@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "module": "Node16",
+    "target": "ES2022",
+    "outDir": "out",
+    "lib": ["ES2022", "dom"],
+    "sourceMap": true,
+    "rootDir": "src",
+    "skipLibCheck": true,
+    "strict": true /* enable all strict type-checking options */,
+    /* Additional Checks */
+    // "noImplicitReturns": true, /* Report error when not all code paths in function return a value. */
+    // "noFallthroughCasesInSwitch": true, /* Report errors for fallthrough cases in switch statement. */
+    // "noUnusedParameters": true,  /* Report errors on unused parameters. */
+    "paths": {
+      "@juliacomputing/dyad-common": ["../../pkgs/common/src/index.ts"],
+      "@juliacomputing/dyad-ast": ["../../pkgs/ast/src/index.ts"],
+      "@juliacomputing/dyad-parser": ["../../pkgs/parser/cjs/index.d.ts"],
+      "@juliacomputing/dyad-kernel": ["../../pkgs/kernel/cjs/index.d.ts"],
+      "@juliacomputing/dyad-protocol": ["../../pkgs/protocol/src/index.ts"],
+      "@juliacomputing/dyad-kernel/node": [
+        "../../pkgs/kernel/cjs/node/index.d.ts"
+      ]
+    }
+  },
+  "references": [
+    { "path": "../../pkgs/common" },
+    { "path": "../../pkgs/ast" },
+    { "path": "../../pkgs/parser" },
+    { "path": "../../pkgs/kernel" },
+    { "path": "../../pkgs/protocol" }
+  ],
+  "exclude": ["node_modules", "details-webview"]
+}

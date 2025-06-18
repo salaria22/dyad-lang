@@ -1,0 +1,46 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "ui": "tui",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build", "^bundle"]
+    },
+    "build:dev": {
+      "dependsOn": ["^build:dev"]
+    },
+    "dyad-studio#build": {
+      "dependsOn": [
+        "@juliacomputing/dyad-parser#bundle",
+        "@juliacomputing/dyad-kernel#bundle",
+        "studio-webview#build",
+        "^build"
+      ]
+    },
+    "studio-webview#build": {
+      "dependsOn": ["^bundle"]
+    },
+    "studio-webview#build:webview": {},
+    "dyad-studio#package": {
+      "dependsOn": ["dyad-studio#build"]
+    },
+    "bundle": {
+      "dependsOn": ["^bundle"]
+    },
+    "test": {
+      "dependsOn": ["build", "^test"]
+    },
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "check-types": {
+      "dependsOn": ["^check-types"]
+    },
+    "package": {
+      "dependsOn": ["^build", "dyad-studio#package"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    }
+  }
+}

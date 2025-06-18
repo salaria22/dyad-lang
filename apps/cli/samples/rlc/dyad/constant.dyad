@@ -1,0 +1,6 @@
+model ConstantVoltage begin
+  extends TwoPin()
+  parameter V::Voltage = 10
+equations
+  v = V
+end

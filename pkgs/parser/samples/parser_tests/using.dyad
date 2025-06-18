@@ -1,0 +1,5 @@
+using Electrical: Voltage
+using Mechanical: Flange, Spring
+using .: density::DensityFunction
+
+type DensityFunction = func(::MediumModel, ::Pressure)::Density

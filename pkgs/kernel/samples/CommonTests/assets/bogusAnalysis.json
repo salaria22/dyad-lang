@@ -1,0 +1,35 @@
+{
+  "title": "Bogus Analysis",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Something used in testing to check problem detection",
+      "default": "BogusAnalysis"
+    },
+    "model": {
+      "type": "object",
+      "description": "Problem: object is not (yet) allowed"
+    },
+    "measurement": {
+      "type": "array",
+      "description": "Problem: Arrays are not (yet) allowed"
+    },
+    "options": {
+      "enum": ["a", "b", "c"],
+      "description": "Problem: enums are not (yet) allowed"
+    },
+    "control_input": {
+      "type": "string",
+      "description": "The control input of the plant"
+    },
+    "step_input": {
+      "type": "string",
+      "description": "The input to the system when optimizing the step response"
+    },
+    "step_output": {
+      "type": "string",
+      "description": "The output to the system when optimizing the step response"
+    }
+  }
+}

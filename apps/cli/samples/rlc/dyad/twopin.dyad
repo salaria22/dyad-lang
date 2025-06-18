@@ -1,0 +1,10 @@
+partial model TwoPin begin
+  p = Pin() [{ "Dyad": { "iconName": "pos" } }]
+  n = Pin() [{ "Dyad": { "iconName": "neg" } }]
+  variable v::Voltage
+  variable i::Current
+equations
+  v = p.v - n.v
+  i = p.i
+  p.i + n.i = 0
+end

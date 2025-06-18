@@ -1,0 +1,34 @@
+{
+  "name": "dyad-lang",
+  "private": true,
+  "scripts": {
+    "build": "turbo run bundle && turbo run build",
+    "build:dev": "turbo run build:dev",
+    "test": "turbo run test",
+    "clean": "git clean -d -x -f",
+    "package": "turbo run package",
+    "publish:common": "(cd pkgs/common; npm publish)",
+    "publish:ast": "(cd pkgs/ast; npm publish)",
+    "publish:parser": "(cd pkgs/parser; npm publish)",
+    "publish:kernel": "(cd pkgs/kernel; npm publish)",
+    "publish": "npm run clean && npm run build && npm run publish:kernel && npm run publish:ast && npm run publish:parser && npm run publish:common",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "reset": "npm run clean && npm i && npm run build",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "check-types": "turbo run check-types"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3",
+    "turbo": "^2.5.0",
+    "typescript": "5.5.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "npm@10.9.2",
+  "workspaces": [
+    "apps/*",
+    "pkgs/*"
+  ]
+}

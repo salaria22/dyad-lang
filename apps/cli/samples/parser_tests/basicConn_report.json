@@ -1,0 +1,65 @@
+{
+  "library": {
+    "kind": "lib",
+    "name": "???",
+    "directory": "???",
+    "module": [],
+    "files": [
+      {
+        "kind": "file",
+        "source": "???",
+        "definitions": [
+          {
+            "kind": "con",
+            "imports": [],
+            "name": "Pin",
+            "elements": {
+              "v": {
+                "kind": "cvar",
+                "type": {
+                  "kind": "tq",
+                  "name": "Voltage",
+                  "mods": {}
+                },
+                "direction": null,
+                "qualifier": "potential",
+                "doc_string": null,
+                "metadata": {
+                  "Dyad": {
+                    "tags": ["electrical"]
+                  }
+                }
+              },
+              "i": {
+                "kind": "cvar",
+                "type": {
+                  "kind": "tq",
+                  "name": "Current",
+                  "mods": {}
+                },
+                "direction": null,
+                "qualifier": "flow",
+                "doc_string": null,
+                "metadata": null
+              }
+            },
+            "metadata": {
+              "Dyad": {
+                "icon": {
+                  "pos": "file:./assets/p_pin.svg",
+                  "neg": "file:./assets/n_pin.svg"
+                },
+                "pathStyle": "stroke:#a495e6;stroke-width:2.5;stroke-dasharray:none;stroke-opacity:1"
+              }
+            },
+            "doc_string": null,
+            "start": 0,
+            "end": 8
+          }
+        ]
+      }
+    ]
+  },
+  "semantic": [],
+  "syntax": []
+}

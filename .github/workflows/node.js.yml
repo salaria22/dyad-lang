@@ -1,0 +1,66 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: '*'
+
+jobs:
+  CI:
+    name: dyad-lang CI
+    runs-on: self-hosted
+    #strategy:
+    #  matrix:
+    #    os:
+    #      - ubuntu-latest
+    #      - windows-latest
+    #      - macos-latest
+    #    arch:
+    #      - x64
+    steps:
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+    - name: Use Node.js
+      uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+      with:
+        node-version: 22.x
+        cache: 'npm'      
+    - uses: julia-actions/setup-julia@5c9647d97b78a5debe5164e9eec09d653d29bd71 # v2
+      with:
+        version: 1
+        #arch: ${{ matrix.arch }}
+    - uses: julia-actions/cache@d10a6fd8f31b12404a54613ebad242900567f2b9 # v2
+    - run: npm ci
+    - run: npm run build --if-present
+    - name: "@dyad-lang/common"
+      run: |
+        cd pkgs/common
+        npm run test
+    - name: "@dyad-lang/ast"
+      run: |
+        cd pkgs/ast
+        npm run test
+    - name: "@dyad-lang/parser"
+      run: |
+        cd pkgs/parser
+        npm run test
+    - name: "@dyad-lang/kernel"
+      run: |
+        cd pkgs/kernel
+        npm run test
+    - name: "@dyad-lang/protocol"
+      run: |
+        cd pkgs/protocol
+        npm run test
+    - name: "cli"
+      run: |
+        cd apps/cli
+        npm run test
+    - name: "hbcomp"
+      run: |
+        cd apps/hbcomp
+        npm run test
+        

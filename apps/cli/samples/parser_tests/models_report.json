@@ -1,0 +1,660 @@
+{
+  "library": {
+    "kind": "lib",
+    "name": "???",
+    "directory": "???",
+    "module": [],
+    "files": [
+      {
+        "kind": "file",
+        "source": "???",
+        "definitions": [
+          {
+            "kind": "mod",
+            "imports": [],
+            "partial": false,
+            "name": "Ground",
+            "start": 0,
+            "end": 54,
+            "extends": [],
+            "declarations": {
+              "g": {
+                "kind": "comp",
+                "start": 21,
+                "end": 22,
+                "instance": {
+                  "kind": "tq",
+                  "name": "Pin",
+                  "mods": {}
+                },
+                "constraint": "Pin",
+                "dims": [],
+                "doc_string": null,
+                "metadata": null
+              }
+            },
+            "equations": [
+              {
+                "name": null,
+                "when": {
+                  "type": "blit",
+                  "value": true
+                },
+                "lhs": {
+                  "type": "cref",
+                  "elems": [
+                    {
+                      "name": "g",
+                      "elems": []
+                    },
+                    {
+                      "name": "v",
+                      "elems": []
+                    }
+                  ]
+                },
+                "rhs": {
+                  "type": "ilit",
+                  "value": 0,
+                  "prefix": null
+                },
+                "doc_string": null,
+                "metadata": null
+              }
+            ],
+            "connections": [],
+            "doc_string": null,
+            "metadata": null
+          },
+          {
+            "kind": "mod",
+            "imports": [],
+            "partial": true,
+            "name": "TwoPin",
+            "start": 64,
+            "end": 317,
+            "extends": [],
+            "declarations": {
+              "p": {
+                "kind": "comp",
+                "start": 85,
+                "end": 86,
+                "instance": {
+                  "kind": "tq",
+                  "name": "Pin",
+                  "mods": {}
+                },
+                "constraint": "Pin",
+                "dims": [],
+                "doc_string": null,
+                "metadata": {
+                  "Dyad": {
+                    "iconName": "pos"
+                  }
+                }
+              },
+              "n": {
+                "kind": "comp",
+                "start": 137,
+                "end": 138,
+                "instance": {
+                  "kind": "tq",
+                  "name": "Pin",
+                  "mods": {}
+                },
+                "constraint": "Pin",
+                "dims": [],
+                "doc_string": null,
+                "metadata": {
+                  "Dyad": {
+                    "iconName": "neg"
+                  }
+                }
+              },
+              "v": {
+                "kind": "var",
+                "type": "Voltage",
+                "start": 198,
+                "end": 199,
+                "dims": [],
+                "init": null,
+                "doc_string": null,
+                "variability": "variable",
+                "metadata": null
+              },
+              "i": {
+                "kind": "var",
+                "type": "Current",
+                "start": 220,
+                "end": 221,
+                "dims": [],
+                "init": null,
+                "doc_string": null,
+                "variability": "variable",
+                "metadata": null
+              }
+            },
+            "equations": [
+              {
+                "name": null,
+                "when": {
+                  "type": "blit",
+                  "value": true
+                },
+                "lhs": {
+                  "type": "cref",
+                  "elems": [
+                    {
+                      "name": "v",
+                      "elems": []
+                    }
+                  ]
+                },
+                "rhs": {
+                  "type": "bexp",
+                  "lhs": {
+                    "type": "cref",
+                    "elems": [
+                      {
+                        "name": "p",
+                        "elems": []
+                      },
+                      {
+                        "name": "v",
+                        "elems": []
+                      }
+                    ]
+                  },
+                  "op": "-",
+                  "rhs": {
+                    "type": "cref",
+                    "elems": [
+                      {
+                        "name": "n",
+                        "elems": []
+                      },
+                      {
+                        "name": "V",
+                        "elems": []
+                      }
+                    ]
+                  },
+                  "elementwise": false
+                },
+                "doc_string": null,
+                "metadata": null
+              },
+              {
+                "name": null,
+                "when": {
+                  "type": "blit",
+                  "value": true
+                },
+                "lhs": {
+                  "type": "cref",
+                  "elems": [
+                    {
+                      "name": "i",
+                      "elems": []
+                    }
+                  ]
+                },
+                "rhs": {
+                  "type": "cref",
+                  "elems": [
+                    {
+                      "name": "p",
+                      "elems": []
+                    },
+                    {
+                      "name": "i",
+                      "elems": []
+                    }
+                  ]
+                },
+                "doc_string": null,
+                "metadata": null
+              },
+              {
+                "name": null,
+                "when": {
+                  "type": "blit",
+                  "value": true
+                },
+                "lhs": {
+                  "type": "bexp",
+                  "lhs": {
+                    "type": "cref",
+                    "elems": [
+                      {
+                        "name": "p",
+                        "elems": []
+                      },
+                      {
+                        "name": "i",
+                        "elems": []
+                      }
+                    ]
+                  },
+                  "op": "+",
+                  "rhs": {
+                    "type": "cref",
+                    "elems": [
+                      {
+                        "name": "n",
+                        "elems": []
+                      },
+                      {
+                        "name": "i",
+                        "elems": []
+                      }
+                    ]
+                  },
+                  "elementwise": false
+                },
+                "rhs": {
+                  "type": "ilit",
+                  "value": 0,
+                  "prefix": null
+                },
+                "doc_string": {
+                  "string": "\"\"\"Conservation of Charge\"\"\"",
+                  "tripleQuoted": true
+                },
+                "metadata": null
+              }
+            ],
+            "connections": [],
+            "doc_string": null,
+            "metadata": null
+          },
+          {
+            "kind": "mod",
+            "imports": [],
+            "partial": false,
+            "name": "VoltageSource",
+            "start": 319,
+            "end": 457,
+            "extends": [
+              {
+                "kind": "tq",
+                "name": "TwoPin",
+                "mods": {}
+              }
+            ],
+            "declarations": {
+              "Vf": {
+                "kind": "var",
+                "type": "Voltage",
+                "start": 376,
+                "end": 378,
+                "dims": [],
+                "init": {
+                  "type": "ilit",
+                  "value": 10,
+                  "prefix": null
+                },
+                "doc_string": null,
+                "variability": "parameter",
+                "metadata": null
+              }
+            },
+            "equations": [
+              {
+                "name": "src",
+                "when": {
+                  "type": "blit",
+                  "value": true
+                },
+                "lhs": {
+                  "type": "cref",
+                  "elems": [
+                    {
+                      "name": "v",
+                      "elems": []
+                    }
+                  ]
+                },
+                "rhs": {
+                  "type": "texp",
+                  "cond": {
+                    "type": "bexp",
+                    "lhs": {
+                      "type": "cref",
+                      "elems": [
+                        {
+                          "name": "t",
+                          "elems": []
+                        }
+                      ]
+                    },
+                    "op": "<",
+                    "rhs": {
+                      "type": "ilit",
+                      "value": 0,
+                      "prefix": null
+                    },
+                    "elementwise": false
+                  },
+                  "yes": {
+                    "type": "ilit",
+                    "value": 0,
+                    "prefix": null
+                  },
+                  "no": {
+                    "type": "texp",
+                    "cond": {
+                      "type": "bexp",
+                      "lhs": {
+                        "type": "cref",
+                        "elems": [
+                          {
+                            "name": "t",
+                            "elems": []
+                          }
+                        ]
+                      },
+                      "op": ">",
+                      "rhs": {
+                        "type": "ilit",
+                        "value": 5,
+                        "prefix": null
+                      },
+                      "elementwise": false
+                    },
+                    "yes": {
+                      "type": "ilit",
+                      "value": 7,
+                      "prefix": null
+                    },
+                    "no": {
+                      "type": "cref",
+                      "elems": [
+                        {
+                          "name": "Vf",
+                          "elems": []
+                        }
+                      ]
+                    }
+                  }
+                },
+                "doc_string": null,
+                "metadata": null
+              }
+            ],
+            "connections": [],
+            "doc_string": null,
+            "metadata": null
+          },
+          {
+            "kind": "mod",
+            "imports": [],
+            "partial": false,
+            "name": "Capacitor",
+            "start": 459,
+            "end": 557,
+            "extends": [
+              {
+                "kind": "tq",
+                "name": "TwoPin",
+                "mods": {}
+              }
+            ],
+            "declarations": {
+              "C": {
+                "kind": "var",
+                "type": "Capacitance",
+                "start": 512,
+                "end": 513,
+                "dims": [],
+                "init": null,
+                "doc_string": null,
+                "variability": "parameter",
+                "metadata": null
+              }
+            },
+            "equations": [
+              {
+                "name": null,
+                "when": {
+                  "type": "blit",
+                  "value": true
+                },
+                "lhs": {
+                  "type": "bexp",
+                  "lhs": {
+                    "type": "cref",
+                    "elems": [
+                      {
+                        "name": "C",
+                        "elems": []
+                      }
+                    ]
+                  },
+                  "op": "*",
+                  "rhs": {
+                    "type": "call",
+                    "func": {
+                      "type": "cref",
+                      "elems": [
+                        {
+                          "name": "der",
+                          "elems": []
+                        }
+                      ]
+                    },
+                    "positional": [
+                      {
+                        "type": "cref",
+                        "elems": [
+                          {
+                            "name": "v",
+                            "elems": []
+                          }
+                        ]
+                      }
+                    ],
+                    "keyword": {}
+                  },
+                  "elementwise": false
+                },
+                "rhs": {
+                  "type": "cref",
+                  "elems": [
+                    {
+                      "name": "i",
+                      "elems": []
+                    }
+                  ]
+                },
+                "doc_string": null,
+                "metadata": null
+              }
+            ],
+            "connections": [],
+            "doc_string": null,
+            "metadata": null
+          },
+          {
+            "kind": "mod",
+            "imports": [],
+            "partial": false,
+            "name": "Inductor",
+            "start": 559,
+            "end": 653,
+            "extends": [
+              {
+                "kind": "tq",
+                "name": "TwoPin",
+                "mods": {}
+              }
+            ],
+            "declarations": {
+              "L": {
+                "kind": "var",
+                "type": "Inductor",
+                "start": 611,
+                "end": 612,
+                "dims": [],
+                "init": null,
+                "doc_string": null,
+                "variability": "parameter",
+                "metadata": null
+              }
+            },
+            "equations": [
+              {
+                "name": null,
+                "when": {
+                  "type": "blit",
+                  "value": true
+                },
+                "lhs": {
+                  "type": "bexp",
+                  "lhs": {
+                    "type": "cref",
+                    "elems": [
+                      {
+                        "name": "L",
+                        "elems": []
+                      }
+                    ]
+                  },
+                  "op": "*",
+                  "rhs": {
+                    "type": "call",
+                    "func": {
+                      "type": "cref",
+                      "elems": [
+                        {
+                          "name": "der",
+                          "elems": []
+                        }
+                      ]
+                    },
+                    "positional": [
+                      {
+                        "type": "cref",
+                        "elems": [
+                          {
+                            "name": "i",
+                            "elems": []
+                          }
+                        ]
+                      }
+                    ],
+                    "keyword": {}
+                  },
+                  "elementwise": false
+                },
+                "rhs": {
+                  "type": "cref",
+                  "elems": [
+                    {
+                      "name": "v",
+                      "elems": []
+                    }
+                  ]
+                },
+                "doc_string": null,
+                "metadata": null
+              }
+            ],
+            "connections": [],
+            "doc_string": null,
+            "metadata": null
+          },
+          {
+            "kind": "mod",
+            "imports": [],
+            "partial": false,
+            "name": "Resistor",
+            "start": 694,
+            "end": 915,
+            "extends": [
+              {
+                "kind": "tq",
+                "name": "TwoPin",
+                "mods": {}
+              }
+            ],
+            "declarations": {
+              "R": {
+                "kind": "var",
+                "type": "Resistance",
+                "start": 779,
+                "end": 780,
+                "dims": [],
+                "init": null,
+                "doc_string": {
+                  "string": "\"Resistance of this Resistor\"",
+                  "tripleQuoted": false
+                },
+                "variability": "parameter",
+                "metadata": null
+              }
+            },
+            "equations": [
+              {
+                "name": null,
+                "when": {
+                  "type": "blit",
+                  "value": true
+                },
+                "lhs": {
+                  "type": "cref",
+                  "elems": [
+                    {
+                      "name": "v",
+                      "elems": []
+                    }
+                  ]
+                },
+                "rhs": {
+                  "type": "bexp",
+                  "lhs": {
+                    "type": "cref",
+                    "elems": [
+                      {
+                        "name": "i",
+                        "elems": []
+                      }
+                    ]
+                  },
+                  "op": "*",
+                  "rhs": {
+                    "type": "cref",
+                    "elems": [
+                      {
+                        "name": "R",
+                        "elems": []
+                      }
+                    ]
+                  },
+                  "elementwise": false
+                },
+                "doc_string": {
+                  "string": "\"Ohm's Law\"",
+                  "tripleQuoted": false
+                },
+                "metadata": null
+              }
+            ],
+            "connections": [],
+            "doc_string": {
+              "string": "\"\"\"\nA simple linear resistor model\n\"\"\"",
+              "tripleQuoted": true
+            },
+            "metadata": {
+              "Dyad": {
+                "icon": "model:./assets/resistor.svg"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "semantic": [],
+  "syntax": []
+}

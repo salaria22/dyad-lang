@@ -1,0 +1,6 @@
+connector HydraulicPort
+  potential p::Pressure 
+  flow m_dot::MassFlowRate
+  stream h::SpecificEnthalpy
+  path medium::MediumModel
+end

@@ -1,0 +1,5 @@
+component Foo
+  node = Node() if use_thermal
+  parameter use_thermal::Boolean
+  variable T::Temperature if use_thermal
+end

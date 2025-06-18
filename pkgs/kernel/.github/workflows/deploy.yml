@@ -1,0 +1,73 @@
+name: Deploy pages
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  packages: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: "Set up Julia"
+        uses: "julia-actions/setup-julia@5c9647d97b78a5debe5164e9eec09d653d29bd71" # v2.6.1
+        with:
+          version: "1"
+
+      - name: "Set up private JuliaHub registries"
+        uses: "JuliaComputing/set-up-private-juliahub-registries@a60c35b0463eb38fcb438d0222ca56ce422d970a" # v1.2.1
+        with:
+          encoded-juliahub-token: "${{ secrets.JULIAHUB_TOKEN_ENCODED }}"
+          ssh-key: "${{ secrets.JULIASIM_REGISTRY_SSH_KEY }}"
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: "lts/*"
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@juliacomputing"
+
+      - name: Install dependencies
+        run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run Tests
+        run: npm run test
+
+      - name: Build
+        run: npm run docs
+
+      - name: Setup Pages
+        uses: actions/configure-pages@1f0c5cde4bc74cd7e1254d0cb4de8d49e9068c7d # v4.0.0
+
+      - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
+        with:
+          path: .retype
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: self-hosted
+    name: Deploy
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5

@@ -1,0 +1,26 @@
+import { Unit, unit, unitless } from "./unit";
+
+export const derivedUnits = {
+  Hz: unit({ s: -1 }),
+  rad: unitless,
+  sr: unitless,
+  N: unit({ kg: 1, m: 1, s: -2 }),
+  Pa: unit({ kg: 1, m: -1, s: -2 }),
+  J: unit({ kg: 1, m: 2, s: -2 }),
+  W: unit({ kg: 1, m: 2, s: -3 }),
+  C: unit({ s: 1, A: 1 }),
+  V: unit({ kg: 1, m: 2, s: -3, A: -1 }),
+  F: unit({ kg: -1, m: -2, s: 4, A: 2 }),
+  Ω: unit({ kg: 1, m: 2, s: -3, A: -2 }),
+  S: unit({ kg: -1, m: -2, s: 3, A: 2 }),
+  Wb: unit({ kg: 1, m: 2, s: -2, A: -1 }),
+  T: unit({ kg: 1, s: -2, A: -1 }),
+  H: unit({ kg: 1, m: 2, s: -2, A: -2 }),
+  "°C": unit({ K: 1 }),
+  lm: unit({ cd: 1 }),
+  lx: unit({ cd: 1, m: -2 }),
+  Bq: unit({ s: -1 }),
+  Gy: unit({ m: 2, s: -2 }),
+  Sv: unit({ m: 2, s: -2 }),
+  kat: unit({ s: -1, mol: 1 }),
+} as const satisfies Record<string, Unit>;

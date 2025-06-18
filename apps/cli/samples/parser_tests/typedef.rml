@@ -1,0 +1,7 @@
+using OtherLibrary: SpecialType
+
+type Voltage = Real(units="V")
+type Current = Real(units="A")
+type MyType = SpecialType()
+
+type LightColor = enum { Red | Green | Blue }

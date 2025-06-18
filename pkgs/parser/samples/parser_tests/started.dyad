@@ -1,0 +1,16 @@
+component GettingStarted 
+  variable v::Int64
+
+  initial state state1 
+  relations
+    eq1: v = previous(v) - 1
+  end
+  state state2
+  relations
+    eq1: v = previous(v) + 1
+  end
+
+relations
+  transition(state1 => state2, timeInState() >= 2);
+  transition(state2 => state1, v >= 5);
+end

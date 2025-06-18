@@ -1,0 +1,23 @@
+component ComponentB
+  variable x::Real(units="m")
+  parameter k::Real(units="1/s") = 1
+  parameter x0::Real(units="m") = 10
+relations
+  initial x = x0
+  der(x) = -k*x
+metadata {
+    "Dyad": {
+        "experiments": {
+            "world": { "stop": 10 }
+        },
+        "tests": {
+            "case1": {
+                "stop": 10,
+                "expect": {
+                    "initial": { "x": 10 }
+                }
+            }
+        }
+    }
+}
+end

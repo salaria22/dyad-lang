@@ -1,0 +1,39 @@
+type LightColor = enum { Red | Yellow | Green };
+
+"""
+This is a model, but a model that only includes state transition type
+behavior.  Not sure what the keyword should be or how the nested states
+should be delineated.
+"""
+state TrafficLight begin
+  output y1::LightColor
+  output y2::LightColor
+  variable count::Integer
+  input sens::Boolean
+  initial substate Stop begin
+    y1 := Red
+    y2 := Green
+  end
+  substate StopForTraffic begin
+    y1 := Red
+    y2 := Green
+  end
+  substate StopToGo begin
+    y1 := Red
+    y2 := Yellow
+  end
+  substate Go begin
+    y1 := Green
+    y2 := Red
+  end
+  substate GoToStop begin
+    y1 := Yellow
+    y2 := Red
+  end
+transitions
+  transition(Stop => StopForTraffic, dwell(Stop, 20*tick)) { count := count + 1 }
+  transition(StopForTraffic => StopToGo, sens) { count := count + 1 }
+  transition(StopToGo => Go, dwell(StopToGo, 3*tick)) { count := count + 1 }
+  transition(Go => GoToStop, dwell(Go, 10*tick)) { count := count + 1 }
+  transition(StopToGo => Stop, dwell(StopToGo, 3*tick)) { count := count + 1 }
+end

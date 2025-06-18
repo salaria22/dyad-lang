@@ -1,0 +1,26 @@
+component System1
+  res = Reservoir()
+  flange = Flange()
+  parameter beta::Real=1
+  final path medium::MediumModel = Beta(beta=beta)
+relations
+  continuity(medium, res.port.medium)
+end
+
+# This model exists to ensure that we don't get an `invalidContinuitySet`
+# error (which was the case prior to #174)
+component System2
+  flange = Flange()
+  sys = System1()
+relations
+  connect(sys.flange, flange)
+end
+
+component System3
+  res = Reservoir()
+  flange = Flange()
+  parameter beta::Real=1
+  path medium::MediumModel = Beta(beta=beta)
+relations
+  continuity(medium, res.port.medium)
+end

@@ -1,0 +1,55 @@
+{
+  "name": "@juliacomputing/dyad-ast",
+  "version": "0.50.0",
+  "description": "Abstract syntax for the Dyad Language",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "exports": {
+    ".": {
+      "types": "./esm/index.d.ts",
+      "require": "./cjs/index.js",
+      "import": "./esm/index.mjs"
+    }
+  },
+  "scripts": {
+    "prepublishOnly": "npm run clean && npm run build && npm run bundle && npm run test",
+    "build": "tsc -p ./",
+    "bundle": "npm run bundle:cjs && npm run bundle:esm",
+    "bundle:cjs": "rimraf cjs && tsup --tsconfig tsconfig.tsup.json src/*.ts --format cjs --dts --dts-resolve -d=./cjs",
+    "bundle:esm": "rimraf esm && tsup --tsconfig tsconfig.tsup.json src/*.ts --format esm --dts --dts-resolve -d=./esm",
+    "test": "jest",
+    "serve": "serve typedocs",
+    "docs": "typedoc src/index.ts",
+    "clean": "rimraf dist && rimraf cjs && rimraf lib"
+  },
+  "keywords": [
+    "Dyad"
+  ],
+  "files": [
+    "esm",
+    "!esm/**/*.test.*",
+    "cjs",
+    "!cjs/**/*.test.*",
+    "src",
+    "!src/**/*.test.*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JuliaComputing/dyad-lang.git"
+  },
+  "author": "Michael M. Tiller",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "rimraf": "^5.0.5",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "tsup": "8.5.0",
+    "typedoc": "0.28.5",
+    "typescript": "5.5.3"
+  },
+  "dependencies": {
+    "@juliacomputing/dyad-common": "*"
+  }
+}

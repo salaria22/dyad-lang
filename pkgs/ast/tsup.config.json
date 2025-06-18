@@ -1,0 +1,7 @@
+{
+  "dts": {
+    "compilerOptions": {
+      "rootDir": "../../"
+    }
+  }
+}

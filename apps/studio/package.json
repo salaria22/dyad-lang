@@ -1,0 +1,123 @@
+{
+  "name": "dyad-studio",
+  "displayName": "Dyad Studio",
+  "description": "Integrated support for Dyad Language",
+  "version": "0.50.0",
+  "publisher": "JuliaComputing",
+  "bugs": "https://github.com/JuliaComputing/JuliaSimIssues/issues/new",
+  "homepage": "https://juliahub.com",
+  "license": "https://juliahub.com/company/eula",
+  "icon": "logos/dyad-logo.notext.light.png",
+  "engines": {
+    "vscode": "^1.89.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "workspaceContains:dyad"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "dyad-studio.restart",
+        "title": "Dyad: Restart Language Server"
+      },
+      {
+        "command": "dyad-studio.compile",
+        "title": "Dyad: Compile"
+      },
+      {
+        "command": "dyad-studio.gendoc",
+        "title": "Dyad: Generate Documentation"
+      },
+      {
+        "command": "dyad-studio.create",
+        "title": "Dyad: Create Component Library"
+      }
+    ],
+    "languages": [
+      {
+        "id": "dyad",
+        "extensions": [
+          ".dyad"
+        ]
+      }
+    ],
+    "configurationDefaults": {
+      "julia.packageServer": "https://juliahub.com"
+    },
+    "configuration": {
+      "title": "Dyad Settings",
+      "properties": {
+        "dyad-studio.autoCompile": {
+          "type": "boolean",
+          "default": true,
+          "description": "Regenerate Julia code from Dyad when files are saved and no errors are found"
+        },
+        "dyad-studio.serverDebug": {
+          "type": "string",
+          "default": "",
+          "description": "Patterns of debugging output to enable"
+        }
+      }
+    },
+    "grammars": [
+      {
+        "language": "dyad",
+        "scopeName": "source.dyad",
+        "path": "./syntaxes/dyad.tmGrammar.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.json": "json"
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "pretest": "npm run build && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test",
+    "build": "npm run lint && npm run compile",
+    "build:dev": "turbo run bundle && turbo run 'studio-webview#build:webview' && node esbuild.js",
+    "compile": "npm run check-types && node esbuild.js --production",
+    "check-types": "tsc --noEmit",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "make"
+  },
+  "devDependencies": {
+    "@types/debug": "4.1.12",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.89.0",
+    "@typescript-eslint/eslint-plugin": "7.18.0",
+    "@typescript-eslint/parser": "7.18.0",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2",
+    "@vscode/vsce": "^3.3.1",
+    "esbuild": "^0.25.2",
+    "eslint": "8.57.1",
+    "eslint-plugin-require-extensions": "0.1.3",
+    "typescript": "5.5.3"
+  },
+  "dependencies": {
+    "@juliacomputing/dyad-ast": "*",
+    "@juliacomputing/dyad-common": "*",
+    "@juliacomputing/dyad-kernel": "*",
+    "@juliacomputing/dyad-parser": "*",
+    "@types/vscode-webview": "1.57.5",
+    "fs-extra": "11.3.0",
+    "isomorphic-git": "1.30.2",
+    "purify-ts": "2.1.0",
+    "queue": "6.0.2",
+    "rxjs": "^7.8.2",
+    "vscode-languageclient": "9.0.1",
+    "vscode-languageserver": "9.0.1",
+    "vscode-languageserver-textdocument": "1.0.12",
+    "vscode-uri": "3.1.0"
+  },
+  "extensionDependencies": [
+    "JuliaComputing.juliahub"
+  ]
+}

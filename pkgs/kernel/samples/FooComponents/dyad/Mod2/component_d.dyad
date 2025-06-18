@@ -1,0 +1,3 @@
+component ComponentD
+  parameter x::BarComponents.BarType;
+end

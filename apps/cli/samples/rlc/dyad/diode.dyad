@@ -1,0 +1,26 @@
+model Diode begin
+  extends TwoPin()
+  variable s::Real
+  parameter dv::Voltage = 1.0
+  parameter di::Current = 1.0
+equations 
+  i/di = if s>0 then s else 0
+  v/dv = if s>0 then 0 else -s
+end
+
+model TestDiode begin
+  diode = Diode()
+  source = LinearVoltageSource(V0=-1, dVdt=1)
+  ground = Ground()
+connections
+  connect(diode.p, source.p)
+  connect(diode.n, source.n, ground.g)
+end
+
+model LinearVoltageSource begin
+  extends TwoPin()
+  parameter V0::Voltage
+  parameter dVdt::VoltageRate
+equations
+  v = V0 + dVdt * t
+end

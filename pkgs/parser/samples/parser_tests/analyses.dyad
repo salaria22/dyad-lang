@@ -1,0 +1,28 @@
+component CircuitModel
+  parameter C::Capacitance = 1m
+end
+
+analysis MyTransient
+  extends TransientAnalysis(integrator="Rodas4", abstol=0.001m, reltol=0.01m, dtmax=0.1)
+  model = CircuitModel()
+  data = Dataset(filename="path/to/csv", indepvar="t")
+relations
+  model.resistor.v = data.v
+  model.resistor.i = data.i
+end
+
+analysis CalibrateIt
+  extends OptimizationAnalysis(method="single_shooting", maxiters=100, optimizer="Ipopt", reduction="sse")
+  result = MyTransient(C=C)
+  parameter C::Capacitance(min=100n, max=1m)
+relations
+  cost = result.cost
+end
+
+analysis DesignIt
+  extends OptimizationAnalysis(method="multiple_shooting", maxiters=100, optimizer="Ipopt", reduction="sum")
+  result = MyTransient(C=C)
+  parameter C::Capacitance(min=100n, max=1m)
+relations
+  cost = result.ampermeter.i^2
+end

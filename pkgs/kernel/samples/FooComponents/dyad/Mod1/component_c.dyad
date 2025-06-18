@@ -1,0 +1,5 @@
+using BarComponents: BarType;
+
+component ComponentC
+  parameter x::BarType;
+end

@@ -1,0 +1,140 @@
+{
+    "library": {
+        "kind": "lib",
+        "name": "???",
+        "directory": "???",
+        "module": [],
+        "files": [
+            {
+                "kind": "file",
+                "source": "???",
+                "definitions": [
+                    {
+                        "kind": "sctd",
+                        "imports": [],
+                        "name": "Voltage",
+                        "base": {
+                            "kind": "tq",
+                            "name": "Real",
+                            "mods": {
+                                "units": {
+                                    "type": "slit",
+                                    "value": "V",
+                                    "quoted": false
+                                },
+                                "b": {
+                                    "type": "bexp",
+                                    "lhs": {
+                                        "type": "ilit",
+                                        "value": 5,
+                                        "prefix": null
+                                    },
+                                    "op": "+",
+                                    "rhs": {
+                                        "type": "ilit",
+                                        "value": 5,
+                                        "prefix": null
+                                    },
+                                    "elementwise": false
+                                },
+                                "c": {
+                                    "type": "blit",
+                                    "value": true
+                                },
+                                "d": {
+                                    "type": "call",
+                                    "func": {
+                                        "type": "cref",
+                                        "elems": [
+                                            {
+                                                "name": "f",
+                                                "elems": []
+                                            }
+                                        ]
+                                    },
+                                    "positional": [
+                                        {
+                                            "type": "ilit",
+                                            "value": 5,
+                                            "prefix": null
+                                        },
+                                        {
+                                            "type": "ilit",
+                                            "value": 6,
+                                            "prefix": null
+                                        }
+                                    ],
+                                    "keyword": {
+                                        "x": {
+                                            "type": "ilit",
+                                            "value": 5,
+                                            "prefix": null
+                                        }
+                                    }
+                                },
+                                "e": {
+                                    "type": "cref",
+                                    "elems": [
+                                        {
+                                            "name": "d",
+                                            "elems": []
+                                        },
+                                        {
+                                            "name": "a",
+                                            "elems": []
+                                        }
+                                    ]
+                                },
+                                "f": {
+                                    "type": "bexp",
+                                    "lhs": {
+                                        "type": "ilit",
+                                        "value": 1000,
+                                        "prefix": "k"
+                                    },
+                                    "op": "+",
+                                    "rhs": {
+                                        "type": "rlit",
+                                        "value": 0.001,
+                                        "prefix": "m"
+                                    },
+                                    "elementwise": false
+                                },
+                                "g": {
+                                    "type": "call",
+                                    "func": {
+                                        "type": "cref",
+                                        "elems": [
+                                            {
+                                                "name": "Resistor",
+                                                "elems": []
+                                            }
+                                        ]
+                                    },
+                                    "positional": [
+                                        {
+                                            "type": "ilit",
+                                            "value": 5,
+                                            "prefix": null
+                                        }
+                                    ],
+                                    "keyword": {
+                                        "R": {
+                                            "type": "ilit",
+                                            "value": 10,
+                                            "prefix": null
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "start": 0,
+                        "end": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "semantic": [],
+    "syntax": []
+}

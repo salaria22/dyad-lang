@@ -1,0 +1,41 @@
+component Orifice
+  extends TwoPort()
+  # internal orifice diameter
+  parameter d::Diameter
+  # pipe diameter
+  parameter D::Diameter
+  variable dp::Pressure
+  variable rho_up::Density
+  variable β::Real
+relations
+  β = d/D
+  rho_up = rho0+(if port_a.p>port_b.p then port_a.p/beta else port_b.p/beta)
+  dp = port_a.p-port_b.p
+  port_a.m_dot = C_d*eps*pi*(d^2)*sign(2*dp*rho_up)*sqrt(abs(2*dp*rho_up))/(4*sqrt(1-beta^4))
+  port_a.m_dot+port_b.m_dot = 0
+metadata {
+  "Dyad": {
+    "icons": {"default": "dyad://Hydraulics/Orifice.svg"},
+    "tests": {
+      "case1": {
+        "stop": 10,
+        "initial": {"pt2.xd": 0},
+        "atol": {"pt2.y": 0.01},
+        "expect": {"final": {"pt2.y": 1}, "signals": ["pt2.y"]}
+      }
+    }
+  }
+}
+end
+
+component TestOrifice
+  hp = HydraulicReservoir(P=202650) [{
+    "Dyad": {"placement": {"diagram": {"x1": 200, "y1": 400, "x2": 400, "y2": 600}}}
+  }]
+  lp = HydraulicReservoir(P=101325) [{
+    "Dyad": {"placement": {"diagram": {"x1": 600, "y1": 400, "x2": 800, "y2": 600}}}
+  }]
+  orifice = Orifice() [{
+    "Dyad": {"placement": {"diagram": {"x1": 500, "y1": 400, "x2": 600, "y2": 600}}}
+  }]
+end

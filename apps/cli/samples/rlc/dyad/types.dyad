@@ -1,0 +1,6 @@
+type Voltage = Real(units="V")
+type Current = Real(units="A")
+type Resistance = Real(units="Ω")
+type Capacitance = Real(units="F")
+type Inductance = Real(units="H")
+type VoltageRate = Real(units="V/s")

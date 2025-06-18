@@ -1,0 +1,6 @@
+model Capacitor begin
+  extends TwoPin()
+  parameter C::Capacitance
+equations
+  C * der(v) = i
+end

@@ -1,0 +1,17 @@
+input: ./docs
+output: .juliahub
+url: https://juliahub.net/dyad/
+branding:
+  title: Dyad Documentation
+  logo: images/logo.png
+  label: &1122071186 Documentation
+edit:
+  repo: "https://github.com/JuliaComputing/dyad-kernel/"
+links:
+  - text: Dyad Documentation
+    link: /docs
+  - text: Github Repo
+    icon: icon-mark-github
+    link: https://github.com/JuliaComputing/dyad-kernel/
+footer:
+  copyright: "&copy; Copyright {{ year }}. All rights reserved."

@@ -1,0 +1,105 @@
+type Voltage = Real(units="V")
+type Current = Real(units="A")
+type Resistance = Real(units="Ohm")
+type Capacitance = Real(units="F")
+type Inductance = Real(units="H")
+
+connector Pin begin
+  potential v::Voltage [{ "Dyad": { "tags": ["electrical"] } }]
+  flow i::Current
+  metadata {
+    "Dyad": {
+        "icon": { "pos": "file:./assets/p_pin.svg", "neg": "file:./assets/n_pin.svg" },
+        "pathStyle": "stroke:#a495e6;stroke-width:2.5;stroke-dasharray:none;stroke-opacity:1"
+    }
+  }
+end
+
+model Ground begin
+  g = Pin()
+equations
+  g.v = 0
+end
+
+partial model TwoPin begin
+  p = Pin() [{ "Dyad": { "iconName": "pos" } }]
+  n = Pin() [{ "Dyad": { "iconName": "neg" } }]
+  variable v::Voltage
+  variable i::Current
+equations
+  v = p.v - n.V
+  i = p.i
+  """Ohm's Law"""
+  p.i + n.i = 0
+end
+
+model VoltageSource begin
+  extends TwoPin()
+  parameter Vf::Voltage = 10
+equations
+  src: v = if t<0 then 0 elseif t>5 then 7 else Vf
+end
+
+model Capacitor begin
+  extends TwoPin()
+  parameter C::Capacitance
+equations
+  C * der(v) = i
+end
+
+model Inductor begin
+  extends TwoPin()
+  parameter L::Inductance
+equations
+  L * der(i) = v
+end
+
+"""
+A simple linear resistor model
+"""
+model Resistor begin
+  extends TwoPin()
+
+  "Resistance of this Resistor"
+  parameter R::Resistance
+equations
+  "Ohm's Law"
+  v = i * R
+metadata {
+    "Dyad": {
+      "icon": "model:./assets/resistor.svg"
+    }  
+}
+end
+
+"""
+This is an RLC model.  This should support markdown.  That includes
+HTML as well.
+"""
+model RLCModel begin
+  resistor = Resistor(R=100)
+  capacitor = Capacitator(C=1m)
+  inductor = Inductor(L=1)
+  source::TwoPin = VoltageSource(Vf=24)
+  ground = Ground()
+connections
+  connect(source.p, inductor.p) metadata {
+    "Dyad": {
+        "path": [
+            []
+        ]
+    }
+  }
+  connect(inductor.n, resistor.p, capacitor.p) metadata {
+    "Dyad": {
+        "path": [
+            [{ "x": 1, "y": 10}],
+            [{ "x": 5, "y": 10}, { "x": 5, "y": 20 }]
+        ]}
+  }
+  connect(resistor.n, ground.g, capacitor.n, source.n)
+end
+
+model RLCModel2 begin
+  extends RLCModel(source = CurrentSource(i_final=1.5m))
+end

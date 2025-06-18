@@ -1,0 +1,16 @@
+out
+dist
+cjs
+esm
+node_modules
+coverage
+test-libraries
+/benchmark
+.vscode-test/
+*.vsix
+.DS_Store
+.yalc
+yalc.lock
+.retype
+.juliahub
+retype.manifest

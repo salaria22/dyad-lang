@@ -1,0 +1,10 @@
+out
+.yalc
+dist
+node_modules
+.vscode-test/
+*.vsix
+yalc.lock
+packed
+.build_complete
+details-webview

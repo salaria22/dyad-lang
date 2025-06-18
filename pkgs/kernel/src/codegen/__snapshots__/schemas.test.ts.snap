@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Schema generation Test schema generation for complex model 1`] = `
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "R": {
+      "minimum": 0,
+      "type": "number",
+    },
+    "dataFile": {
+      "type": "string",
+    },
+    "n": {
+      "maximum": 5,
+      "minimum": 1,
+      "type": "number",
+    },
+    "p": {
+      "default": 101326,
+      "type": "number",
+    },
+    "sw": {
+      "type": "boolean",
+    },
+    "v": {
+      "minimum": 0,
+      "type": "number",
+    },
+  },
+  "required": [
+    "v",
+    "sw",
+    "dataFile",
+    "n",
+    "R",
+  ],
+  "type": "object",
+}
+`;
+
+exports[`Test Schema generation Test schema generation for resistor model 1`] = `
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "R": {
+      "description": "Resistance of this Resistor",
+      "minimum": 0,
+      "type": "number",
+    },
+  },
+  "required": [
+    "R",
+  ],
+  "type": "object",
+}
+`;

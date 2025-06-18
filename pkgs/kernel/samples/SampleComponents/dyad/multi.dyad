@@ -1,0 +1,14 @@
+partial component Base1
+  parameter x::Temperature
+end
+
+partial component Base2 
+  variable y::Temperature
+end
+
+component Multi
+  extends Base1(x=10) 
+  extends Base2
+relations
+  der(y) = (y-x)
+end

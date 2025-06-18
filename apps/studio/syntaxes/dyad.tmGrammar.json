@@ -1,0 +1,157 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "scopeName": "source.dyad",
+  "displayName": "Dyad",
+  "name": "dyad",
+  "fileTypes": [".dyad"],
+  "patterns": [
+    { "include": "#keywords" },
+    { "include": "#support" },
+    { "include": "#entity" },
+    { "include": "#comment" },
+    { "include": "#metadata" },
+    { "include": "#literals" },
+    { "include": "#operators" },
+    { "include": "#identifiers" }
+  ],
+  "repository": {
+    "constant": {
+      "patterns": [
+        {
+          "name": "constant.literal.dyad",
+          "match": "null"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.component.dyad",
+          "match": "\\b(analysis|component|connector|end|enum|extends|final|func|initial|metadata|relations|state|struct|type)\\b"
+        },
+        {
+          "name": "keyword.control.dyad",
+          "match": "\\b(case|default|elseif|else|for|if|in|switch|then|using)\\b"
+        },
+        {
+          "name": "variable.other.property.dyad",
+          "match": "\\b(constant|example|external|final|flow|input|output|partial|path|parameter|potential|stream|test|variable|structural|parameter|constant)\\b"
+        },
+        {
+          "name": "entity.name.function.dyad",
+          "match": "\\b(analysis_point|assert|connect|der|continuity|transition)\\b"
+        },
+        {
+          "name": "keyword.operator.logical.dyad",
+          "match": "\\b(or|and)\\b"
+        }
+      ]
+    },
+    "entity": {
+      "patterns": [
+        {
+          "name": "entity",
+          "match": "([A-Za-z0-9])+ = ([A-Za-z0-9])+\\(",
+          "captures": {
+            "0": {
+              "patterns": [
+                {
+                  "name": "entity.name.function",
+                  "match": "([A-Za-z0-9])+\\s"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "support": {
+      "patterns": [
+        {
+          "name": "support.type",
+          "match": "::([A-Za-z0-9])+"
+        },
+        {
+          "name": "support.function",
+          "match": "(type|potential|flow|stream|partial|external|test|example|path|variable|structural|parameter|constant)"
+        }
+      ]
+    },
+    "comment": {
+      "name": "comment.line.dyad",
+      "begin": "#",
+      "end": "$"
+    },
+    "metadata": {
+      "patterns": [
+        {
+          "comment": "Match metadata that starts with metadata { and ends with } end",
+          "name": "meta.embedded.json.dyad",
+          "begin": "metadata\\s*\\{",
+          "end": "\\}\\s*end",
+          "patterns": [
+            {
+              "include": "source.json"
+            }
+          ]
+        }
+      ]
+    },
+    "literals": {
+      "patterns": [
+        {
+          "name": "string.quoted.triple.dyad",
+          "begin": "\"\"\"",
+          "end": "\"\"\""
+        },
+        {
+          "name": "string.quoted.double.dyad",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.dyad",
+              "match": "\\\\([bfnrtv\"\\\\/]|u[0-9a-fA-F]{4})"
+            }
+          ]
+        },
+        {
+          "name": "constant.numeric.dyad",
+          "match": "-?(0|[1-9]\\d*)(\\.\\d+)?([eE][+-]?\\d+|Q|R|Y|Z|E|P|T|G|M|k|h|da|d|c|m|μ|n|p|f|a|z|y|r|q)?"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.arithmetic.dyad",
+          "match": "[+\\-*/%]|\\.\\+|\\.\\-|\\.\\*|\\./|\\.%"
+        },
+        {
+          "name": "keyword.operator.exponential.dyad",
+          "match": "\\^|\\.\\^"
+        },
+        {
+          "name": "keyword.operator.comparison.dyad",
+          "match": "<=?|>=?|==|<>"
+        },
+        {
+          "name": "keyword.operator.arrow.dyad",
+          "match": "=>"
+        },
+        {
+          "name": "keyword.operator.punctuation.dyad",
+          "match": "[|:;,()\\[\\]{}]"
+        }
+      ]
+    },
+    "identifiers": {
+      "patterns": [
+        {
+          "name": "variable.other.dyad",
+          "match": "[\\p{L}\\p{Extended_Pictographic}][\\p{L}\\p{Extended_Pictographic}\\p{No}0-9_]*"
+        }
+      ]
+    }
+  }
+}

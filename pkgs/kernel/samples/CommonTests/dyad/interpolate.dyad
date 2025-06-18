@@ -1,0 +1,10 @@
+type RealInterpolator = func(::Real)::Real
+
+component InterpolateFromFile
+  parameter filename::String
+  final parameter f::RealInterpolator = dataFromFile(filename)
+  u = RealInput()
+  y = RealOutput()
+relations
+  y = f(u)
+end

@@ -1,0 +1,47 @@
+model Machine1
+    variable v::Int64
+    state state1 
+        variable count::Int64
+
+        state stateA 
+        relations
+            v = previous(v) + 2
+        end
+        state stateB  
+        relations
+            v = previous(v) - 1
+        end 
+        state stateC 
+        relations
+            count = previous(count) + 1
+        end
+        state stateX 
+            variable i::Int64
+            variable w::Int64
+        relations 
+            initial i = 0
+            i = previous(i) + 1
+            w = v
+        end
+        state stateY  
+            variable j::Int64 
+        relations 
+            initial j = 0
+            j = previous(j) + 1
+        end
+    relations 
+        initial count = 0
+        transition(stateX => stateY, i > 20)
+        transition(stateA => stateB, v >= 6)
+        transition(stateB => stateC, v == 0)
+        transition(stateC => stateD, count >= 0)
+    end
+    state state2 
+    relations
+        v = previous(v) + 5
+    end
+relations
+    initial v = 0
+    transition(state1 => state2, active(stateD) and active(stateY))
+    transition(state2 => state1, v >= 20)
+end

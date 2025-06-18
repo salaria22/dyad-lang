@@ -1,0 +1,24 @@
+connector Pin
+  potential v::Voltage() [{"Dyad": {"tags": ["electrical"], "size": -5}}]
+  flow i::Current()
+metadata {
+  "Dyad": {
+    "icon": {"pos": "file:./assets/p_pin.svg", "neg": "file:./assets/n_pin.svg"},
+    "pathStyle": "stroke:#a495e6"
+  }
+}
+end
+
+connector RealInput = input Real
+
+connector HydraulicPort
+  # Preserve doc strings
+  potential p::Pressure
+  flow m_dot::MassFlowRate
+  path medium::MediumModel
+end
+
+connector Flange3D
+  potential x::Position[3]
+  flow force::Force[3]
+end

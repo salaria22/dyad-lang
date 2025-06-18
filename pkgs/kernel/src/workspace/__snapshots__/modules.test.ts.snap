@@ -1,0 +1,1085 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test semantics related to modules Test querying of SampleComponents 1`] = `
+{
+  "file": "urn:parsedfile:SampleComponents::hello.dyad",
+  "kind": "def",
+  "library": "urn:library:SampleComponents",
+  "module": "urn:module:SampleComponents:",
+  "self": "urn:definition:SampleComponents::Hello",
+}
+`;
+
+exports[`Test semantics related to modules Test querying of SampleComponents 2`] = `
+{
+  "base": {
+    "AbsoluteActivity": "urn:definition:Dyad::AbsoluteActivity",
+    "AbsolutePressure": "urn:definition:Dyad::AbsolutePressure",
+    "AbsorbedDose": "urn:definition:Dyad::AbsorbedDose",
+    "AbsorbedDoseRate": "urn:definition:Dyad::AbsorbedDoseRate",
+    "Acceleration": "urn:definition:Dyad::Acceleration",
+    "AcceptorIonizationEnergy": "urn:definition:Dyad::AcceptorIonizationEnergy",
+    "AcceptorNumberDensity": "urn:definition:Dyad::AcceptorNumberDensity",
+    "AcousticAbsorptionCoefficient": "urn:definition:Dyad::AcousticAbsorptionCoefficient",
+    "AcousticImpedance": "urn:definition:Dyad::AcousticImpedance",
+    "ActivePower": "urn:definition:Dyad::ActivePower",
+    "Activity": "urn:definition:Dyad::Activity",
+    "ActivityCoefficient": "urn:definition:Dyad::ActivityCoefficient",
+    "ActivityCoefficientOfSolute": "urn:definition:Dyad::ActivityCoefficientOfSolute",
+    "ActivityOfSolute": "urn:definition:Dyad::ActivityOfSolute",
+    "ActivityOfSolvent": "urn:definition:Dyad::ActivityOfSolvent",
+    "Admittance": "urn:definition:Dyad::Admittance",
+    "Affinity": "urn:definition:Dyad::Affinity",
+    "AlfvenNumber": "urn:definition:Dyad::AlfvenNumber",
+    "AlphaDisintegrationEnergy": "urn:definition:Dyad::AlphaDisintegrationEnergy",
+    "AmountOfSubstance": "urn:definition:Dyad::AmountOfSubstance",
+    "AmplitudeLevelDifference": "urn:definition:Dyad::AmplitudeLevelDifference",
+    "Angle": "urn:definition:Dyad::Angle",
+    "AngularAcceleration": "urn:definition:Dyad::AngularAcceleration",
+    "AngularCrossSection": "urn:definition:Dyad::AngularCrossSection",
+    "AngularFrequency": "urn:definition:Dyad::AngularFrequency",
+    "AngularImpulse": "urn:definition:Dyad::AngularImpulse",
+    "AngularMomentum": "urn:definition:Dyad::AngularMomentum",
+    "AngularMomentumFlux": "urn:definition:Dyad::AngularMomentumFlux",
+    "AngularVelocity": "urn:definition:Dyad::AngularVelocity",
+    "AngularWaveNumber": "urn:definition:Dyad::AngularWaveNumber",
+    "ApparentPower": "urn:definition:Dyad::ApparentPower",
+    "Area": "urn:definition:Dyad::Area",
+    "AtomicAttenuationCoefficient": "urn:definition:Dyad::AtomicAttenuationCoefficient",
+    "AtomicMassConstant": "urn:definition:Dyad::AtomicMassConstant",
+    "AttenuationCoefficient": "urn:definition:Dyad::AttenuationCoefficient",
+    "BetaDisintegrationEnergy": "urn:definition:Dyad::BetaDisintegrationEnergy",
+    "BindingFraction": "urn:definition:Dyad::BindingFraction",
+    "BiotNumber": "urn:definition:Dyad::BiotNumber",
+    "BohrMagneton": "urn:definition:Dyad::BohrMagneton",
+    "BooleanInput": "urn:definition:Dyad::BooleanInput",
+    "BooleanOutput": "urn:definition:Dyad::BooleanOutput",
+    "BraggAngle": "urn:definition:Dyad::BraggAngle",
+    "Breadth": "urn:definition:Dyad::Breadth",
+    "BulkModulus": "urn:definition:Dyad::BulkModulus",
+    "CIESpectralTristimulusValues": "urn:definition:Dyad::CIESpectralTristimulusValues",
+    "CanonicalPartitionFunction": "urn:definition:Dyad::CanonicalPartitionFunction",
+    "Capacitance": "urn:definition:Dyad::Capacitance",
+    "CarrierLifeTime": "urn:definition:Dyad::CarrierLifeTime",
+    "Charge": "urn:definition:Dyad::Charge",
+    "ChargeNumberOfIon": "urn:definition:Dyad::ChargeNumberOfIon",
+    "ChemicalPotential": "urn:definition:Dyad::ChemicalPotential",
+    "ChromaticityCoordinates": "urn:definition:Dyad::ChromaticityCoordinates",
+    "CircularWaveNumber": "urn:definition:Dyad::CircularWaveNumber",
+    "CoefficientOfFriction": "urn:definition:Dyad::CoefficientOfFriction",
+    "CoefficientOfHeatTransfer": "urn:definition:Dyad::CoefficientOfHeatTransfer",
+    "CoherenceLength": "urn:definition:Dyad::CoherenceLength",
+    "Compressibility": "urn:definition:Dyad::Compressibility",
+    "ComptonWavelength": "urn:definition:Dyad::ComptonWavelength",
+    "Concentration": "urn:definition:Dyad::Concentration",
+    "Conductance": "urn:definition:Dyad::Conductance",
+    "Conductivity": "urn:definition:Dyad::Conductivity",
+    "CouplingCoefficient": "urn:definition:Dyad::CouplingCoefficient",
+    "CowlingNumber": "urn:definition:Dyad::CowlingNumber",
+    "CrossSection": "urn:definition:Dyad::CrossSection",
+    "CubicExpansionCoefficient": "urn:definition:Dyad::CubicExpansionCoefficient",
+    "CurieTemperature": "urn:definition:Dyad::CurieTemperature",
+    "Current": "urn:definition:Dyad::Current",
+    "CurrentDensity": "urn:definition:Dyad::CurrentDensity",
+    "CurrentDensityOfParticles": "urn:definition:Dyad::CurrentDensityOfParticles",
+    "CurrentLinkage": "urn:definition:Dyad::CurrentLinkage",
+    "CurrentSlope": "urn:definition:Dyad::CurrentSlope",
+    "CyclotronAngularFrequency": "urn:definition:Dyad::CyclotronAngularFrequency",
+    "Damping": "urn:definition:Dyad::Damping",
+    "DampingCoefficient": "urn:definition:Dyad::DampingCoefficient",
+    "DebyeCircularFrequency": "urn:definition:Dyad::DebyeCircularFrequency",
+    "DebyeCircularWaveNumber": "urn:definition:Dyad::DebyeCircularWaveNumber",
+    "DebyeTemperature": "urn:definition:Dyad::DebyeTemperature",
+    "DebyeWallerFactor": "urn:definition:Dyad::DebyeWallerFactor",
+    "DecayConstant": "urn:definition:Dyad::DecayConstant",
+    "DegreeOfDissociation": "urn:definition:Dyad::DegreeOfDissociation",
+    "Density": "urn:definition:Dyad::Density",
+    "DensityOfHeatFlowRate": "urn:definition:Dyad::DensityOfHeatFlowRate",
+    "DensityOfStates": "urn:definition:Dyad::DensityOfStates",
+    "DerDensityByEnthalpy": "urn:definition:Dyad::DerDensityByEnthalpy",
+    "DerDensityByPressure": "urn:definition:Dyad::DerDensityByPressure",
+    "DerDensityByTemperature": "urn:definition:Dyad::DerDensityByTemperature",
+    "DerEnergyByDensity": "urn:definition:Dyad::DerEnergyByDensity",
+    "DerEnergyByPressure": "urn:definition:Dyad::DerEnergyByPressure",
+    "DerEnthalpyByPressure": "urn:definition:Dyad::DerEnthalpyByPressure",
+    "Diameter": "urn:definition:Dyad::Diameter",
+    "DiffusionArea": "urn:definition:Dyad::DiffusionArea",
+    "DiffusionCoefficient": "urn:definition:Dyad::DiffusionCoefficient",
+    "DiffusionLength": "urn:definition:Dyad::DiffusionLength",
+    "DirectionalSpectralEmissivity": "urn:definition:Dyad::DirectionalSpectralEmissivity",
+    "DissipationCoefficient": "urn:definition:Dyad::DissipationCoefficient",
+    "Distance": "urn:definition:Dyad::Distance",
+    "DonorIonizationEnergy": "urn:definition:Dyad::DonorIonizationEnergy",
+    "DonorNumberDensity": "urn:definition:Dyad::DonorNumberDensity",
+    "DoseEquivalent": "urn:definition:Dyad::DoseEquivalent",
+    "Duration": "urn:definition:Dyad::Duration",
+    "DynamicViscosity": "urn:definition:Dyad::DynamicViscosity",
+    "EffectiveMass": "urn:definition:Dyad::EffectiveMass",
+    "Efficiency": "urn:definition:Dyad::Efficiency",
+    "ElectricCharge": "urn:definition:Dyad::ElectricCharge",
+    "ElectricCurrent": "urn:definition:Dyad::ElectricCurrent",
+    "ElectricDipoleMoment": "urn:definition:Dyad::ElectricDipoleMoment",
+    "ElectricDipoleMomentOfMolecule": "urn:definition:Dyad::ElectricDipoleMomentOfMolecule",
+    "ElectricFieldStrength": "urn:definition:Dyad::ElectricFieldStrength",
+    "ElectricFlux": "urn:definition:Dyad::ElectricFlux",
+    "ElectricFluxDensity": "urn:definition:Dyad::ElectricFluxDensity",
+    "ElectricPolarizabilityOfAMolecule": "urn:definition:Dyad::ElectricPolarizabilityOfAMolecule",
+    "ElectricPolarization": "urn:definition:Dyad::ElectricPolarization",
+    "ElectricPotential": "urn:definition:Dyad::ElectricPotential",
+    "ElectricSusceptibility": "urn:definition:Dyad::ElectricSusceptibility",
+    "ElectricalForceConstant": "urn:definition:Dyad::ElectricalForceConstant",
+    "ElectricalTorqueConstant": "urn:definition:Dyad::ElectricalTorqueConstant",
+    "Electrization": "urn:definition:Dyad::Electrization",
+    "ElectrolyticConductivity": "urn:definition:Dyad::ElectrolyticConductivity",
+    "ElectromagneticEnergyDensity": "urn:definition:Dyad::ElectromagneticEnergyDensity",
+    "ElectromagneticMoment": "urn:definition:Dyad::ElectromagneticMoment",
+    "ElectromotiveForce": "urn:definition:Dyad::ElectromotiveForce",
+    "ElectronNumberDensity": "urn:definition:Dyad::ElectronNumberDensity",
+    "ElectronRadius": "urn:definition:Dyad::ElectronRadius",
+    "ElementaryCharge": "urn:definition:Dyad::ElementaryCharge",
+    "Emissivity": "urn:definition:Dyad::Emissivity",
+    "EmptyComponent": "urn:definition:Dyad::EmptyComponent",
+    "Energy": "urn:definition:Dyad::Energy",
+    "EnergyDensity": "urn:definition:Dyad::EnergyDensity",
+    "EnergyFlowRate": "urn:definition:Dyad::EnergyFlowRate",
+    "EnergyFluence": "urn:definition:Dyad::EnergyFluence",
+    "EnergyFluenceRate": "urn:definition:Dyad::EnergyFluenceRate",
+    "EnergyImparted": "urn:definition:Dyad::EnergyImparted",
+    "Enthalpy": "urn:definition:Dyad::Enthalpy",
+    "EnthalpyFlowRate": "urn:definition:Dyad::EnthalpyFlowRate",
+    "Entropy": "urn:definition:Dyad::Entropy",
+    "EntropyFlowRate": "urn:definition:Dyad::EntropyFlowRate",
+    "EquivalentAbsorptionArea": "urn:definition:Dyad::EquivalentAbsorptionArea",
+    "EulerNumber": "urn:definition:Dyad::EulerNumber",
+    "ExchangeIntegral": "urn:definition:Dyad::ExchangeIntegral",
+    "Exposure": "urn:definition:Dyad::Exposure",
+    "ExposureRate": "urn:definition:Dyad::ExposureRate",
+    "FaradayConstant": "urn:definition:Dyad::FaradayConstant",
+    "FastFissionFactor": "urn:definition:Dyad::FastFissionFactor",
+    "FermiCircularWaveNumber": "urn:definition:Dyad::FermiCircularWaveNumber",
+    "FermiEnergy": "urn:definition:Dyad::FermiEnergy",
+    "FermiTemperature": "urn:definition:Dyad::FermiTemperature",
+    "Flange": "urn:definition:Dyad::Flange",
+    "FluxiodQuantum": "urn:definition:Dyad::FluxiodQuantum",
+    "Force": "urn:definition:Dyad::Force",
+    "FourierNumber": "urn:definition:Dyad::FourierNumber",
+    "FourierNumberOfMassTransfer": "urn:definition:Dyad::FourierNumberOfMassTransfer",
+    "Frequency": "urn:definition:Dyad::Frequency",
+    "FroudeNumber": "urn:definition:Dyad::FroudeNumber",
+    "Fugacity": "urn:definition:Dyad::Fugacity",
+    "GFactorOfAtom": "urn:definition:Dyad::GFactorOfAtom",
+    "GFactorOfNucleus": "urn:definition:Dyad::GFactorOfNucleus",
+    "GapEnergy": "urn:definition:Dyad::GapEnergy",
+    "GibbsFreeEnergy": "urn:definition:Dyad::GibbsFreeEnergy",
+    "GrandCanonicalPartitionFunction": "urn:definition:Dyad::GrandCanonicalPartitionFunction",
+    "GrashofNumber": "urn:definition:Dyad::GrashofNumber",
+    "GrashofNumberOfMassTransfer": "urn:definition:Dyad::GrashofNumberOfMassTransfer",
+    "GrueneisenParameter": "urn:definition:Dyad::GrueneisenParameter",
+    "GyromagneticCoefficient": "urn:definition:Dyad::GyromagneticCoefficient",
+    "HalfLife": "urn:definition:Dyad::HalfLife",
+    "HalfThickness": "urn:definition:Dyad::HalfThickness",
+    "HallCoefficient": "urn:definition:Dyad::HallCoefficient",
+    "HartmannNumber": "urn:definition:Dyad::HartmannNumber",
+    "HartreeEnergy": "urn:definition:Dyad::HartreeEnergy",
+    "Heat": "urn:definition:Dyad::Heat",
+    "HeatCapacity": "urn:definition:Dyad::HeatCapacity",
+    "HeatFlowRate": "urn:definition:Dyad::HeatFlowRate",
+    "HeatFlux": "urn:definition:Dyad::HeatFlux",
+    "Height": "urn:definition:Dyad::Height",
+    "HelmholtzFreeEnergy": "urn:definition:Dyad::HelmholtzFreeEnergy",
+    "HoleNumberDensity": "urn:definition:Dyad::HoleNumberDensity",
+    "Illuminance": "urn:definition:Dyad::Illuminance",
+    "Impedance": "urn:definition:Dyad::Impedance",
+    "Impulse": "urn:definition:Dyad::Impulse",
+    "Inductance": "urn:definition:Dyad::Inductance",
+    "Inertia": "urn:definition:Dyad::Inertia",
+    "InstantaneousPower": "urn:definition:Dyad::InstantaneousPower",
+    "InternalEnergy": "urn:definition:Dyad::InternalEnergy",
+    "IntrinsicNumberDensity": "urn:definition:Dyad::IntrinsicNumberDensity",
+    "InversePotential": "urn:definition:Dyad::InversePotential",
+    "IonNumberDensity": "urn:definition:Dyad::IonNumberDensity",
+    "IonicStrength": "urn:definition:Dyad::IonicStrength",
+    "Irradiance": "urn:definition:Dyad::Irradiance",
+    "IsentropicCompressibility": "urn:definition:Dyad::IsentropicCompressibility",
+    "IsentropicExponent": "urn:definition:Dyad::IsentropicExponent",
+    "IsothermalCompressibility": "urn:definition:Dyad::IsothermalCompressibility",
+    "Kerma": "urn:definition:Dyad::Kerma",
+    "KermaRate": "urn:definition:Dyad::KermaRate",
+    "KinematicViscosity": "urn:definition:Dyad::KinematicViscosity",
+    "KineticEnergy": "urn:definition:Dyad::KineticEnergy",
+    "KnudsenNumber": "urn:definition:Dyad::KnudsenNumber",
+    "LandauGinzburgParameter": "urn:definition:Dyad::LandauGinzburgParameter",
+    "LarmorAngularFrequency": "urn:definition:Dyad::LarmorAngularFrequency",
+    "LeakageCoefficient": "urn:definition:Dyad::LeakageCoefficient",
+    "Length": "urn:definition:Dyad::Length",
+    "Lethargy": "urn:definition:Dyad::Lethargy",
+    "LevelWidth": "urn:definition:Dyad::LevelWidth",
+    "LewisNumber": "urn:definition:Dyad::LewisNumber",
+    "LightExposure": "urn:definition:Dyad::LightExposure",
+    "LinearAbsorptionCoefficient": "urn:definition:Dyad::LinearAbsorptionCoefficient",
+    "LinearAttenuationCoefficient": "urn:definition:Dyad::LinearAttenuationCoefficient",
+    "LinearCurrentDensity": "urn:definition:Dyad::LinearCurrentDensity",
+    "LinearDensity": "urn:definition:Dyad::LinearDensity",
+    "LinearEnergyTransfer": "urn:definition:Dyad::LinearEnergyTransfer",
+    "LinearExpansionCoefficient": "urn:definition:Dyad::LinearExpansionCoefficient",
+    "LinearIonization": "urn:definition:Dyad::LinearIonization",
+    "LinearStrain": "urn:definition:Dyad::LinearStrain",
+    "LinearTemperatureCoefficient": "urn:definition:Dyad::LinearTemperatureCoefficient",
+    "LogarithmicDecrement": "urn:definition:Dyad::LogarithmicDecrement",
+    "LondonPenetrationDepth": "urn:definition:Dyad::LondonPenetrationDepth",
+    "LongRangeOrderParameter": "urn:definition:Dyad::LongRangeOrderParameter",
+    "LorenzCoefficient": "urn:definition:Dyad::LorenzCoefficient",
+    "LossAngle": "urn:definition:Dyad::LossAngle",
+    "Loundness": "urn:definition:Dyad::Loundness",
+    "LoundnessLevel": "urn:definition:Dyad::LoundnessLevel",
+    "Luminance": "urn:definition:Dyad::Luminance",
+    "LuminousEfficacy": "urn:definition:Dyad::LuminousEfficacy",
+    "LuminousEfficiency": "urn:definition:Dyad::LuminousEfficiency",
+    "LuminousExitance": "urn:definition:Dyad::LuminousExitance",
+    "LuminousFlux": "urn:definition:Dyad::LuminousFlux",
+    "LuminousIntensity": "urn:definition:Dyad::LuminousIntensity",
+    "MachNumber": "urn:definition:Dyad::MachNumber",
+    "MacroscopicCrossSection": "urn:definition:Dyad::MacroscopicCrossSection",
+    "MadelungConstant": "urn:definition:Dyad::MadelungConstant",
+    "MagneticDipoleMoment": "urn:definition:Dyad::MagneticDipoleMoment",
+    "MagneticFieldStrength": "urn:definition:Dyad::MagneticFieldStrength",
+    "MagneticFlux": "urn:definition:Dyad::MagneticFlux",
+    "MagneticFluxDensity": "urn:definition:Dyad::MagneticFluxDensity",
+    "MagneticMomentOfParticle": "urn:definition:Dyad::MagneticMomentOfParticle",
+    "MagneticPolarization": "urn:definition:Dyad::MagneticPolarization",
+    "MagneticPotential": "urn:definition:Dyad::MagneticPotential",
+    "MagneticPotentialDifference": "urn:definition:Dyad::MagneticPotentialDifference",
+    "MagneticReynoldsNumber": "urn:definition:Dyad::MagneticReynoldsNumber",
+    "MagneticSusceptibility": "urn:definition:Dyad::MagneticSusceptibility",
+    "MagneticVectorPotential": "urn:definition:Dyad::MagneticVectorPotential",
+    "Magnetization": "urn:definition:Dyad::Magnetization",
+    "MagnetomotiveForce": "urn:definition:Dyad::MagnetomotiveForce",
+    "Mass": "urn:definition:Dyad::Mass",
+    "MassAttenuationCoefficient": "urn:definition:Dyad::MassAttenuationCoefficient",
+    "MassConcentration": "urn:definition:Dyad::MassConcentration",
+    "MassDefect": "urn:definition:Dyad::MassDefect",
+    "MassEnergyTransferCoefficient": "urn:definition:Dyad::MassEnergyTransferCoefficient",
+    "MassExcess": "urn:definition:Dyad::MassExcess",
+    "MassFlowRate": "urn:definition:Dyad::MassFlowRate",
+    "MassFraction": "urn:definition:Dyad::MassFraction",
+    "MassOfElectron": "urn:definition:Dyad::MassOfElectron",
+    "MassOfMolecule": "urn:definition:Dyad::MassOfMolecule",
+    "MassOfNeutron": "urn:definition:Dyad::MassOfNeutron",
+    "MassOfProton": "urn:definition:Dyad::MassOfProton",
+    "MassieuFunction": "urn:definition:Dyad::MassieuFunction",
+    "MaximumBetaParticleEnergy": "urn:definition:Dyad::MaximumBetaParticleEnergy",
+    "MeanEnergyImparted": "urn:definition:Dyad::MeanEnergyImparted",
+    "MeanFreePath": "urn:definition:Dyad::MeanFreePath",
+    "MeanLife": "urn:definition:Dyad::MeanLife",
+    "MeanLinearRange": "urn:definition:Dyad::MeanLinearRange",
+    "MeanMassRange": "urn:definition:Dyad::MeanMassRange",
+    "MechanicalImpedance": "urn:definition:Dyad::MechanicalImpedance",
+    "MicrocanonicalPartitionFunction": "urn:definition:Dyad::MicrocanonicalPartitionFunction",
+    "MigrationArea": "urn:definition:Dyad::MigrationArea",
+    "MigrationLength": "urn:definition:Dyad::MigrationLength",
+    "Mobility": "urn:definition:Dyad::Mobility",
+    "MobilityRatio": "urn:definition:Dyad::MobilityRatio",
+    "ModulusOfAdmittance": "urn:definition:Dyad::ModulusOfAdmittance",
+    "ModulusOfElasticity": "urn:definition:Dyad::ModulusOfElasticity",
+    "ModulusOfImpedance": "urn:definition:Dyad::ModulusOfImpedance",
+    "MolarAbsorptionCoefficient": "urn:definition:Dyad::MolarAbsorptionCoefficient",
+    "MolarAttenuationCoefficient": "urn:definition:Dyad::MolarAttenuationCoefficient",
+    "MolarConductivity": "urn:definition:Dyad::MolarConductivity",
+    "MolarEntropy": "urn:definition:Dyad::MolarEntropy",
+    "MolarFlowRate": "urn:definition:Dyad::MolarFlowRate",
+    "MolarHeatCapacity": "urn:definition:Dyad::MolarHeatCapacity",
+    "MolarInternalEnergy": "urn:definition:Dyad::MolarInternalEnergy",
+    "MolarMass": "urn:definition:Dyad::MolarMass",
+    "MolarVolume": "urn:definition:Dyad::MolarVolume",
+    "MoleFraction": "urn:definition:Dyad::MoleFraction",
+    "MolecularConcentration": "urn:definition:Dyad::MolecularConcentration",
+    "MolecularPartitionFunction": "urn:definition:Dyad::MolecularPartitionFunction",
+    "MomentOfForce": "urn:definition:Dyad::MomentOfForce",
+    "MomentOfInertia": "urn:definition:Dyad::MomentOfInertia",
+    "Momentum": "urn:definition:Dyad::Momentum",
+    "MomentumFlux": "urn:definition:Dyad::MomentumFlux",
+    "MutualInductance": "urn:definition:Dyad::MutualInductance",
+    "NeelTemperature": "urn:definition:Dyad::NeelTemperature",
+    "NeutronFluenceRate": "urn:definition:Dyad::NeutronFluenceRate",
+    "NeutronNumber": "urn:definition:Dyad::NeutronNumber",
+    "NeutronNumberDensity": "urn:definition:Dyad::NeutronNumberDensity",
+    "NeutronSpeed": "urn:definition:Dyad::NeutronSpeed",
+    "NeutronYieldPerAbsorption": "urn:definition:Dyad::NeutronYieldPerAbsorption",
+    "NeutronYieldPerFission": "urn:definition:Dyad::NeutronYieldPerFission",
+    "Node": "urn:definition:Dyad::Node",
+    "NonLeakageProbability": "urn:definition:Dyad::NonLeakageProbability",
+    "NormalStress": "urn:definition:Dyad::NormalStress",
+    "NuclearMagneton": "urn:definition:Dyad::NuclearMagneton",
+    "NuclearPrecessionAngularFrequency": "urn:definition:Dyad::NuclearPrecessionAngularFrequency",
+    "NuclearQuadrupoleMoment": "urn:definition:Dyad::NuclearQuadrupoleMoment",
+    "NuclearRadius": "urn:definition:Dyad::NuclearRadius",
+    "NucleonNumber": "urn:definition:Dyad::NucleonNumber",
+    "NumberDensityOfMolecules": "urn:definition:Dyad::NumberDensityOfMolecules",
+    "NumberOfMolecules": "urn:definition:Dyad::NumberOfMolecules",
+    "NusseltNumber": "urn:definition:Dyad::NusseltNumber",
+    "NusseltNumberOfMassTransfer": "urn:definition:Dyad::NusseltNumberOfMassTransfer",
+    "OrderOfReflexion": "urn:definition:Dyad::OrderOfReflexion",
+    "OsmoticCoefficientOfSolvent": "urn:definition:Dyad::OsmoticCoefficientOfSolvent",
+    "OsmoticPressure": "urn:definition:Dyad::OsmoticPressure",
+    "PackingFraction": "urn:definition:Dyad::PackingFraction",
+    "PartialPressure": "urn:definition:Dyad::PartialPressure",
+    "ParticleFluence": "urn:definition:Dyad::ParticleFluence",
+    "ParticleFluenceRate": "urn:definition:Dyad::ParticleFluenceRate",
+    "PathLength": "urn:definition:Dyad::PathLength",
+    "PecletNumber": "urn:definition:Dyad::PecletNumber",
+    "PecletNumberOfMassTransfer": "urn:definition:Dyad::PecletNumberOfMassTransfer",
+    "PeltierCoefficient": "urn:definition:Dyad::PeltierCoefficient",
+    "Period": "urn:definition:Dyad::Period",
+    "Permeability": "urn:definition:Dyad::Permeability",
+    "PermeabilityOfVacuum": "urn:definition:Dyad::PermeabilityOfVacuum",
+    "Permeance": "urn:definition:Dyad::Permeance",
+    "Permittivity": "urn:definition:Dyad::Permittivity",
+    "PermittivityOfVacuum": "urn:definition:Dyad::PermittivityOfVacuum",
+    "PhaseCoefficient": "urn:definition:Dyad::PhaseCoefficient",
+    "PhaseDifference": "urn:definition:Dyad::PhaseDifference",
+    "Pin": "urn:definition:Dyad::Pin",
+    "PlanckFunction": "urn:definition:Dyad::PlanckFunction",
+    "PoissonNumber": "urn:definition:Dyad::PoissonNumber",
+    "Position": "urn:definition:Dyad::Position",
+    "PotentialDifference": "urn:definition:Dyad::PotentialDifference",
+    "PotentialEnergy": "urn:definition:Dyad::PotentialEnergy",
+    "Power": "urn:definition:Dyad::Power",
+    "PowerFactor": "urn:definition:Dyad::PowerFactor",
+    "PowerLevelDifference": "urn:definition:Dyad::PowerLevelDifference",
+    "PoyntingVector": "urn:definition:Dyad::PoyntingVector",
+    "PrandtlNumber": "urn:definition:Dyad::PrandtlNumber",
+    "Pressure": "urn:definition:Dyad::Pressure",
+    "PressureCoefficient": "urn:definition:Dyad::PressureCoefficient",
+    "PropagationCoefficient": "urn:definition:Dyad::PropagationCoefficient",
+    "ProtonNumber": "urn:definition:Dyad::ProtonNumber",
+    "QuadraticTemperatureCoefficient": "urn:definition:Dyad::QuadraticTemperatureCoefficient",
+    "QualityFactor": "urn:definition:Dyad::QualityFactor",
+    "QuantityOfLight": "urn:definition:Dyad::QuantityOfLight",
+    "Radiance": "urn:definition:Dyad::Radiance",
+    "RadiantEnergy": "urn:definition:Dyad::RadiantEnergy",
+    "RadiantEnergyDensity": "urn:definition:Dyad::RadiantEnergyDensity",
+    "RadiantEnergyFluenceRate": "urn:definition:Dyad::RadiantEnergyFluenceRate",
+    "RadiantExtiance": "urn:definition:Dyad::RadiantExtiance",
+    "RadiantIntensity": "urn:definition:Dyad::RadiantIntensity",
+    "RadiantPower": "urn:definition:Dyad::RadiantPower",
+    "Radius": "urn:definition:Dyad::Radius",
+    "RatioOfSpecificHeatCapacities": "urn:definition:Dyad::RatioOfSpecificHeatCapacities",
+    "RayleighNumber": "urn:definition:Dyad::RayleighNumber",
+    "Reactance": "urn:definition:Dyad::Reactance",
+    "ReactionEnergy": "urn:definition:Dyad::ReactionEnergy",
+    "ReactivePower": "urn:definition:Dyad::ReactivePower",
+    "Reactivity": "urn:definition:Dyad::Reactivity",
+    "ReactorTimeConstant": "urn:definition:Dyad::ReactorTimeConstant",
+    "RealInput": "urn:definition:Dyad::RealInput",
+    "RealOutput": "urn:definition:Dyad::RealOutput",
+    "RecombinationCoefficient": "urn:definition:Dyad::RecombinationCoefficient",
+    "ReflectionCoefficient": "urn:definition:Dyad::ReflectionCoefficient",
+    "RefractiveIndex": "urn:definition:Dyad::RefractiveIndex",
+    "RelativeAtomicMass": "urn:definition:Dyad::RelativeAtomicMass",
+    "RelativeDensity": "urn:definition:Dyad::RelativeDensity",
+    "RelativeMassDefect": "urn:definition:Dyad::RelativeMassDefect",
+    "RelativeMassExcess": "urn:definition:Dyad::RelativeMassExcess",
+    "RelativeMolecularMass": "urn:definition:Dyad::RelativeMolecularMass",
+    "RelativePermeability": "urn:definition:Dyad::RelativePermeability",
+    "RelativePermittivity": "urn:definition:Dyad::RelativePermittivity",
+    "RelativePressureCoefficient": "urn:definition:Dyad::RelativePressureCoefficient",
+    "RelaxationTime": "urn:definition:Dyad::RelaxationTime",
+    "Reluctance": "urn:definition:Dyad::Reluctance",
+    "ResidualResistivity": "urn:definition:Dyad::ResidualResistivity",
+    "Resistance": "urn:definition:Dyad::Resistance",
+    "Resistivity": "urn:definition:Dyad::Resistivity",
+    "ResonanceEnergy": "urn:definition:Dyad::ResonanceEnergy",
+    "ResonanceEscapeProbability": "urn:definition:Dyad::ResonanceEscapeProbability",
+    "ReverberationTime": "urn:definition:Dyad::ReverberationTime",
+    "ReynoldsNumber": "urn:definition:Dyad::ReynoldsNumber",
+    "RichardsonConstant": "urn:definition:Dyad::RichardsonConstant",
+    "RotationalDampingConstant": "urn:definition:Dyad::RotationalDampingConstant",
+    "RotationalSpringConstant": "urn:definition:Dyad::RotationalSpringConstant",
+    "SchmidtNumber": "urn:definition:Dyad::SchmidtNumber",
+    "SecondMomentOfArea": "urn:definition:Dyad::SecondMomentOfArea",
+    "SecondPolarMomentOfArea": "urn:definition:Dyad::SecondPolarMomentOfArea",
+    "SectionModulus": "urn:definition:Dyad::SectionModulus",
+    "SeebeckCoefficient": "urn:definition:Dyad::SeebeckCoefficient",
+    "SelfInductance": "urn:definition:Dyad::SelfInductance",
+    "ShearModulus": "urn:definition:Dyad::ShearModulus",
+    "ShearStrain": "urn:definition:Dyad::ShearStrain",
+    "ShearStress": "urn:definition:Dyad::ShearStress",
+    "ShortRangeOrderParameter": "urn:definition:Dyad::ShortRangeOrderParameter",
+    "SlowingDownArea": "urn:definition:Dyad::SlowingDownArea",
+    "SlowingDownDensity": "urn:definition:Dyad::SlowingDownDensity",
+    "SlowingDownLength": "urn:definition:Dyad::SlowingDownLength",
+    "SolidAngle": "urn:definition:Dyad::SolidAngle",
+    "SoundEnergyDensity": "urn:definition:Dyad::SoundEnergyDensity",
+    "SoundIntensity": "urn:definition:Dyad::SoundIntensity",
+    "SoundParticleAcceleration": "urn:definition:Dyad::SoundParticleAcceleration",
+    "SoundParticleDisplacement": "urn:definition:Dyad::SoundParticleDisplacement",
+    "SoundParticleVelocity": "urn:definition:Dyad::SoundParticleVelocity",
+    "SoundPower": "urn:definition:Dyad::SoundPower",
+    "SoundPowerLevel": "urn:definition:Dyad::SoundPowerLevel",
+    "SoundPressure": "urn:definition:Dyad::SoundPressure",
+    "SoundPressureLevel": "urn:definition:Dyad::SoundPressureLevel",
+    "SoundReductionIndex": "urn:definition:Dyad::SoundReductionIndex",
+    "SpecificAcousticImpedance": "urn:definition:Dyad::SpecificAcousticImpedance",
+    "SpecificActivity": "urn:definition:Dyad::SpecificActivity",
+    "SpecificEnergy": "urn:definition:Dyad::SpecificEnergy",
+    "SpecificEnergyImparted": "urn:definition:Dyad::SpecificEnergyImparted",
+    "SpecificEnthalpy": "urn:definition:Dyad::SpecificEnthalpy",
+    "SpecificEntropy": "urn:definition:Dyad::SpecificEntropy",
+    "SpecificGibbsFreeEnergy": "urn:definition:Dyad::SpecificGibbsFreeEnergy",
+    "SpecificHeatCapacity": "urn:definition:Dyad::SpecificHeatCapacity",
+    "SpecificHeatCapacityAtConstantPressure": "urn:definition:Dyad::SpecificHeatCapacityAtConstantPressure",
+    "SpecificHeatCapacityAtConstantVolume": "urn:definition:Dyad::SpecificHeatCapacityAtConstantVolume",
+    "SpecificHeatCapacityAtSaturation": "urn:definition:Dyad::SpecificHeatCapacityAtSaturation",
+    "SpecificHelmholtzFreeEnergy": "urn:definition:Dyad::SpecificHelmholtzFreeEnergy",
+    "SpecificInternalEnergy": "urn:definition:Dyad::SpecificInternalEnergy",
+    "SpecificVolume": "urn:definition:Dyad::SpecificVolume",
+    "SpectralAbsorptionFactor": "urn:definition:Dyad::SpectralAbsorptionFactor",
+    "SpectralAngularCrossSection": "urn:definition:Dyad::SpectralAngularCrossSection",
+    "SpectralConcentration": "urn:definition:Dyad::SpectralConcentration",
+    "SpectralCrossSection": "urn:definition:Dyad::SpectralCrossSection",
+    "SpectralEmissivity": "urn:definition:Dyad::SpectralEmissivity",
+    "SpectralLuminousEfficacy": "urn:definition:Dyad::SpectralLuminousEfficacy",
+    "SpectralLuminousEfficiency": "urn:definition:Dyad::SpectralLuminousEfficiency",
+    "SpectralRadianceFactor": "urn:definition:Dyad::SpectralRadianceFactor",
+    "SpectralRadiantEnergyDensity": "urn:definition:Dyad::SpectralRadiantEnergyDensity",
+    "SpectralReflectionFactor": "urn:definition:Dyad::SpectralReflectionFactor",
+    "SpectralTransmissionFactor": "urn:definition:Dyad::SpectralTransmissionFactor",
+    "Spline": "urn:definition:Dyad::Spline",
+    "StandardAbsoluteActivity": "urn:definition:Dyad::StandardAbsoluteActivity",
+    "StandardAbsoluteActivityOfSolute": "urn:definition:Dyad::StandardAbsoluteActivityOfSolute",
+    "StandardAbsoluteActivityOfSolvent": "urn:definition:Dyad::StandardAbsoluteActivityOfSolvent",
+    "StantonNumber": "urn:definition:Dyad::StantonNumber",
+    "StantonNumberOfMassTransfer": "urn:definition:Dyad::StantonNumberOfMassTransfer",
+    "StaticPressure": "urn:definition:Dyad::StaticPressure",
+    "StatisticalWeight": "urn:definition:Dyad::StatisticalWeight",
+    "StoichiometricNumber": "urn:definition:Dyad::StoichiometricNumber",
+    "Strain": "urn:definition:Dyad::Strain",
+    "Stress": "urn:definition:Dyad::Stress",
+    "StrouhalNumber": "urn:definition:Dyad::StrouhalNumber",
+    "SurfaceCoefficientOfHeatTransfer": "urn:definition:Dyad::SurfaceCoefficientOfHeatTransfer",
+    "SurfaceDensity": "urn:definition:Dyad::SurfaceDensity",
+    "SurfaceDensityOfCharge": "urn:definition:Dyad::SurfaceDensityOfCharge",
+    "SurfaceTension": "urn:definition:Dyad::SurfaceTension",
+    "Susceptance": "urn:definition:Dyad::Susceptance",
+    "Temp_K": "urn:definition:Dyad::Temp_K",
+    "Temperature": "urn:definition:Dyad::Temperature",
+    "TemperatureDifference": "urn:definition:Dyad::TemperatureDifference",
+    "TemperatureSlope": "urn:definition:Dyad::TemperatureSlope",
+    "ThermalConductance": "urn:definition:Dyad::ThermalConductance",
+    "ThermalConductivity": "urn:definition:Dyad::ThermalConductivity",
+    "ThermalDiffusionCoefficient": "urn:definition:Dyad::ThermalDiffusionCoefficient",
+    "ThermalDiffusionFactor": "urn:definition:Dyad::ThermalDiffusionFactor",
+    "ThermalDiffusionRatio": "urn:definition:Dyad::ThermalDiffusionRatio",
+    "ThermalDiffusivity": "urn:definition:Dyad::ThermalDiffusivity",
+    "ThermalInsulance": "urn:definition:Dyad::ThermalInsulance",
+    "ThermalResistance": "urn:definition:Dyad::ThermalResistance",
+    "ThermalUtilizationFactor": "urn:definition:Dyad::ThermalUtilizationFactor",
+    "ThermodynamicTemperature": "urn:definition:Dyad::ThermodynamicTemperature",
+    "ThermoelectromotiveForce": "urn:definition:Dyad::ThermoelectromotiveForce",
+    "Thickness": "urn:definition:Dyad::Thickness",
+    "ThomsonCoefficient": "urn:definition:Dyad::ThomsonCoefficient",
+    "Time": "urn:definition:Dyad::Time",
+    "Torque": "urn:definition:Dyad::Torque",
+    "TotalAtomicStoppingPower": "urn:definition:Dyad::TotalAtomicStoppingPower",
+    "TotalCrossSection": "urn:definition:Dyad::TotalCrossSection",
+    "TotalIonization": "urn:definition:Dyad::TotalIonization",
+    "TotalLinearStoppingPower": "urn:definition:Dyad::TotalLinearStoppingPower",
+    "TotalMacroscopicCrossSection": "urn:definition:Dyad::TotalMacroscopicCrossSection",
+    "TotalMassStoppingPower": "urn:definition:Dyad::TotalMassStoppingPower",
+    "TotalNeutronSourceDensity": "urn:definition:Dyad::TotalNeutronSourceDensity",
+    "Transconductance": "urn:definition:Dyad::Transconductance",
+    "TransientAnalysis": "urn:definition:Dyad::TransientAnalysis",
+    "TranslationalDampingConstant": "urn:definition:Dyad::TranslationalDampingConstant",
+    "TranslationalSpringConstant": "urn:definition:Dyad::TranslationalSpringConstant",
+    "TransmissionCoefficient": "urn:definition:Dyad::TransmissionCoefficient",
+    "TransportNumberOfIonic": "urn:definition:Dyad::TransportNumberOfIonic",
+    "Velocity": "urn:definition:Dyad::Velocity",
+    "VelocityOfSound": "urn:definition:Dyad::VelocityOfSound",
+    "Voltage": "urn:definition:Dyad::Voltage",
+    "VoltageSlope": "urn:definition:Dyad::VoltageSlope",
+    "Volume": "urn:definition:Dyad::Volume",
+    "VolumeDensityOfCharge": "urn:definition:Dyad::VolumeDensityOfCharge",
+    "VolumeFlowRate": "urn:definition:Dyad::VolumeFlowRate",
+    "VolumeFraction": "urn:definition:Dyad::VolumeFraction",
+    "VolumeStrain": "urn:definition:Dyad::VolumeStrain",
+    "WaveNumber": "urn:definition:Dyad::WaveNumber",
+    "Wavelenght": "urn:definition:Dyad::Wavelenght",
+    "Wavelength": "urn:definition:Dyad::Wavelength",
+    "WeberNumber": "urn:definition:Dyad::WeberNumber",
+    "Weight": "urn:definition:Dyad::Weight",
+    "Work": "urn:definition:Dyad::Work",
+  },
+  "builtins": {
+    "Boolean": "urn:builtin:Boolean",
+    "Integer": "urn:builtin:Integer",
+    "Native": "urn:builtin:Native",
+    "Real": "urn:builtin:Real",
+    "String": "urn:builtin:String",
+  },
+  "local": {
+    "Base1": "urn:definition:SampleComponents::Base1",
+    "Base2": "urn:definition:SampleComponents::Base2",
+    "Dyad": "urn:library:Dyad",
+    "Gain": "urn:definition:SampleComponents::Gain",
+    "Hello": "urn:definition:SampleComponents::Hello",
+    "HelloTest": "urn:definition:SampleComponents::HelloTest",
+    "Initialize": "urn:definition:SampleComponents::Initialize",
+    "Multi": "urn:definition:SampleComponents::Multi",
+    "PlantModel": "urn:definition:SampleComponents::PlantModel",
+    "SampleComponents": "urn:library:SampleComponents",
+  },
+}
+`;
+
+exports[`Test semantics related to modules Test querying of SampleComponents 3`] = `
+{
+  "base": {
+    "kind": "qtype",
+    "mods": {
+      "displayUnits": {
+        "expr": {
+          "quoted": false,
+          "span": {
+            "ec": 74,
+            "el": 179,
+            "sc": 69,
+            "sl": 179,
+          },
+          "type": "slit",
+          "value": "degC",
+        },
+        "final": false,
+        "nested": null,
+        "span": {
+          "ec": 74,
+          "el": 179,
+          "sc": 56,
+          "sl": 179,
+        },
+      },
+      "guess": {
+        "expr": {
+          "span": null,
+          "type": "ulit",
+        },
+        "final": false,
+        "nested": null,
+        "span": null,
+      },
+      "max": {
+        "expr": {
+          "span": null,
+          "type": "ulit",
+        },
+        "final": false,
+        "nested": null,
+        "span": null,
+      },
+      "maxInclusive": {
+        "expr": {
+          "span": null,
+          "type": "ulit",
+        },
+        "final": false,
+        "nested": null,
+        "span": null,
+      },
+      "min": {
+        "expr": {
+          "prefix": null,
+          "repr": "0",
+          "span": {
+            "ec": 53,
+            "el": 179,
+            "sc": 53,
+            "sl": 179,
+          },
+          "type": "ilit",
+          "value": 0,
+        },
+        "final": false,
+        "nested": null,
+        "span": {
+          "ec": 53,
+          "el": 179,
+          "sc": 49,
+          "sl": 179,
+        },
+      },
+      "minInclusive": {
+        "expr": {
+          "span": null,
+          "type": "ulit",
+        },
+        "final": false,
+        "nested": null,
+        "span": null,
+      },
+      "nominal": {
+        "expr": {
+          "span": null,
+          "type": "ulit",
+        },
+        "final": false,
+        "nested": null,
+        "span": null,
+      },
+      "quantity": {
+        "expr": {
+          "span": null,
+          "type": "ulit",
+        },
+        "final": false,
+        "nested": null,
+        "span": null,
+      },
+      "statePriority": {
+        "expr": {
+          "prefix": null,
+          "repr": "0",
+          "span": null,
+          "type": "ilit",
+          "value": 0,
+        },
+        "final": false,
+        "nested": null,
+        "span": null,
+      },
+      "units": {
+        "expr": {
+          "quoted": false,
+          "span": {
+            "ec": 46,
+            "el": 179,
+            "sc": 44,
+            "sl": 179,
+          },
+          "type": "slit",
+          "value": "K",
+        },
+        "final": false,
+        "nested": null,
+        "span": {
+          "ec": 46,
+          "el": 179,
+          "sc": 38,
+          "sl": 179,
+        },
+      },
+    },
+    "name": [
+      {
+        "span": null,
+        "value": "Real",
+      },
+    ],
+    "span": {
+      "ec": 43,
+      "el": 183,
+      "sc": 20,
+      "sl": 183,
+    },
+  },
+  "doc_string": null,
+  "kind": "scalar",
+  "metadata": {
+    "kind": "meta",
+    "span": null,
+    "value": {},
+  },
+  "name": {
+    "span": {
+      "ec": 16,
+      "el": 183,
+      "sc": 6,
+      "sl": 183,
+    },
+    "value": "Temperature",
+  },
+  "source": null,
+  "span": null,
+}
+`;
+
+exports[`Test semantics related to modules Test querying of SampleComponents 4`] = `
+{
+  "declarations": {
+    "x": {
+      "cond": null,
+      "dims": [],
+      "doc_string": null,
+      "final": false,
+      "init": null,
+      "kind": "var",
+      "metadata": null,
+      "name": {
+        "span": {
+          "ec": 13,
+          "el": 2,
+          "sc": 13,
+          "sl": 2,
+        },
+        "value": "x",
+      },
+      "span": {
+        "ec": 26,
+        "el": 2,
+        "sc": 3,
+        "sl": 2,
+      },
+      "type": {
+        "kind": "qtype",
+        "mods": null,
+        "name": [
+          {
+            "span": {
+              "ec": 26,
+              "el": 2,
+              "sc": 16,
+              "sl": 2,
+            },
+            "value": "Temperature",
+          },
+        ],
+        "span": {
+          "ec": 26,
+          "el": 2,
+          "sc": 16,
+          "sl": 2,
+        },
+      },
+      "variability": "parameter",
+    },
+    "y": {
+      "cond": null,
+      "dims": [],
+      "doc_string": null,
+      "final": false,
+      "init": null,
+      "kind": "var",
+      "metadata": null,
+      "name": {
+        "span": {
+          "ec": 12,
+          "el": 6,
+          "sc": 12,
+          "sl": 6,
+        },
+        "value": "y",
+      },
+      "span": {
+        "ec": 25,
+        "el": 6,
+        "sc": 3,
+        "sl": 6,
+      },
+      "type": {
+        "kind": "qtype",
+        "mods": null,
+        "name": [
+          {
+            "span": {
+              "ec": 25,
+              "el": 6,
+              "sc": 15,
+              "sl": 6,
+            },
+            "value": "Temperature",
+          },
+        ],
+        "span": {
+          "ec": 25,
+          "el": 6,
+          "sc": 15,
+          "sl": 6,
+        },
+      },
+      "variability": "variable",
+    },
+  },
+  "doc_string": null,
+  "extends": [],
+  "kind": "cdef",
+  "metadata": {
+    "kind": "meta",
+    "span": null,
+    "value": {},
+  },
+  "name": {
+    "span": {
+      "ec": 15,
+      "el": 9,
+      "sc": 11,
+      "sl": 9,
+    },
+    "value": "Multi",
+  },
+  "qualifier": null,
+  "relations": [
+    {
+      "doc_string": null,
+      "initial": false,
+      "kind": "eq",
+      "lhs": {
+        "func": {
+          "elems": [
+            {
+              "indices": [],
+              "name": "der",
+              "span": {
+                "ec": 5,
+                "el": 13,
+                "sc": 3,
+                "sl": 13,
+              },
+            },
+          ],
+          "type": "cref",
+        },
+        "keyword": {},
+        "positional": [
+          {
+            "elems": [
+              {
+                "indices": [],
+                "name": "y",
+                "span": {
+                  "ec": 7,
+                  "el": 13,
+                  "sc": 7,
+                  "sl": 13,
+                },
+              },
+            ],
+            "type": "cref",
+          },
+        ],
+        "span": {
+          "ec": 8,
+          "el": 13,
+          "sc": 3,
+          "sl": 13,
+        },
+        "type": "call",
+      },
+      "metadata": null,
+      "name": null,
+      "rhs": {
+        "expr": {
+          "elementwise": false,
+          "lhs": {
+            "elems": [
+              {
+                "indices": [],
+                "name": "y",
+                "span": {
+                  "ec": 13,
+                  "el": 13,
+                  "sc": 13,
+                  "sl": 13,
+                },
+              },
+            ],
+            "type": "cref",
+          },
+          "op": "-",
+          "rhs": {
+            "elems": [
+              {
+                "indices": [],
+                "name": "x",
+                "span": {
+                  "ec": 15,
+                  "el": 13,
+                  "sc": 15,
+                  "sl": 13,
+                },
+              },
+            ],
+            "type": "cref",
+          },
+          "type": "bexp",
+        },
+        "span": {
+          "ec": 16,
+          "el": 13,
+          "sc": 12,
+          "sl": 13,
+        },
+        "type": "paren",
+      },
+      "span": {
+        "ec": 16,
+        "el": 13,
+        "sc": 3,
+        "sl": 13,
+      },
+      "when": {
+        "span": null,
+        "type": "blit",
+        "value": true,
+      },
+    },
+  ],
+  "source": null,
+  "span": null,
+}
+`;
+
+exports[`Test semantics related to modules Test querying of SampleComponents 5`] = `
+"component Multi
+  parameter x::Temperature
+  variable y::Temperature
+relations
+  der(y) = (y-x)
+metadata {}
+end"
+`;
+
+exports[`Test semantics related to modules Test querying of modules 1`] = `
+{
+  "code": "",
+  "key": {
+    "kind": "experiment",
+    "module": [],
+    "name": "A",
+  },
+}
+`;
+
+exports[`Test semantics related to modules Test querying of modules 2`] = `
+{
+  "code": "",
+  "key": {
+    "kind": "test",
+    "module": [],
+    "name": "A",
+  },
+}
+`;
+
+exports[`Test semantics related to modules Test querying of modules 3`] = `
+{
+  "code": "@doc Markdown.doc"""
+   A(; name, x1, x2, x3, x4)
+
+## Parameters: 
+
+| Name         | Description                         | Units  |   Default value |
+| ------------ | ----------------------------------- | ------ | --------------- |
+| \`x1\`         |                          | --  |   1 |
+| \`x2\`         |                          | --  |   2 |
+| \`x3\`         |                          | --  |   3 |
+| \`x4\`         |                          | --  |   4 |
+"""
+@component function A(; name, x1=1, x2=2, x3=3, x4=4)
+
+  ### Symbolic Parameters
+  __params = Any[]
+  append!(__params, @parameters (x1::Float64 = x1))
+  append!(__params, @parameters (x2::Float64 = x2))
+  append!(__params, @parameters (x3::Float64 = x3))
+  append!(__params, @parameters (x4::Float64 = x4))
+
+  ### Variables
+  __vars = Any[]
+
+  ### Constants
+  __constants = Any[]
+
+  ### Components
+  __systems = ODESystem[]
+
+  ### Defaults
+  __defaults = Dict()
+
+  ### Initialization Equations
+  __initialization_eqs = []
+
+  ### Equations
+  __eqs = Equation[]
+  push!(__eqs, x1 ~ x2)
+
+  # Return completely constructed ODESystem
+  return ODESystem(__eqs, t, __vars, __params; systems=__systems, defaults=__defaults, name, initialization_eqs=__initialization_eqs)
+end
+export A",
+  "key": {
+    "kind": "definition",
+    "module": [],
+    "name": "A",
+  },
+}
+`;
+
+exports[`Test semantics related to modules Test querying of modules 4`] = `
+{
+  "generated/A_definition.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+@doc Markdown.doc"""
+   A(; name, x1, x2, x3, x4)
+
+## Parameters: 
+
+| Name         | Description                         | Units  |   Default value |
+| ------------ | ----------------------------------- | ------ | --------------- |
+| \`x1\`         |                          | --  |   1 |
+| \`x2\`         |                          | --  |   2 |
+| \`x3\`         |                          | --  |   3 |
+| \`x4\`         |                          | --  |   4 |
+"""
+@component function A(; name, x1=1, x2=2, x3=3, x4=4)
+
+  ### Symbolic Parameters
+  __params = Any[]
+  append!(__params, @parameters (x1::Float64 = x1))
+  append!(__params, @parameters (x2::Float64 = x2))
+  append!(__params, @parameters (x3::Float64 = x3))
+  append!(__params, @parameters (x4::Float64 = x4))
+
+  ### Variables
+  __vars = Any[]
+
+  ### Constants
+  __constants = Any[]
+
+  ### Components
+  __systems = ODESystem[]
+
+  ### Defaults
+  __defaults = Dict()
+
+  ### Initialization Equations
+  __initialization_eqs = []
+
+  ### Equations
+  __eqs = Equation[]
+  push!(__eqs, x1 ~ x2)
+
+  # Return completely constructed ODESystem
+  return ODESystem(__eqs, t, __vars, __params; systems=__systems, defaults=__defaults, name, initialization_eqs=__initialization_eqs)
+end
+export A
+",
+  "generated/A_experiment.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+
+",
+  "generated/A_test.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+
+",
+}
+`;

@@ -1,0 +1,13 @@
+{
+  "files": [],
+  "compilerOptions": {
+    "paths": {
+      "@juliacomputing/dyad-protocol": ["../../pkgs/protocol/src/index.ts"]
+    }
+  },
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" },
+    { "path": "../../pkgs/protocol" }
+  ]
+}

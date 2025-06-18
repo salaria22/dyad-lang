@@ -1,0 +1,107 @@
+connector RealInput = input Real metadata {"Dyad": {"icons": {"default": "dyad://Dyad/input.svg"}}}
+
+component Ground
+  g = Pin()
+relations
+  g.v = 0
+end
+
+partial component TwoPin
+  p = Pin() [{"Dyad": {"iconName": "pos"}}]
+  n = Pin() [{"Dyad": {"iconName": "neg"}}]
+  variable v::Voltage(min=0)
+  variable i::Current
+relations
+  v = p.v-n.V
+  i = p.i
+  # Conservation of Charge
+  p.i+n.i = 0
+end
+
+component VoltageSource
+  extends TwoPin()
+  parameter Vf::Voltage = 10
+relations
+  src: v = if t<0 then 0 else if t>5 then 7 else Vf
+end
+
+component Capacitor
+  extends TwoPin()
+  parameter C::Capacitance
+  final parameter altC::Capacitance = C
+relations
+  initial v = 0
+  C*der(v) = i
+  assert(v>0, "voltage should not be positive")
+end
+
+component Inductor
+  extends TwoPin()
+  parameter L::Inductor
+relations
+  L*der(i) = v
+end
+
+# A simple linear resistor model
+component Resistor
+  extends TwoPin()
+  # Resistance of this Resistor
+  # I wonder if wrapping works for this
+  # syntax out of the box
+  parameter R::Resistance
+relations
+  # Ohm's Law
+  v = i*R
+metadata {"Dyad": {"icon": "model:./assets/resistor.svg"}}
+end
+
+# This is a comment with a deliberately empty line:
+#
+# above.
+external component Battery
+  extends TwoPin(p(v(guess=1.0)))
+  parameter R::Resistance
+  parameter series::Int
+  parameter parallel::Int
+metadata {"Dyad": {"icon": "model:./assets/battery.svg"}}
+end
+
+component VoltageSource
+  extends TwoPin()
+  V = RealInput()
+relations
+  v = V.u
+  # This signifies an analysis point
+  u_v: analysis_point(V, u)
+end
+
+example component Circuit
+  source::TwoPin = Resistor(R=100)
+  source2::TwoPin(R=200) = Resistor(R=100)
+  source3::TwoPin() = Resistor(R=100)
+end
+
+test component Circuit2
+  extends Circuit
+end
+
+component Mass
+  parameter init::InitializationOptions
+relations
+  # This handles various initialization contingencies
+  switch init
+    case FixedPosition
+      initial s = init.s
+    end
+    case FixedSpeedAndPosition
+      initial s = init.s
+      initial der(s) = init.v
+    end
+    case Equilibrium
+      initial der(s) = 0
+    end
+    default
+      initial s = 10
+    end
+  end
+end

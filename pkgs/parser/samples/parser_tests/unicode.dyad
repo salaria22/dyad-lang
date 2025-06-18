@@ -1,0 +1,9 @@
+component 林花謝了春紅
+  parameter k₁::Real = 2
+  parameter ω₀::Real = 10
+  parameter 🐰::Real = 1
+  variable ω::Real
+relations
+  initial ω = ω₀
+  der(ω) = -k*ω
+end

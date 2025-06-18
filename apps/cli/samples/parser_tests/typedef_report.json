@@ -1,0 +1,118 @@
+{
+    "library": {
+        "kind": "lib",
+        "name": "???",
+        "directory": "???",
+        "module": [],
+        "files": [
+            {
+                "kind": "file",
+                "source": "???",
+                "definitions": [
+                    {
+                        "kind": "sctd",
+                        "imports": [
+                            {
+                                "module": "OtherLibrary",
+                                "symbols": [
+                                    "SpecialType"
+                                ]
+                            }
+                        ],
+                        "name": "Voltage",
+                        "base": {
+                            "kind": "tq",
+                            "name": "Real",
+                            "mods": {
+                                "units": {
+                                    "type": "slit",
+                                    "value": "V",
+                                    "quoted": false
+                                }
+                            }
+                        },
+                        "start": 33,
+                        "end": 36
+                    },
+                    {
+                        "kind": "sctd",
+                        "imports": [
+                            {
+                                "module": "OtherLibrary",
+                                "symbols": [
+                                    "SpecialType"
+                                ]
+                            }
+                        ],
+                        "name": "Current",
+                        "base": {
+                            "kind": "tq",
+                            "name": "Real",
+                            "mods": {
+                                "units": {
+                                    "type": "slit",
+                                    "value": "A",
+                                    "quoted": false
+                                }
+                            }
+                        },
+                        "start": 64,
+                        "end": 67
+                    },
+                    {
+                        "kind": "sctd",
+                        "imports": [
+                            {
+                                "module": "OtherLibrary",
+                                "symbols": [
+                                    "SpecialType"
+                                ]
+                            }
+                        ],
+                        "name": "MyType",
+                        "base": {
+                            "kind": "tq",
+                            "name": "SpecialType",
+                            "mods": {}
+                        },
+                        "start": 95,
+                        "end": 98
+                    },
+                    {
+                        "kind": "etd",
+                        "imports": [
+                            {
+                                "module": "OtherLibrary",
+                                "symbols": [
+                                    "SpecialType"
+                                ]
+                            }
+                        ],
+                        "name": "LightColor",
+                        "elems": [
+                            {
+                                "kind": "tq",
+                                "name": "Red",
+                                "mods": {}
+                            },
+                            {
+                                "kind": "tq",
+                                "name": "Green",
+                                "mods": {}
+                            },
+                            {
+                                "kind": "tq",
+                                "name": "Blue",
+                                "mods": {}
+                            }
+                        ],
+                        "start": 124,
+                        "end": 127
+                    }
+                ]
+            }
+        ]
+    },
+    "semantic": [],
+    "syntax": []
+}

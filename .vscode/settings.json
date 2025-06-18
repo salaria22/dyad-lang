@@ -1,0 +1,31 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+  "files.exclude": {
+    "./apps/studio/out": false // set this to true to hide the "out" folder with the compiled JS files
+  },
+  "search.exclude": {
+    "./apps/studio/out": true // set this to false to include "out" folder in search results
+  },
+  "debug.javascript.autoAttachFilter": "onlyWithFlag",
+  // Turn off tsc task auto detection since we have the necessary tasks as npm scripts
+  "typescript.tsc.autoDetect": "off",
+  "cSpell.words": ["Dyad"],
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"],
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]",
+    "REVIEW",
+    "QUESTION",
+    "FIX"
+  ],
+  "todo-tree.general.showIconsInsteadOfTagsInStatusBar": false,
+  "jestrunner.jestCommand": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+  "jestrunner.debugOptions": {
+    "runtimeArgs": ["--experimental-vm-modules"]
+  }
+}

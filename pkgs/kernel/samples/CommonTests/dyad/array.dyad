@@ -1,0 +1,13 @@
+component HasArrays
+  structural parameter N::Integer = 5
+  parameter x::Real[N];
+relations
+  for i in 1:N
+    initial x[i] = i 
+    der(x[i]) = -x[i]
+  end
+end
+
+component MetaArray
+  arrays = [HasArrays(N=8) for i in 1:10]
+end

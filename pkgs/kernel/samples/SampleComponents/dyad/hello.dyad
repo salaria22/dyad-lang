@@ -1,0 +1,59 @@
+# Enumeration to describe initialization scenarios
+enum Initialize = Steady | Fixed(x::Position)
+
+# A simple component model
+#
+# This component demonstrates several features of the Dyad
+# modeling language.
+component Hello
+  structural parameter init::Initialize = Initialize.Fixed(x=10)
+  variable x::Position(statePriority=10)
+  parameter k::Real(units="1/s") = 1
+  constant g::Acceleration = 9.81
+relations
+  switch init 
+    case Steady
+      initial der(x) = 0 
+    end
+    case Fixed
+      initial x = init.x
+    end
+  end
+  der(x) = -k*x
+  assert(x > 0 or x < 20, "x dropped below 0 or rose above 20")
+metadata {
+    "Dyad": {
+        "experiments": {
+            "world": { "stop": 10 }
+        },
+        "tests": {
+            "case1": {
+                "stop": 10,
+                "expect": {
+                    "initial": { "x": 10 }
+                }
+            }
+        }
+    }
+}
+end
+
+test component HelloTest
+    hello = Hello()
+metadata {
+  "Dyad": {
+    "tests": {
+      "case1": {
+        "stop": 5,
+        "expect": {
+          "signals": ["hello.x"],
+          "final": {
+            "hello.x": 6
+          },
+          "initial": { "hello.x": 10 }
+        }
+      }
+    }
+  }
+}
+end

@@ -1,0 +1,2970 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 1`] = `
+{
+  "code": "",
+  "key": {
+    "kind": "experiment",
+    "module": [],
+    "name": "Inductor",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 2`] = `
+{
+  "code": "",
+  "key": {
+    "kind": "test",
+    "module": [],
+    "name": "Inductor",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 3`] = `
+{
+  "code": "@doc Markdown.doc"""
+   Inductor(; name, L)
+
+## Parameters: 
+
+| Name         | Description                         | Units  |   Default value |
+| ------------ | ----------------------------------- | ------ | --------------- |
+| \`L\`         |                          | H  |    |
+
+## Connectors
+
+ * \`p\` - This connector represents an electrical pin with voltage and current as the potential and flow variables, respectively. ([\`Pin\`](@ref))
+ * \`n\` - This connector represents an electrical pin with voltage and current as the potential and flow variables, respectively. ([\`Pin\`](@ref))
+
+## Variables
+
+| Name         | Description                         | Units  | 
+| ------------ | ----------------------------------- | ------ | 
+| \`v\`         |                          | V  | 
+| \`i\`         |                          | A  | 
+"""
+@component function Inductor(; name, L=nothing)
+
+  ### Symbolic Parameters
+  __params = Any[]
+  append!(__params, @parameters (L::Float64 = L))
+
+  ### Variables
+  __vars = Any[]
+  append!(__vars, @variables (v(t)))
+  append!(__vars, @variables (i(t)))
+
+  ### Constants
+  __constants = Any[]
+
+  ### Components
+  __systems = ODESystem[]
+  push!(__systems, @named p = __Dyad__Pin())
+  push!(__systems, @named n = __Dyad__Pin())
+
+  ### Defaults
+  __defaults = Dict()
+
+  ### Initialization Equations
+  __initialization_eqs = []
+
+  ### Equations
+  __eqs = Equation[]
+  push!(__eqs, v ~ p.v - n.v)
+  push!(__eqs, i ~ p.i)
+  push!(__eqs, p.i + n.i ~ 0)
+  push!(__eqs, L * D(i) ~ v)
+
+  # Return completely constructed ODESystem
+  return ODESystem(__eqs, t, __vars, __params; systems=__systems, defaults=__defaults, name, initialization_eqs=__initialization_eqs)
+end
+export Inductor
+
+Base.show(io::IO, a::MIME"image/svg+xml", t::typeof(Inductor)) = print(io,
+  """<div style="height: 100%; width: 100%; background-color: white"><div style="margin: auto; height: 500px; width: 500px; padding: 200px"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+      <defs>
+        <filter id='red-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#ff0000" flood-opacity="0.5"/></filter>
+        <filter id='green-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#00ff00" flood-opacity="0.5"/></filter>
+        <filter id='blue-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#0000ff" flood-opacity="0.5"/></filter>
+        <filter id='drop-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="40" flood-opacity="0.5"/></filter>
+      </defs>
+    <g  transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+<g  transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+      </svg></div></div>""")",
+  "key": {
+    "kind": "definition",
+    "module": [],
+    "name": "Inductor",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 4`] = `
+{
+  "code": "",
+  "key": {
+    "kind": "experiment",
+    "module": [],
+    "name": "ConstantVoltage",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 5`] = `
+{
+  "code": "",
+  "key": {
+    "kind": "test",
+    "module": [],
+    "name": "ConstantVoltage",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 6`] = `
+{
+  "code": "@doc Markdown.doc"""
+   ConstantVoltage(; name, V)
+
+## Parameters: 
+
+| Name         | Description                         | Units  |   Default value |
+| ------------ | ----------------------------------- | ------ | --------------- |
+| \`V\`         |                          | V  |   10 |
+
+## Connectors
+
+ * \`p\` - This connector represents an electrical pin with voltage and current as the potential and flow variables, respectively. ([\`Pin\`](@ref))
+ * \`n\` - This connector represents an electrical pin with voltage and current as the potential and flow variables, respectively. ([\`Pin\`](@ref))
+
+## Variables
+
+| Name         | Description                         | Units  | 
+| ------------ | ----------------------------------- | ------ | 
+| \`v\`         |                          | V  | 
+| \`i\`         |                          | A  | 
+"""
+@component function ConstantVoltage(; name, V=10)
+
+  ### Symbolic Parameters
+  __params = Any[]
+  append!(__params, @parameters (V::Float64 = V))
+
+  ### Variables
+  __vars = Any[]
+  append!(__vars, @variables (v(t)))
+  append!(__vars, @variables (i(t)))
+
+  ### Constants
+  __constants = Any[]
+
+  ### Components
+  __systems = ODESystem[]
+  push!(__systems, @named p = __Dyad__Pin())
+  push!(__systems, @named n = __Dyad__Pin())
+
+  ### Defaults
+  __defaults = Dict()
+
+  ### Initialization Equations
+  __initialization_eqs = []
+
+  ### Equations
+  __eqs = Equation[]
+  push!(__eqs, v ~ p.v - n.v)
+  push!(__eqs, i ~ p.i)
+  push!(__eqs, p.i + n.i ~ 0)
+  push!(__eqs, v ~ V)
+
+  # Return completely constructed ODESystem
+  return ODESystem(__eqs, t, __vars, __params; systems=__systems, defaults=__defaults, name, initialization_eqs=__initialization_eqs)
+end
+export ConstantVoltage
+
+Base.show(io::IO, a::MIME"image/svg+xml", t::typeof(ConstantVoltage)) = print(io,
+  """<div style="height: 100%; width: 100%; background-color: white"><div style="margin: auto; height: 500px; width: 500px; padding: 200px"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+      <defs>
+        <filter id='red-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#ff0000" flood-opacity="0.5"/></filter>
+        <filter id='green-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#00ff00" flood-opacity="0.5"/></filter>
+        <filter id='blue-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#0000ff" flood-opacity="0.5"/></filter>
+        <filter id='drop-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="40" flood-opacity="0.5"/></filter>
+      </defs>
+    <g  transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+<g  transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+      </svg></div></div>""")",
+  "key": {
+    "kind": "definition",
+    "module": [],
+    "name": "ConstantVoltage",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 7`] = `
+{
+  "code": "",
+  "key": {
+    "kind": "experiment",
+    "module": [],
+    "name": "DeSauty",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 8`] = `
+{
+  "code": "",
+  "key": {
+    "kind": "test",
+    "module": [],
+    "name": "DeSauty",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 9`] = `
+{
+  "code": "@doc Markdown.doc"""
+   DeSauty(; name, C₁, C₂)
+
+## Parameters: 
+
+| Name         | Description                         | Units  |   Default value |
+| ------------ | ----------------------------------- | ------ | --------------- |
+| \`C₁\`         |                          | F  |   0.000029999999999999997 |
+| \`C₂\`         |                          | F  |   0.000001 |
+"""
+@component function DeSauty(; name, C₁=0.000029999999999999997, C₂=0.000001)
+
+  ### Symbolic Parameters
+  __params = Any[]
+  append!(__params, @parameters (C₁::Float64 = C₁))
+  append!(__params, @parameters (C₂::Float64 = C₂))
+
+  ### Variables
+  __vars = Any[]
+
+  ### Constants
+  __constants = Any[]
+
+  ### Components
+  __systems = ODESystem[]
+  push!(__systems, @named resistor1 = ElectricalComponents.Resistor(R=5))
+  push!(__systems, @named resistor2 = ElectricalComponents.Resistor(R=2))
+  push!(__systems, @named capacitor1 = ElectricalComponents.Capacitor(C=C₁))
+  push!(__systems, @named capacitor2 = ElectricalComponents.Capacitor(C=C₂))
+  push!(__systems, @named source = ElectricalComponents.VoltageSource())
+  push!(__systems, @named input_signal = ElectricalComponents.Sine(frequency=100, A=1, phase=0))
+  push!(__systems, @named ground = ElectricalComponents.Ground())
+
+  ### Defaults
+  __defaults = Dict()
+
+  ### Initialization Equations
+  __initialization_eqs = []
+
+  ### Equations
+  __eqs = Equation[]
+  push!(__eqs, input_signal.y ~ source.V)
+  push!(__eqs, connect(source.p, capacitor1.n, capacitor2.n))
+  push!(__eqs, connect(source.n, resistor1.p, resistor2.p, ground.g))
+  push!(__eqs, connect(resistor1.n, capacitor1.p))
+  push!(__eqs, connect(resistor2.n, capacitor2.p))
+
+  # Return completely constructed ODESystem
+  return ODESystem(__eqs, t, __vars, __params; systems=__systems, defaults=__defaults, name, initialization_eqs=__initialization_eqs)
+end
+export DeSauty
+
+Base.show(io::IO, a::MIME"image/svg+xml", t::typeof(DeSauty)) = print(io,
+  """<div style="height: 100%; width: 100%; background-color: white"><div style="margin: auto; height: 500px; width: 500px; padding: 200px"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+      <defs>
+        <filter id='red-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#ff0000" flood-opacity="0.5"/></filter>
+        <filter id='green-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#00ff00" flood-opacity="0.5"/></filter>
+        <filter id='blue-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#0000ff" flood-opacity="0.5"/></filter>
+        <filter id='drop-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="40" flood-opacity="0.5"/></filter>
+      </defs>
+    
+      </svg></div></div>""")",
+  "key": {
+    "kind": "definition",
+    "module": [],
+    "name": "DeSauty",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 10`] = `
+{
+  "code": """"Run model RLCModel from 0 to 10"""
+function simple()
+  @mtkbuild model = RLCModel()
+  u0 = [model.capacitor.v => 10, model.inductor.i => 0]
+  prob = ODEProblem(model, u0, (0, 10))
+  sol = solve(prob)
+end
+export simple",
+  "key": {
+    "kind": "experiment",
+    "module": [],
+    "name": "RLCModel",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 11`] = `
+{
+  "code": "@test try
+    simple()
+    true
+catch
+    false
+end
+@testset "Running test case1 for RLCModel" begin
+  using CSV, DataFrames, Plots
+
+  @mtkbuild model = RLCModel()
+  u0 = []
+  prob = ODEProblem(model, u0, (0, 10))
+  sol = solve(prob, DefaultODEAlgorithm())
+  @test SciMLBase.successful_retcode(sol)
+  @test sol.t[1] ≈ 0
+  @test sol[model.capacitor.v][1] ≈ 10
+  @test sol.t[end] ≈ 10
+# Signals selected for regression testing: []
+  ref_times = [sol(t, idxs=:t) for t in LinRange(sol[:t][1], sol[:t][end], 100)]
+  if get(ENV, "DYAD_UPDATE_REFS", "") !== ""
+    # If asked to update snapshots, write out reference data for all signals
+    mkpath("snapshots")
+  end
+end",
+  "key": {
+    "kind": "test",
+    "module": [],
+    "name": "RLCModel",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 12`] = `
+{
+  "code": "@doc Markdown.doc"""
+   RLCModel(; name)
+
+This is an RLC model.  This should support markdown.  That includes
+HTML as well.
+"""
+@component function RLCModel(; name)
+
+  ### Symbolic Parameters
+  __params = Any[]
+
+  ### Variables
+  __vars = Any[]
+
+  ### Constants
+  __constants = Any[]
+
+  ### Components
+  __systems = ODESystem[]
+  push!(__systems, @named resistor = ElectricalComponents.Resistor(R=100))
+  push!(__systems, @named capacitor = ElectricalComponents.Capacitor(C=0.001))
+  push!(__systems, @named inductor = ElectricalComponents.Inductor(L=1))
+  push!(__systems, @named source = ElectricalComponents.ConstantVoltage(V=30))
+  push!(__systems, @named ground = ElectricalComponents.Ground())
+
+  ### Defaults
+  __defaults = Dict()
+  __defaults[inductor.i] = (0)
+  __defaults[capacitor.v] = (10)
+
+  ### Initialization Equations
+  __initialization_eqs = []
+
+  ### Equations
+  __eqs = Equation[]
+  push!(__eqs, connect(source.p, inductor.n))
+  push!(__eqs, connect(inductor.p, resistor.p, capacitor.p))
+  push!(__eqs, connect(resistor.n, ground.g, capacitor.n, source.n))
+
+  # Return completely constructed ODESystem
+  return ODESystem(__eqs, t, __vars, __params; systems=__systems, defaults=__defaults, name, initialization_eqs=__initialization_eqs)
+end
+export RLCModel
+
+Base.show(io::IO, a::MIME"image/svg+xml", t::typeof(RLCModel)) = print(io,
+  """<div style="height: 100%; width: 100%; background-color: white"><div style="margin: auto; height: 500px; width: 500px; padding: 200px"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+      <defs>
+        <filter id='red-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#ff0000" flood-opacity="0.5"/></filter>
+        <filter id='green-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#00ff00" flood-opacity="0.5"/></filter>
+        <filter id='blue-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#0000ff" flood-opacity="0.5"/></filter>
+        <filter id='drop-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="40" flood-opacity="0.5"/></filter>
+      </defs>
+    <g filter="url(#drop-shadow)" transform="translate(300 0) scale(0.2 0.2) rotate(90)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+    text {
+      transform-origin: center center;
+    }
+    </style><g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+    <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+        vector-effect="non-scaling-stroke" />
+    <path d="M 0 500 L 200 500 L 250 300 L 350 700 L 450 300 L 550 700 L 650 300 L 750 700 L 800 500 L 1000 500"
+        fill="transparent" stroke="black" stroke-width="8" />
+</svg></g>
+<g transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+<g transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">resistor</text>
+    <text x="500" y="150" transform="rotate(0, 0, -350)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">R=100Ω</text>
+    </svg></g>
+<g filter="url(#drop-shadow)" transform="translate(0 0) scale(0.2 0.2) rotate(90)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+    text {
+      transform-origin: center center;
+    }
+    </style><g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+    <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+        vector-effect="non-scaling-stroke" />
+    <path d="M 0 500 L 400 500 M 400 200 L 400 800 M 600 200 L 600 800 M 600 500 L 1000 500" stroke="black"
+        stroke-width="8"></path>
+</svg></g>
+<g transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+<g transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">capacitor</text>
+    <text x="500" y="150" transform="rotate(0, 0, -350)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">C=0.001F</text>
+    </svg></g>
+<g filter="url(#drop-shadow)" transform="translate(-200 -300) scale(0.2 0.2) rotate(180)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+    text {
+      transform-origin: center center;
+    }
+    </style><g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+    <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+        vector-effect="non-scaling-stroke" />
+    <g id="rings">
+        <circle cx="275" cy="500" r="75" fill="transparent" stroke="black" stroke-width="8" />
+        <circle cx="425" cy="500" r="75" fill="transparent" stroke="black" stroke-width="8" />
+        <circle cx="575" cy="500" r="75" fill="transparent" stroke="black" stroke-width="8" />
+        <circle cx="725" cy="500" r="75" fill="transparent" stroke="black" stroke-width="8" />
+    </g>
+
+    <rect x="100" y="500" width="800" height="100" fill="#d2dbed" />
+
+    <path d="M 0 500 L 200 500" fill="transparent" stroke="black" stroke-width="8" />
+    <path d="M 800 500 L 1000 500" fill="transparent" stroke="black" stroke-width="8" />
+</svg></g>
+<g transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+<g transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(180, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">inductor</text>
+    <text x="500" y="150" transform="rotate(180, 0, -350)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">L=1H</text>
+    </svg></g>
+<g filter="url(#drop-shadow)" transform="translate(-400 0) scale(0.2 0.2) rotate(90)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+    text {
+      transform-origin: center center;
+    }
+    </style><g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+    <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+        vector-effect="non-scaling-stroke" />
+    <text x="250" y="300" dominant-baseline="middle" text-anchor="middle" font-weight="200" font-size="300">+</text>
+    <text x="750" y="300" dominant-baseline="middle" text-anchor="middle" font-weight="200" font-size="300">-</text>
+    <path d="M 0 500 L 400 500 M 400 100 L 400 900 M 600 200 L 600 800 M 600 500 L 1000 500" stroke="black"
+        stroke-width="8"></path>
+</svg></g>
+<g transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+<g transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">source</text>
+    <text x="800" y="150" transform="rotate(0, 300, -350)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">10V</text>
+    </svg></g>
+<g filter="url(#drop-shadow)" transform="translate(0 500) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+    text {
+      transform-origin: center center;
+    }
+    </style><g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+    <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+        vector-effect="non-scaling-stroke" />
+    <path d="M 500 0 L 500 300 M 100 300 L 900 300 M 200 475 L 800 475 M 300 650 L 700 650 M 400 825 L 600 825"
+        stroke="black" stroke-width="8" />
+</svg></g>
+<g transform="translate(0 -500) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">ground</text>
+    </svg></g>
+    <path d="M 100 400 L 100 200 L 200 200 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 400 200 L 500 200 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 800 400 L 800 200 L 500 200 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 500 400 L 500 200 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 800 600 L 800 800 L 500 800 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 500 900 L 500 800 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 500 600 L 500 800 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 500 800 L 100 800 L 100 600 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <circle cx="500" cy="200" r="5" fill="blue" />
+    <circle cx="500" cy="800" r="5" fill="blue" />
+    <text x="800" y="100" transform="rotate(0, 300, -400)" fill="black" font-size="100" font-weight="200" dominant-baseline="central" text-anchor="middle">RLC Model</text>
+      </svg></div></div>""")",
+  "key": {
+    "kind": "definition",
+    "module": [],
+    "name": "RLCModel",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 13`] = `
+{
+  "code": "",
+  "key": {
+    "kind": "experiment",
+    "module": [],
+    "name": "Capacitor",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 14`] = `
+{
+  "code": "",
+  "key": {
+    "kind": "test",
+    "module": [],
+    "name": "Capacitor",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 15`] = `
+{
+  "code": "@doc Markdown.doc"""
+   Capacitor(; name, C)
+
+## Parameters: 
+
+| Name         | Description                         | Units  |   Default value |
+| ------------ | ----------------------------------- | ------ | --------------- |
+| \`C\`         |                          | F  |    |
+
+## Connectors
+
+ * \`p\` - This connector represents an electrical pin with voltage and current as the potential and flow variables, respectively. ([\`Pin\`](@ref))
+ * \`n\` - This connector represents an electrical pin with voltage and current as the potential and flow variables, respectively. ([\`Pin\`](@ref))
+
+## Variables
+
+| Name         | Description                         | Units  | 
+| ------------ | ----------------------------------- | ------ | 
+| \`v\`         |                          | V  | 
+| \`i\`         |                          | A  | 
+"""
+@component function Capacitor(; name, C=nothing)
+
+  ### Symbolic Parameters
+  __params = Any[]
+  append!(__params, @parameters (C::Float64 = C))
+
+  ### Variables
+  __vars = Any[]
+  append!(__vars, @variables (v(t)))
+  append!(__vars, @variables (i(t)))
+
+  ### Constants
+  __constants = Any[]
+
+  ### Components
+  __systems = ODESystem[]
+  push!(__systems, @named p = __Dyad__Pin())
+  push!(__systems, @named n = __Dyad__Pin())
+
+  ### Defaults
+  __defaults = Dict()
+  __defaults[v] = (10)
+
+  ### Initialization Equations
+  __initialization_eqs = []
+
+  ### Equations
+  __eqs = Equation[]
+  push!(__eqs, v ~ p.v - n.v)
+  push!(__eqs, i ~ p.i)
+  push!(__eqs, p.i + n.i ~ 0)
+  push!(__eqs, C * D(v) ~ i)
+
+  # Return completely constructed ODESystem
+  return ODESystem(__eqs, t, __vars, __params; systems=__systems, defaults=__defaults, name, initialization_eqs=__initialization_eqs)
+end
+export Capacitor
+
+Base.show(io::IO, a::MIME"image/svg+xml", t::typeof(Capacitor)) = print(io,
+  """<div style="height: 100%; width: 100%; background-color: white"><div style="margin: auto; height: 500px; width: 500px; padding: 200px"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+      <defs>
+        <filter id='red-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#ff0000" flood-opacity="0.5"/></filter>
+        <filter id='green-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#00ff00" flood-opacity="0.5"/></filter>
+        <filter id='blue-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#0000ff" flood-opacity="0.5"/></filter>
+        <filter id='drop-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="40" flood-opacity="0.5"/></filter>
+      </defs>
+    <g  transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+<g  transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+      </svg></div></div>""")",
+  "key": {
+    "kind": "definition",
+    "module": [],
+    "name": "Capacitor",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 16`] = `
+{
+  "code": """"Run model SinRLC from 0 to 10"""
+function simple_sine()
+  @mtkbuild model = SinRLC()
+  u0 = [model.capacitor.v => 10, model.inductor.i => 0]
+  prob = ODEProblem(model, u0, (0, 10))
+  sol = solve(prob)
+end
+export simple_sine",
+  "key": {
+    "kind": "experiment",
+    "module": [],
+    "name": "SinRLC",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 17`] = `
+{
+  "code": "@test try
+    simple_sine()
+    true
+catch
+    false
+end
+@testset "Running test case1 for SinRLC" begin
+  using CSV, DataFrames, Plots
+
+  @mtkbuild model = SinRLC()
+  u0 = []
+  prob = ODEProblem(model, u0, (0, 10))
+  sol = solve(prob, DefaultODEAlgorithm())
+  @test SciMLBase.successful_retcode(sol)
+  @test sol.t[1] ≈ 0
+  @test sol[model.capacitor.v][1] ≈ 10
+  @test sol.t[end] ≈ 10
+# Signals selected for regression testing: []
+  ref_times = [sol(t, idxs=:t) for t in LinRange(sol[:t][1], sol[:t][end], 100)]
+  if get(ENV, "DYAD_UPDATE_REFS", "") !== ""
+    # If asked to update snapshots, write out reference data for all signals
+    mkpath("snapshots")
+  end
+end",
+  "key": {
+    "kind": "test",
+    "module": [],
+    "name": "SinRLC",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 18`] = `
+{
+  "code": "@doc Markdown.doc"""
+   SinRLC(; name)
+
+This is an RLC model.  This should support markdown.  That includes
+HTML as well.
+"""
+@component function SinRLC(; name)
+
+  ### Symbolic Parameters
+  __params = Any[]
+
+  ### Variables
+  __vars = Any[]
+
+  ### Constants
+  __constants = Any[]
+
+  ### Components
+  __systems = ODESystem[]
+  push!(__systems, @named resistor = ElectricalComponents.Resistor(R=100))
+  push!(__systems, @named capacitor = ElectricalComponents.Capacitor(C=0.001))
+  push!(__systems, @named inductor = ElectricalComponents.Inductor(L=1))
+  push!(__systems, @named source = ElectricalComponents.VoltageSource())
+  push!(__systems, @named sine = ElectricalComponents.Sine(frequency=1, amplitude=1, phase=0))
+  push!(__systems, @named ground = ElectricalComponents.Ground())
+
+  ### Defaults
+  __defaults = Dict()
+  __defaults[inductor.i] = (0)
+  __defaults[capacitor.v] = (10)
+
+  ### Initialization Equations
+  __initialization_eqs = []
+
+  ### Equations
+  __eqs = Equation[]
+  push!(__eqs, connect(source.p, inductor.n))
+  push!(__eqs, sine.y ~ source.V)
+  push!(__eqs, connect(inductor.p, resistor.p, capacitor.p))
+  push!(__eqs, connect(resistor.n, ground.g, capacitor.n, source.n))
+
+  # Return completely constructed ODESystem
+  return ODESystem(__eqs, t, __vars, __params; systems=__systems, defaults=__defaults, name, initialization_eqs=__initialization_eqs)
+end
+export SinRLC
+
+Base.show(io::IO, a::MIME"image/svg+xml", t::typeof(SinRLC)) = print(io,
+  """<div style="height: 100%; width: 100%; background-color: white"><div style="margin: auto; height: 500px; width: 500px; padding: 200px"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+      <defs>
+        <filter id='red-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#ff0000" flood-opacity="0.5"/></filter>
+        <filter id='green-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#00ff00" flood-opacity="0.5"/></filter>
+        <filter id='blue-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#0000ff" flood-opacity="0.5"/></filter>
+        <filter id='drop-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="40" flood-opacity="0.5"/></filter>
+      </defs>
+    <g filter="url(#drop-shadow)" transform="translate(300 0) scale(0.2 0.2) rotate(90)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+    text {
+      transform-origin: center center;
+    }
+    </style><g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+    <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+        vector-effect="non-scaling-stroke" />
+    <path d="M 0 500 L 200 500 L 250 300 L 350 700 L 450 300 L 550 700 L 650 300 L 750 700 L 800 500 L 1000 500"
+        fill="transparent" stroke="black" stroke-width="8" />
+</svg></g>
+<g transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+<g transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">resistor</text>
+    <text x="500" y="150" transform="rotate(0, 0, -350)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">R=100Ω</text>
+    </svg></g>
+<g filter="url(#drop-shadow)" transform="translate(0 0) scale(0.2 0.2) rotate(90)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+    text {
+      transform-origin: center center;
+    }
+    </style><g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+    <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+        vector-effect="non-scaling-stroke" />
+    <path d="M 0 500 L 400 500 M 400 200 L 400 800 M 600 200 L 600 800 M 600 500 L 1000 500" stroke="black"
+        stroke-width="8"></path>
+</svg></g>
+<g transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+<g transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">capacitor</text>
+    <text x="500" y="150" transform="rotate(0, 0, -350)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">C=0.001F</text>
+    </svg></g>
+<g filter="url(#drop-shadow)" transform="translate(-200 -300) scale(0.2 0.2) rotate(180)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+    text {
+      transform-origin: center center;
+    }
+    </style><g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+    <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+        vector-effect="non-scaling-stroke" />
+    <g id="rings">
+        <circle cx="275" cy="500" r="75" fill="transparent" stroke="black" stroke-width="8" />
+        <circle cx="425" cy="500" r="75" fill="transparent" stroke="black" stroke-width="8" />
+        <circle cx="575" cy="500" r="75" fill="transparent" stroke="black" stroke-width="8" />
+        <circle cx="725" cy="500" r="75" fill="transparent" stroke="black" stroke-width="8" />
+    </g>
+
+    <rect x="100" y="500" width="800" height="100" fill="#d2dbed" />
+
+    <path d="M 0 500 L 200 500" fill="transparent" stroke="black" stroke-width="8" />
+    <path d="M 800 500 L 1000 500" fill="transparent" stroke="black" stroke-width="8" />
+</svg></g>
+<g transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+<g transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(180, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">inductor</text>
+    <text x="500" y="150" transform="rotate(180, 0, -350)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">L=1H</text>
+    </svg></g>
+<g filter="url(#drop-shadow)" transform="translate(-400 0) scale(0.2 0.2) rotate(90)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+    text {
+      transform-origin: center center;
+    }
+    </style><g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" id="a" width="1000" height="1000" viewBox="0 0 1000 1000"
+><defs><style>.b {fill: none;}.b,.c {stroke: #b6b4cf;stroke-linejoin: round;stroke-width: 8px;}.c,.d {  fill: #fff;}.e {fill: #6e6ea1;}.e,.d {stroke-width: 0px;}</style>
+  </defs><rect class="d" x="4" y="4" width="992" height="992" /><path class="e" d="M992,8v984H8V8h984M1000,0H0v1000h1000V0h0Z" /><path class="b"
+    d="M361.83,226.44c-62.23-3.99-115.91,43.22-119.9,105.45-3.99,62.23,43.22,115.91,105.45,119.9,62.23,3.99,115.91-43.22,119.9-105.45,3.99-62.23-43.22-115.91-105.45-119.9ZM413.76,342.91c-2.09,32.67-30.28,57.46-62.95,55.36-32.67-2.1-57.46-30.28-55.36-62.95,2.09-32.67,30.28-57.46,62.95-55.36,32.67,2.09,57.45,30.28,55.36,62.95Z"
+  /><circle class="b" cx="353.85" cy="682.11" r="80.62" /><circle class="b" cx="652.79" cy="644.36" r="52.47" /><polyline class="b" points="410.2 624.82 698.58 340.68 464.78 340.68" /><line class="b" x1="617.63" y1="609.81" x2="432.03" y2="420.13" /><circle class="c" cx="696.98" cy="340.44" r="54.47" />
+</svg></g>
+<g transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+<g transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">source</text>
+    </svg></g>
+<g filter="url(#drop-shadow)" transform="translate(0 500) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+    text {
+      transform-origin: center center;
+    }
+    </style><g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+    <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+        vector-effect="non-scaling-stroke" />
+    <path d="M 500 0 L 500 300 M 100 300 L 900 300 M 200 475 L 800 475 M 300 650 L 700 650 M 400 825 L 600 825"
+        stroke="black" stroke-width="8" />
+</svg></g>
+<g transform="translate(0 -500) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">ground</text>
+    </svg></g>
+    <path d="M 100 400 L 100 200 L 200 200 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 400 200 L 500 200 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 800 400 L 800 200 L 500 200 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 500 400 L 500 200 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 800 600 L 800 800 L 500 800 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 500 900 L 500 800 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 500 600 L 500 800 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 500 800 L 100 800 L 100 600 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <circle cx="500" cy="200" r="5" fill="blue" />
+    <circle cx="500" cy="800" r="5" fill="blue" />
+      </svg></div></div>""")",
+  "key": {
+    "kind": "definition",
+    "module": [],
+    "name": "SinRLC",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 19`] = `
+{
+  "code": "",
+  "key": {
+    "kind": "experiment",
+    "module": [],
+    "name": "Resistor",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 20`] = `
+{
+  "code": "",
+  "key": {
+    "kind": "test",
+    "module": [],
+    "name": "Resistor",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 21`] = `
+{
+  "code": "@doc Markdown.doc"""
+   Resistor(; name, R)
+
+A simple linear resistor model
+
+![Resistor](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpJkiEyqh-BRx27pvVH0GLZ4MP_D1oriBwJhnZdgIq7m17z9VKUWaW9MeNQAz1rTML2ho&usqp=CAU)
+
+## Parameters: 
+
+| Name         | Description                         | Units  |   Default value |
+| ------------ | ----------------------------------- | ------ | --------------- |
+| \`R\`         | Resistance of this Resistor                         | Ω  |    |
+
+## Connectors
+
+ * \`p\` - This connector represents an electrical pin with voltage and current as the potential and flow variables, respectively. ([\`Pin\`](@ref))
+ * \`n\` - This connector represents an electrical pin with voltage and current as the potential and flow variables, respectively. ([\`Pin\`](@ref))
+
+## Variables
+
+| Name         | Description                         | Units  | 
+| ------------ | ----------------------------------- | ------ | 
+| \`v\`         |                          | V  | 
+| \`i\`         |                          | A  | 
+"""
+@component function Resistor(; name, R=nothing)
+
+  ### Symbolic Parameters
+  __params = Any[]
+  append!(__params, @parameters (R::Float64 = R), [description = "Resistance of this Resistor"])
+
+  ### Variables
+  __vars = Any[]
+  append!(__vars, @variables (v(t)))
+  append!(__vars, @variables (i(t)))
+
+  ### Constants
+  __constants = Any[]
+
+  ### Components
+  __systems = ODESystem[]
+  push!(__systems, @named p = __Dyad__Pin())
+  push!(__systems, @named n = __Dyad__Pin())
+
+  ### Defaults
+  __defaults = Dict()
+
+  ### Initialization Equations
+  __initialization_eqs = []
+
+  ### Equations
+  __eqs = Equation[]
+  push!(__eqs, v ~ p.v - n.v)
+  push!(__eqs, i ~ p.i)
+  push!(__eqs, p.i + n.i ~ 0)
+  # Ohm's Law
+  push!(__eqs, v ~ i * R)
+
+  # Return completely constructed ODESystem
+  return ODESystem(__eqs, t, __vars, __params; systems=__systems, defaults=__defaults, name, initialization_eqs=__initialization_eqs)
+end
+export Resistor
+
+Base.show(io::IO, a::MIME"image/svg+xml", t::typeof(Resistor)) = print(io,
+  """<div style="height: 100%; width: 100%; background-color: white"><div style="margin: auto; height: 500px; width: 500px; padding: 200px"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+      <defs>
+        <filter id='red-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#ff0000" flood-opacity="0.5"/></filter>
+        <filter id='green-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#00ff00" flood-opacity="0.5"/></filter>
+        <filter id='blue-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#0000ff" flood-opacity="0.5"/></filter>
+        <filter id='drop-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="40" flood-opacity="0.5"/></filter>
+      </defs>
+    <g  transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+<g  transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+      </svg></div></div>""")",
+  "key": {
+    "kind": "definition",
+    "module": [],
+    "name": "Resistor",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 22`] = `
+{
+  "code": "",
+  "key": {
+    "kind": "experiment",
+    "module": [],
+    "name": "VoltageSource",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 23`] = `
+{
+  "code": "",
+  "key": {
+    "kind": "test",
+    "module": [],
+    "name": "VoltageSource",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 24`] = `
+{
+  "code": "@doc Markdown.doc"""
+   VoltageSource(; name, uV)
+
+## Parameters: 
+
+| Name         | Description                         | Units  |   Default value |
+| ------------ | ----------------------------------- | ------ | --------------- |
+| \`uV\`         |                          | V  |   1 |
+
+## Connectors
+
+ * \`p\` - This connector represents an electrical pin with voltage and current as the potential and flow variables, respectively. ([\`Pin\`](@ref))
+ * \`n\` - This connector represents an electrical pin with voltage and current as the potential and flow variables, respectively. ([\`Pin\`](@ref))
+ * \`V\` - ([\`RealInput\`](@ref))
+
+## Variables
+
+| Name         | Description                         | Units  | 
+| ------------ | ----------------------------------- | ------ | 
+| \`v\`         |                          | V  | 
+| \`i\`         |                          | A  | 
+"""
+@component function VoltageSource(; name, uV=1)
+
+  ### Symbolic Parameters
+  __params = Any[]
+  append!(__params, @parameters (uV::Float64 = uV))
+
+  ### Variables
+  __vars = Any[]
+  append!(__vars, @variables V(t), [input = true])
+  append!(__vars, @variables (v(t)))
+  append!(__vars, @variables (i(t)))
+
+  ### Constants
+  __constants = Any[]
+
+  ### Components
+  __systems = ODESystem[]
+  push!(__systems, @named p = __Dyad__Pin())
+  push!(__systems, @named n = __Dyad__Pin())
+
+  ### Defaults
+  __defaults = Dict()
+
+  ### Initialization Equations
+  __initialization_eqs = []
+
+  ### Equations
+  __eqs = Equation[]
+  push!(__eqs, v ~ p.v - n.v)
+  push!(__eqs, i ~ p.i)
+  push!(__eqs, p.i + n.i ~ 0)
+  push!(__eqs, v ~ V * uV)
+
+  # Return completely constructed ODESystem
+  return ODESystem(__eqs, t, __vars, __params; systems=__systems, defaults=__defaults, name, initialization_eqs=__initialization_eqs)
+end
+export VoltageSource
+
+Base.show(io::IO, a::MIME"image/svg+xml", t::typeof(VoltageSource)) = print(io,
+  """<div style="height: 100%; width: 100%; background-color: white"><div style="margin: auto; height: 500px; width: 500px; padding: 200px"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+      <defs>
+        <filter id='red-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#ff0000" flood-opacity="0.5"/></filter>
+        <filter id='green-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#00ff00" flood-opacity="0.5"/></filter>
+        <filter id='blue-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#0000ff" flood-opacity="0.5"/></filter>
+        <filter id='drop-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="40" flood-opacity="0.5"/></filter>
+      </defs>
+    <g  transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+<g  transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+      </svg></div></div>""")",
+  "key": {
+    "kind": "definition",
+    "module": [],
+    "name": "VoltageSource",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 25`] = `
+{
+  "code": "",
+  "key": {
+    "kind": "experiment",
+    "module": [],
+    "name": "Ground",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 26`] = `
+{
+  "code": "",
+  "key": {
+    "kind": "test",
+    "module": [],
+    "name": "Ground",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 27`] = `
+{
+  "code": "@doc Markdown.doc"""
+   Ground(; name)
+
+## Connectors
+
+ * \`g\` - This connector represents an electrical pin with voltage and current as the potential and flow variables, respectively. ([\`Pin\`](@ref))
+"""
+@component function Ground(; name)
+
+  ### Symbolic Parameters
+  __params = Any[]
+
+  ### Variables
+  __vars = Any[]
+
+  ### Constants
+  __constants = Any[]
+
+  ### Components
+  __systems = ODESystem[]
+  push!(__systems, @named g = __Dyad__Pin())
+
+  ### Defaults
+  __defaults = Dict()
+
+  ### Initialization Equations
+  __initialization_eqs = []
+
+  ### Equations
+  __eqs = Equation[]
+  push!(__eqs, g.v ~ 0)
+
+  # Return completely constructed ODESystem
+  return ODESystem(__eqs, t, __vars, __params; systems=__systems, defaults=__defaults, name, initialization_eqs=__initialization_eqs)
+end
+export Ground
+
+Base.show(io::IO, a::MIME"image/svg+xml", t::typeof(Ground)) = print(io,
+  """<div style="height: 100%; width: 100%; background-color: white"><div style="margin: auto; height: 500px; width: 500px; padding: 200px"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+      <defs>
+        <filter id='red-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#ff0000" flood-opacity="0.5"/></filter>
+        <filter id='green-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#00ff00" flood-opacity="0.5"/></filter>
+        <filter id='blue-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#0000ff" flood-opacity="0.5"/></filter>
+        <filter id='drop-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="40" flood-opacity="0.5"/></filter>
+      </defs>
+    <g  transform="translate(0 -500) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+      </svg></div></div>""")",
+  "key": {
+    "kind": "definition",
+    "module": [],
+    "name": "Ground",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 28`] = `
+{
+  "code": "",
+  "key": {
+    "kind": "experiment",
+    "module": [],
+    "name": "Sine",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 29`] = `
+{
+  "code": "",
+  "key": {
+    "kind": "test",
+    "module": [],
+    "name": "Sine",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 30`] = `
+{
+  "code": "@doc Markdown.doc"""
+   Sine(; name, frequency, amplitude, phase)
+
+## Parameters: 
+
+| Name         | Description                         | Units  |   Default value |
+| ------------ | ----------------------------------- | ------ | --------------- |
+| \`frequency\`         |                          | Hz  |    |
+| \`amplitude\`         |                          | --  |    |
+| \`phase\`         |                          | rad  |    |
+
+## Connectors
+
+ * \`y\` - ([\`RealOutput\`](@ref))
+"""
+@component function Sine(; name, frequency=nothing, amplitude=nothing, phase=nothing)
+
+  ### Symbolic Parameters
+  __params = Any[]
+  append!(__params, @parameters (frequency::Float64 = frequency))
+  append!(__params, @parameters (amplitude::Float64 = amplitude))
+  append!(__params, @parameters (phase::Float64 = phase))
+
+  ### Variables
+  __vars = Any[]
+  append!(__vars, @variables y(t), [output = true])
+
+  ### Constants
+  __constants = Any[]
+
+  ### Components
+  __systems = ODESystem[]
+
+  ### Defaults
+  __defaults = Dict()
+
+  ### Initialization Equations
+  __initialization_eqs = []
+
+  ### Equations
+  __eqs = Equation[]
+  push!(__eqs, y ~ amplitude * sin(frequency * 2 * pi * t + phase))
+
+  # Return completely constructed ODESystem
+  return ODESystem(__eqs, t, __vars, __params; systems=__systems, defaults=__defaults, name, initialization_eqs=__initialization_eqs)
+end
+export Sine
+
+Base.show(io::IO, a::MIME"image/svg+xml", t::typeof(Sine)) = print(io,
+  """<div style="height: 100%; width: 100%; background-color: white"><div style="margin: auto; height: 500px; width: 500px; padding: 200px"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+      <defs>
+        <filter id='red-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#ff0000" flood-opacity="0.5"/></filter>
+        <filter id='green-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#00ff00" flood-opacity="0.5"/></filter>
+        <filter id='blue-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#0000ff" flood-opacity="0.5"/></filter>
+        <filter id='drop-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="40" flood-opacity="0.5"/></filter>
+      </defs>
+    
+      </svg></div></div>""")",
+  "key": {
+    "kind": "definition",
+    "module": [],
+    "name": "Sine",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 31`] = `
+{
+  "code": "",
+  "key": {
+    "kind": "experiment",
+    "module": [],
+    "name": "VoltagePulse",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 32`] = `
+{
+  "code": "",
+  "key": {
+    "kind": "test",
+    "module": [],
+    "name": "VoltagePulse",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 33`] = `
+{
+  "code": "@doc Markdown.doc"""
+   VoltagePulse(; name, Vbase, Vpulse, start, stop)
+
+## Parameters: 
+
+| Name         | Description                         | Units  |   Default value |
+| ------------ | ----------------------------------- | ------ | --------------- |
+| \`Vbase\`         |                          | V  |    |
+| \`Vpulse\`         |                          | V  |    |
+| \`start\`         |                          | s  |    |
+| \`stop\`         |                          | s  |    |
+
+## Connectors
+
+ * \`p\` - This connector represents an electrical pin with voltage and current as the potential and flow variables, respectively. ([\`Pin\`](@ref))
+ * \`n\` - This connector represents an electrical pin with voltage and current as the potential and flow variables, respectively. ([\`Pin\`](@ref))
+
+## Variables
+
+| Name         | Description                         | Units  | 
+| ------------ | ----------------------------------- | ------ | 
+| \`v\`         |                          | V  | 
+| \`i\`         |                          | A  | 
+"""
+@component function VoltagePulse(; name, Vbase=nothing, Vpulse=nothing, start=nothing, stop=nothing)
+
+  ### Symbolic Parameters
+  __params = Any[]
+  append!(__params, @parameters (Vbase::Float64 = Vbase))
+  append!(__params, @parameters (Vpulse::Float64 = Vpulse))
+  append!(__params, @parameters (start::Float64 = start))
+  append!(__params, @parameters (stop::Float64 = stop))
+
+  ### Variables
+  __vars = Any[]
+  append!(__vars, @variables (v(t)))
+  append!(__vars, @variables (i(t)))
+
+  ### Constants
+  __constants = Any[]
+
+  ### Components
+  __systems = ODESystem[]
+  push!(__systems, @named p = __Dyad__Pin())
+  push!(__systems, @named n = __Dyad__Pin())
+
+  ### Defaults
+  __defaults = Dict()
+
+  ### Initialization Equations
+  __initialization_eqs = []
+
+  ### Equations
+  __eqs = Equation[]
+  push!(__eqs, v ~ p.v - n.v)
+  push!(__eqs, i ~ p.i)
+  push!(__eqs, p.i + n.i ~ 0)
+  push!(__eqs, v ~ ifelse((t > start) & (t < stop), Vpulse, Vbase))
+
+  # Return completely constructed ODESystem
+  return ODESystem(__eqs, t, __vars, __params; systems=__systems, defaults=__defaults, name, initialization_eqs=__initialization_eqs)
+end
+export VoltagePulse
+
+Base.show(io::IO, a::MIME"image/svg+xml", t::typeof(VoltagePulse)) = print(io,
+  """<div style="height: 100%; width: 100%; background-color: white"><div style="margin: auto; height: 500px; width: 500px; padding: 200px"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+      <defs>
+        <filter id='red-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#ff0000" flood-opacity="0.5"/></filter>
+        <filter id='green-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#00ff00" flood-opacity="0.5"/></filter>
+        <filter id='blue-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#0000ff" flood-opacity="0.5"/></filter>
+        <filter id='drop-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="40" flood-opacity="0.5"/></filter>
+      </defs>
+    <g  transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+<g  transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+      </svg></div></div>""")",
+  "key": {
+    "kind": "definition",
+    "module": [],
+    "name": "VoltagePulse",
+  },
+}
+`;
+
+exports[`Test code generation from zipped libraries Run code generation tests on bundled Electrical.zip 34`] = `
+{
+  "generated/Capacitor_definition.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+@doc Markdown.doc"""
+   Capacitor(; name, C)
+
+## Parameters: 
+
+| Name         | Description                         | Units  |   Default value |
+| ------------ | ----------------------------------- | ------ | --------------- |
+| \`C\`         |                          | F  |    |
+
+## Connectors
+
+ * \`p\` - This connector represents an electrical pin with voltage and current as the potential and flow variables, respectively. ([\`Pin\`](@ref))
+ * \`n\` - This connector represents an electrical pin with voltage and current as the potential and flow variables, respectively. ([\`Pin\`](@ref))
+
+## Variables
+
+| Name         | Description                         | Units  | 
+| ------------ | ----------------------------------- | ------ | 
+| \`v\`         |                          | V  | 
+| \`i\`         |                          | A  | 
+"""
+@component function Capacitor(; name, C=nothing)
+
+  ### Symbolic Parameters
+  __params = Any[]
+  append!(__params, @parameters (C::Float64 = C))
+
+  ### Variables
+  __vars = Any[]
+  append!(__vars, @variables (v(t)))
+  append!(__vars, @variables (i(t)))
+
+  ### Constants
+  __constants = Any[]
+
+  ### Components
+  __systems = ODESystem[]
+  push!(__systems, @named p = __Dyad__Pin())
+  push!(__systems, @named n = __Dyad__Pin())
+
+  ### Defaults
+  __defaults = Dict()
+  __defaults[v] = (10)
+
+  ### Initialization Equations
+  __initialization_eqs = []
+
+  ### Equations
+  __eqs = Equation[]
+  push!(__eqs, v ~ p.v - n.v)
+  push!(__eqs, i ~ p.i)
+  push!(__eqs, p.i + n.i ~ 0)
+  push!(__eqs, C * D(v) ~ i)
+
+  # Return completely constructed ODESystem
+  return ODESystem(__eqs, t, __vars, __params; systems=__systems, defaults=__defaults, name, initialization_eqs=__initialization_eqs)
+end
+export Capacitor
+
+Base.show(io::IO, a::MIME"image/svg+xml", t::typeof(Capacitor)) = print(io,
+  """<div style="height: 100%; width: 100%; background-color: white"><div style="margin: auto; height: 500px; width: 500px; padding: 200px"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+      <defs>
+        <filter id='red-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#ff0000" flood-opacity="0.5"/></filter>
+        <filter id='green-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#00ff00" flood-opacity="0.5"/></filter>
+        <filter id='blue-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#0000ff" flood-opacity="0.5"/></filter>
+        <filter id='drop-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="40" flood-opacity="0.5"/></filter>
+      </defs>
+    <g  transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+<g  transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+      </svg></div></div>""")
+",
+  "generated/Capacitor_experiment.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+
+",
+  "generated/Capacitor_test.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+
+",
+  "generated/ConstantVoltage_definition.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+@doc Markdown.doc"""
+   ConstantVoltage(; name, V)
+
+## Parameters: 
+
+| Name         | Description                         | Units  |   Default value |
+| ------------ | ----------------------------------- | ------ | --------------- |
+| \`V\`         |                          | V  |   10 |
+
+## Connectors
+
+ * \`p\` - This connector represents an electrical pin with voltage and current as the potential and flow variables, respectively. ([\`Pin\`](@ref))
+ * \`n\` - This connector represents an electrical pin with voltage and current as the potential and flow variables, respectively. ([\`Pin\`](@ref))
+
+## Variables
+
+| Name         | Description                         | Units  | 
+| ------------ | ----------------------------------- | ------ | 
+| \`v\`         |                          | V  | 
+| \`i\`         |                          | A  | 
+"""
+@component function ConstantVoltage(; name, V=10)
+
+  ### Symbolic Parameters
+  __params = Any[]
+  append!(__params, @parameters (V::Float64 = V))
+
+  ### Variables
+  __vars = Any[]
+  append!(__vars, @variables (v(t)))
+  append!(__vars, @variables (i(t)))
+
+  ### Constants
+  __constants = Any[]
+
+  ### Components
+  __systems = ODESystem[]
+  push!(__systems, @named p = __Dyad__Pin())
+  push!(__systems, @named n = __Dyad__Pin())
+
+  ### Defaults
+  __defaults = Dict()
+
+  ### Initialization Equations
+  __initialization_eqs = []
+
+  ### Equations
+  __eqs = Equation[]
+  push!(__eqs, v ~ p.v - n.v)
+  push!(__eqs, i ~ p.i)
+  push!(__eqs, p.i + n.i ~ 0)
+  push!(__eqs, v ~ V)
+
+  # Return completely constructed ODESystem
+  return ODESystem(__eqs, t, __vars, __params; systems=__systems, defaults=__defaults, name, initialization_eqs=__initialization_eqs)
+end
+export ConstantVoltage
+
+Base.show(io::IO, a::MIME"image/svg+xml", t::typeof(ConstantVoltage)) = print(io,
+  """<div style="height: 100%; width: 100%; background-color: white"><div style="margin: auto; height: 500px; width: 500px; padding: 200px"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+      <defs>
+        <filter id='red-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#ff0000" flood-opacity="0.5"/></filter>
+        <filter id='green-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#00ff00" flood-opacity="0.5"/></filter>
+        <filter id='blue-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#0000ff" flood-opacity="0.5"/></filter>
+        <filter id='drop-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="40" flood-opacity="0.5"/></filter>
+      </defs>
+    <g  transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+<g  transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+      </svg></div></div>""")
+",
+  "generated/ConstantVoltage_experiment.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+
+",
+  "generated/ConstantVoltage_test.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+
+",
+  "generated/DeSauty_definition.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+@doc Markdown.doc"""
+   DeSauty(; name, C₁, C₂)
+
+## Parameters: 
+
+| Name         | Description                         | Units  |   Default value |
+| ------------ | ----------------------------------- | ------ | --------------- |
+| \`C₁\`         |                          | F  |   0.000029999999999999997 |
+| \`C₂\`         |                          | F  |   0.000001 |
+"""
+@component function DeSauty(; name, C₁=0.000029999999999999997, C₂=0.000001)
+
+  ### Symbolic Parameters
+  __params = Any[]
+  append!(__params, @parameters (C₁::Float64 = C₁))
+  append!(__params, @parameters (C₂::Float64 = C₂))
+
+  ### Variables
+  __vars = Any[]
+
+  ### Constants
+  __constants = Any[]
+
+  ### Components
+  __systems = ODESystem[]
+  push!(__systems, @named resistor1 = ElectricalComponents.Resistor(R=5))
+  push!(__systems, @named resistor2 = ElectricalComponents.Resistor(R=2))
+  push!(__systems, @named capacitor1 = ElectricalComponents.Capacitor(C=C₁))
+  push!(__systems, @named capacitor2 = ElectricalComponents.Capacitor(C=C₂))
+  push!(__systems, @named source = ElectricalComponents.VoltageSource())
+  push!(__systems, @named input_signal = ElectricalComponents.Sine(frequency=100, A=1, phase=0))
+  push!(__systems, @named ground = ElectricalComponents.Ground())
+
+  ### Defaults
+  __defaults = Dict()
+
+  ### Initialization Equations
+  __initialization_eqs = []
+
+  ### Equations
+  __eqs = Equation[]
+  push!(__eqs, input_signal.y ~ source.V)
+  push!(__eqs, connect(source.p, capacitor1.n, capacitor2.n))
+  push!(__eqs, connect(source.n, resistor1.p, resistor2.p, ground.g))
+  push!(__eqs, connect(resistor1.n, capacitor1.p))
+  push!(__eqs, connect(resistor2.n, capacitor2.p))
+
+  # Return completely constructed ODESystem
+  return ODESystem(__eqs, t, __vars, __params; systems=__systems, defaults=__defaults, name, initialization_eqs=__initialization_eqs)
+end
+export DeSauty
+
+Base.show(io::IO, a::MIME"image/svg+xml", t::typeof(DeSauty)) = print(io,
+  """<div style="height: 100%; width: 100%; background-color: white"><div style="margin: auto; height: 500px; width: 500px; padding: 200px"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+      <defs>
+        <filter id='red-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#ff0000" flood-opacity="0.5"/></filter>
+        <filter id='green-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#00ff00" flood-opacity="0.5"/></filter>
+        <filter id='blue-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#0000ff" flood-opacity="0.5"/></filter>
+        <filter id='drop-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="40" flood-opacity="0.5"/></filter>
+      </defs>
+    
+      </svg></div></div>""")
+",
+  "generated/DeSauty_experiment.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+
+",
+  "generated/DeSauty_test.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+
+",
+  "generated/Ground_definition.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+@doc Markdown.doc"""
+   Ground(; name)
+
+## Connectors
+
+ * \`g\` - This connector represents an electrical pin with voltage and current as the potential and flow variables, respectively. ([\`Pin\`](@ref))
+"""
+@component function Ground(; name)
+
+  ### Symbolic Parameters
+  __params = Any[]
+
+  ### Variables
+  __vars = Any[]
+
+  ### Constants
+  __constants = Any[]
+
+  ### Components
+  __systems = ODESystem[]
+  push!(__systems, @named g = __Dyad__Pin())
+
+  ### Defaults
+  __defaults = Dict()
+
+  ### Initialization Equations
+  __initialization_eqs = []
+
+  ### Equations
+  __eqs = Equation[]
+  push!(__eqs, g.v ~ 0)
+
+  # Return completely constructed ODESystem
+  return ODESystem(__eqs, t, __vars, __params; systems=__systems, defaults=__defaults, name, initialization_eqs=__initialization_eqs)
+end
+export Ground
+
+Base.show(io::IO, a::MIME"image/svg+xml", t::typeof(Ground)) = print(io,
+  """<div style="height: 100%; width: 100%; background-color: white"><div style="margin: auto; height: 500px; width: 500px; padding: 200px"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+      <defs>
+        <filter id='red-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#ff0000" flood-opacity="0.5"/></filter>
+        <filter id='green-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#00ff00" flood-opacity="0.5"/></filter>
+        <filter id='blue-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#0000ff" flood-opacity="0.5"/></filter>
+        <filter id='drop-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="40" flood-opacity="0.5"/></filter>
+      </defs>
+    <g  transform="translate(0 -500) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+      </svg></div></div>""")
+",
+  "generated/Ground_experiment.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+
+",
+  "generated/Ground_test.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+
+",
+  "generated/Inductor_definition.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+@doc Markdown.doc"""
+   Inductor(; name, L)
+
+## Parameters: 
+
+| Name         | Description                         | Units  |   Default value |
+| ------------ | ----------------------------------- | ------ | --------------- |
+| \`L\`         |                          | H  |    |
+
+## Connectors
+
+ * \`p\` - This connector represents an electrical pin with voltage and current as the potential and flow variables, respectively. ([\`Pin\`](@ref))
+ * \`n\` - This connector represents an electrical pin with voltage and current as the potential and flow variables, respectively. ([\`Pin\`](@ref))
+
+## Variables
+
+| Name         | Description                         | Units  | 
+| ------------ | ----------------------------------- | ------ | 
+| \`v\`         |                          | V  | 
+| \`i\`         |                          | A  | 
+"""
+@component function Inductor(; name, L=nothing)
+
+  ### Symbolic Parameters
+  __params = Any[]
+  append!(__params, @parameters (L::Float64 = L))
+
+  ### Variables
+  __vars = Any[]
+  append!(__vars, @variables (v(t)))
+  append!(__vars, @variables (i(t)))
+
+  ### Constants
+  __constants = Any[]
+
+  ### Components
+  __systems = ODESystem[]
+  push!(__systems, @named p = __Dyad__Pin())
+  push!(__systems, @named n = __Dyad__Pin())
+
+  ### Defaults
+  __defaults = Dict()
+
+  ### Initialization Equations
+  __initialization_eqs = []
+
+  ### Equations
+  __eqs = Equation[]
+  push!(__eqs, v ~ p.v - n.v)
+  push!(__eqs, i ~ p.i)
+  push!(__eqs, p.i + n.i ~ 0)
+  push!(__eqs, L * D(i) ~ v)
+
+  # Return completely constructed ODESystem
+  return ODESystem(__eqs, t, __vars, __params; systems=__systems, defaults=__defaults, name, initialization_eqs=__initialization_eqs)
+end
+export Inductor
+
+Base.show(io::IO, a::MIME"image/svg+xml", t::typeof(Inductor)) = print(io,
+  """<div style="height: 100%; width: 100%; background-color: white"><div style="margin: auto; height: 500px; width: 500px; padding: 200px"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+      <defs>
+        <filter id='red-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#ff0000" flood-opacity="0.5"/></filter>
+        <filter id='green-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#00ff00" flood-opacity="0.5"/></filter>
+        <filter id='blue-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#0000ff" flood-opacity="0.5"/></filter>
+        <filter id='drop-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="40" flood-opacity="0.5"/></filter>
+      </defs>
+    <g  transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+<g  transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+      </svg></div></div>""")
+",
+  "generated/Inductor_experiment.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+
+",
+  "generated/Inductor_test.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+
+",
+  "generated/RLCModel_definition.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+@doc Markdown.doc"""
+   RLCModel(; name)
+
+This is an RLC model.  This should support markdown.  That includes
+HTML as well.
+"""
+@component function RLCModel(; name)
+
+  ### Symbolic Parameters
+  __params = Any[]
+
+  ### Variables
+  __vars = Any[]
+
+  ### Constants
+  __constants = Any[]
+
+  ### Components
+  __systems = ODESystem[]
+  push!(__systems, @named resistor = ElectricalComponents.Resistor(R=100))
+  push!(__systems, @named capacitor = ElectricalComponents.Capacitor(C=0.001))
+  push!(__systems, @named inductor = ElectricalComponents.Inductor(L=1))
+  push!(__systems, @named source = ElectricalComponents.ConstantVoltage(V=30))
+  push!(__systems, @named ground = ElectricalComponents.Ground())
+
+  ### Defaults
+  __defaults = Dict()
+  __defaults[inductor.i] = (0)
+  __defaults[capacitor.v] = (10)
+
+  ### Initialization Equations
+  __initialization_eqs = []
+
+  ### Equations
+  __eqs = Equation[]
+  push!(__eqs, connect(source.p, inductor.n))
+  push!(__eqs, connect(inductor.p, resistor.p, capacitor.p))
+  push!(__eqs, connect(resistor.n, ground.g, capacitor.n, source.n))
+
+  # Return completely constructed ODESystem
+  return ODESystem(__eqs, t, __vars, __params; systems=__systems, defaults=__defaults, name, initialization_eqs=__initialization_eqs)
+end
+export RLCModel
+
+Base.show(io::IO, a::MIME"image/svg+xml", t::typeof(RLCModel)) = print(io,
+  """<div style="height: 100%; width: 100%; background-color: white"><div style="margin: auto; height: 500px; width: 500px; padding: 200px"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+      <defs>
+        <filter id='red-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#ff0000" flood-opacity="0.5"/></filter>
+        <filter id='green-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#00ff00" flood-opacity="0.5"/></filter>
+        <filter id='blue-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#0000ff" flood-opacity="0.5"/></filter>
+        <filter id='drop-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="40" flood-opacity="0.5"/></filter>
+      </defs>
+    <g filter="url(#drop-shadow)" transform="translate(300 0) scale(0.2 0.2) rotate(90)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+    text {
+      transform-origin: center center;
+    }
+    </style><g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+    <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+        vector-effect="non-scaling-stroke" />
+    <path d="M 0 500 L 200 500 L 250 300 L 350 700 L 450 300 L 550 700 L 650 300 L 750 700 L 800 500 L 1000 500"
+        fill="transparent" stroke="black" stroke-width="8" />
+</svg></g>
+<g transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+<g transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">resistor</text>
+    <text x="500" y="150" transform="rotate(0, 0, -350)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">R=100Ω</text>
+    </svg></g>
+<g filter="url(#drop-shadow)" transform="translate(0 0) scale(0.2 0.2) rotate(90)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+    text {
+      transform-origin: center center;
+    }
+    </style><g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+    <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+        vector-effect="non-scaling-stroke" />
+    <path d="M 0 500 L 400 500 M 400 200 L 400 800 M 600 200 L 600 800 M 600 500 L 1000 500" stroke="black"
+        stroke-width="8"></path>
+</svg></g>
+<g transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+<g transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">capacitor</text>
+    <text x="500" y="150" transform="rotate(0, 0, -350)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">C=0.001F</text>
+    </svg></g>
+<g filter="url(#drop-shadow)" transform="translate(-200 -300) scale(0.2 0.2) rotate(180)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+    text {
+      transform-origin: center center;
+    }
+    </style><g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+    <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+        vector-effect="non-scaling-stroke" />
+    <g id="rings">
+        <circle cx="275" cy="500" r="75" fill="transparent" stroke="black" stroke-width="8" />
+        <circle cx="425" cy="500" r="75" fill="transparent" stroke="black" stroke-width="8" />
+        <circle cx="575" cy="500" r="75" fill="transparent" stroke="black" stroke-width="8" />
+        <circle cx="725" cy="500" r="75" fill="transparent" stroke="black" stroke-width="8" />
+    </g>
+
+    <rect x="100" y="500" width="800" height="100" fill="#d2dbed" />
+
+    <path d="M 0 500 L 200 500" fill="transparent" stroke="black" stroke-width="8" />
+    <path d="M 800 500 L 1000 500" fill="transparent" stroke="black" stroke-width="8" />
+</svg></g>
+<g transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+<g transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(180, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">inductor</text>
+    <text x="500" y="150" transform="rotate(180, 0, -350)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">L=1H</text>
+    </svg></g>
+<g filter="url(#drop-shadow)" transform="translate(-400 0) scale(0.2 0.2) rotate(90)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+    text {
+      transform-origin: center center;
+    }
+    </style><g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+    <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+        vector-effect="non-scaling-stroke" />
+    <text x="250" y="300" dominant-baseline="middle" text-anchor="middle" font-weight="200" font-size="300">+</text>
+    <text x="750" y="300" dominant-baseline="middle" text-anchor="middle" font-weight="200" font-size="300">-</text>
+    <path d="M 0 500 L 400 500 M 400 100 L 400 900 M 600 200 L 600 800 M 600 500 L 1000 500" stroke="black"
+        stroke-width="8"></path>
+</svg></g>
+<g transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+<g transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">source</text>
+    <text x="800" y="150" transform="rotate(0, 300, -350)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">10V</text>
+    </svg></g>
+<g filter="url(#drop-shadow)" transform="translate(0 500) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+    text {
+      transform-origin: center center;
+    }
+    </style><g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+    <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+        vector-effect="non-scaling-stroke" />
+    <path d="M 500 0 L 500 300 M 100 300 L 900 300 M 200 475 L 800 475 M 300 650 L 700 650 M 400 825 L 600 825"
+        stroke="black" stroke-width="8" />
+</svg></g>
+<g transform="translate(0 -500) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">ground</text>
+    </svg></g>
+    <path d="M 100 400 L 100 200 L 200 200 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 400 200 L 500 200 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 800 400 L 800 200 L 500 200 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 500 400 L 500 200 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 800 600 L 800 800 L 500 800 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 500 900 L 500 800 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 500 600 L 500 800 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 500 800 L 100 800 L 100 600 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <circle cx="500" cy="200" r="5" fill="blue" />
+    <circle cx="500" cy="800" r="5" fill="blue" />
+    <text x="800" y="100" transform="rotate(0, 300, -400)" fill="black" font-size="100" font-weight="200" dominant-baseline="central" text-anchor="middle">RLC Model</text>
+      </svg></div></div>""")
+",
+  "generated/RLCModel_experiment.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+"""Run model RLCModel from 0 to 10"""
+function simple()
+  @mtkbuild model = RLCModel()
+  u0 = [model.capacitor.v => 10, model.inductor.i => 0]
+  prob = ODEProblem(model, u0, (0, 10))
+  sol = solve(prob)
+end
+export simple
+",
+  "generated/RLCModel_test.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+@test try
+    simple()
+    true
+catch
+    false
+end
+@testset "Running test case1 for RLCModel" begin
+  using CSV, DataFrames, Plots
+
+  @mtkbuild model = RLCModel()
+  u0 = []
+  prob = ODEProblem(model, u0, (0, 10))
+  sol = solve(prob, DefaultODEAlgorithm())
+  @test SciMLBase.successful_retcode(sol)
+  @test sol.t[1] ≈ 0
+  @test sol[model.capacitor.v][1] ≈ 10
+  @test sol.t[end] ≈ 10
+# Signals selected for regression testing: []
+  ref_times = [sol(t, idxs=:t) for t in LinRange(sol[:t][1], sol[:t][end], 100)]
+  if get(ENV, "DYAD_UPDATE_REFS", "") !== ""
+    # If asked to update snapshots, write out reference data for all signals
+    mkpath("snapshots")
+  end
+end
+",
+  "generated/Resistor_definition.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+@doc Markdown.doc"""
+   Resistor(; name, R)
+
+A simple linear resistor model
+
+![Resistor](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpJkiEyqh-BRx27pvVH0GLZ4MP_D1oriBwJhnZdgIq7m17z9VKUWaW9MeNQAz1rTML2ho&usqp=CAU)
+
+## Parameters: 
+
+| Name         | Description                         | Units  |   Default value |
+| ------------ | ----------------------------------- | ------ | --------------- |
+| \`R\`         | Resistance of this Resistor                         | Ω  |    |
+
+## Connectors
+
+ * \`p\` - This connector represents an electrical pin with voltage and current as the potential and flow variables, respectively. ([\`Pin\`](@ref))
+ * \`n\` - This connector represents an electrical pin with voltage and current as the potential and flow variables, respectively. ([\`Pin\`](@ref))
+
+## Variables
+
+| Name         | Description                         | Units  | 
+| ------------ | ----------------------------------- | ------ | 
+| \`v\`         |                          | V  | 
+| \`i\`         |                          | A  | 
+"""
+@component function Resistor(; name, R=nothing)
+
+  ### Symbolic Parameters
+  __params = Any[]
+  append!(__params, @parameters (R::Float64 = R), [description = "Resistance of this Resistor"])
+
+  ### Variables
+  __vars = Any[]
+  append!(__vars, @variables (v(t)))
+  append!(__vars, @variables (i(t)))
+
+  ### Constants
+  __constants = Any[]
+
+  ### Components
+  __systems = ODESystem[]
+  push!(__systems, @named p = __Dyad__Pin())
+  push!(__systems, @named n = __Dyad__Pin())
+
+  ### Defaults
+  __defaults = Dict()
+
+  ### Initialization Equations
+  __initialization_eqs = []
+
+  ### Equations
+  __eqs = Equation[]
+  push!(__eqs, v ~ p.v - n.v)
+  push!(__eqs, i ~ p.i)
+  push!(__eqs, p.i + n.i ~ 0)
+  # Ohm's Law
+  push!(__eqs, v ~ i * R)
+
+  # Return completely constructed ODESystem
+  return ODESystem(__eqs, t, __vars, __params; systems=__systems, defaults=__defaults, name, initialization_eqs=__initialization_eqs)
+end
+export Resistor
+
+Base.show(io::IO, a::MIME"image/svg+xml", t::typeof(Resistor)) = print(io,
+  """<div style="height: 100%; width: 100%; background-color: white"><div style="margin: auto; height: 500px; width: 500px; padding: 200px"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+      <defs>
+        <filter id='red-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#ff0000" flood-opacity="0.5"/></filter>
+        <filter id='green-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#00ff00" flood-opacity="0.5"/></filter>
+        <filter id='blue-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#0000ff" flood-opacity="0.5"/></filter>
+        <filter id='drop-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="40" flood-opacity="0.5"/></filter>
+      </defs>
+    <g  transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+<g  transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+      </svg></div></div>""")
+",
+  "generated/Resistor_experiment.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+
+",
+  "generated/Resistor_test.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+
+",
+  "generated/SinRLC_definition.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+@doc Markdown.doc"""
+   SinRLC(; name)
+
+This is an RLC model.  This should support markdown.  That includes
+HTML as well.
+"""
+@component function SinRLC(; name)
+
+  ### Symbolic Parameters
+  __params = Any[]
+
+  ### Variables
+  __vars = Any[]
+
+  ### Constants
+  __constants = Any[]
+
+  ### Components
+  __systems = ODESystem[]
+  push!(__systems, @named resistor = ElectricalComponents.Resistor(R=100))
+  push!(__systems, @named capacitor = ElectricalComponents.Capacitor(C=0.001))
+  push!(__systems, @named inductor = ElectricalComponents.Inductor(L=1))
+  push!(__systems, @named source = ElectricalComponents.VoltageSource())
+  push!(__systems, @named sine = ElectricalComponents.Sine(frequency=1, amplitude=1, phase=0))
+  push!(__systems, @named ground = ElectricalComponents.Ground())
+
+  ### Defaults
+  __defaults = Dict()
+  __defaults[inductor.i] = (0)
+  __defaults[capacitor.v] = (10)
+
+  ### Initialization Equations
+  __initialization_eqs = []
+
+  ### Equations
+  __eqs = Equation[]
+  push!(__eqs, connect(source.p, inductor.n))
+  push!(__eqs, sine.y ~ source.V)
+  push!(__eqs, connect(inductor.p, resistor.p, capacitor.p))
+  push!(__eqs, connect(resistor.n, ground.g, capacitor.n, source.n))
+
+  # Return completely constructed ODESystem
+  return ODESystem(__eqs, t, __vars, __params; systems=__systems, defaults=__defaults, name, initialization_eqs=__initialization_eqs)
+end
+export SinRLC
+
+Base.show(io::IO, a::MIME"image/svg+xml", t::typeof(SinRLC)) = print(io,
+  """<div style="height: 100%; width: 100%; background-color: white"><div style="margin: auto; height: 500px; width: 500px; padding: 200px"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+      <defs>
+        <filter id='red-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#ff0000" flood-opacity="0.5"/></filter>
+        <filter id='green-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#00ff00" flood-opacity="0.5"/></filter>
+        <filter id='blue-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#0000ff" flood-opacity="0.5"/></filter>
+        <filter id='drop-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="40" flood-opacity="0.5"/></filter>
+      </defs>
+    <g filter="url(#drop-shadow)" transform="translate(300 0) scale(0.2 0.2) rotate(90)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+    text {
+      transform-origin: center center;
+    }
+    </style><g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+    <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+        vector-effect="non-scaling-stroke" />
+    <path d="M 0 500 L 200 500 L 250 300 L 350 700 L 450 300 L 550 700 L 650 300 L 750 700 L 800 500 L 1000 500"
+        fill="transparent" stroke="black" stroke-width="8" />
+</svg></g>
+<g transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+<g transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">resistor</text>
+    <text x="500" y="150" transform="rotate(0, 0, -350)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">R=100Ω</text>
+    </svg></g>
+<g filter="url(#drop-shadow)" transform="translate(0 0) scale(0.2 0.2) rotate(90)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+    text {
+      transform-origin: center center;
+    }
+    </style><g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+    <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+        vector-effect="non-scaling-stroke" />
+    <path d="M 0 500 L 400 500 M 400 200 L 400 800 M 600 200 L 600 800 M 600 500 L 1000 500" stroke="black"
+        stroke-width="8"></path>
+</svg></g>
+<g transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+<g transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">capacitor</text>
+    <text x="500" y="150" transform="rotate(0, 0, -350)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">C=0.001F</text>
+    </svg></g>
+<g filter="url(#drop-shadow)" transform="translate(-200 -300) scale(0.2 0.2) rotate(180)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+    text {
+      transform-origin: center center;
+    }
+    </style><g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+    <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+        vector-effect="non-scaling-stroke" />
+    <g id="rings">
+        <circle cx="275" cy="500" r="75" fill="transparent" stroke="black" stroke-width="8" />
+        <circle cx="425" cy="500" r="75" fill="transparent" stroke="black" stroke-width="8" />
+        <circle cx="575" cy="500" r="75" fill="transparent" stroke="black" stroke-width="8" />
+        <circle cx="725" cy="500" r="75" fill="transparent" stroke="black" stroke-width="8" />
+    </g>
+
+    <rect x="100" y="500" width="800" height="100" fill="#d2dbed" />
+
+    <path d="M 0 500 L 200 500" fill="transparent" stroke="black" stroke-width="8" />
+    <path d="M 800 500 L 1000 500" fill="transparent" stroke="black" stroke-width="8" />
+</svg></g>
+<g transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+<g transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(180, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">inductor</text>
+    <text x="500" y="150" transform="rotate(180, 0, -350)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">L=1H</text>
+    </svg></g>
+<g filter="url(#drop-shadow)" transform="translate(-400 0) scale(0.2 0.2) rotate(90)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+    text {
+      transform-origin: center center;
+    }
+    </style><g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" id="a" width="1000" height="1000" viewBox="0 0 1000 1000"
+><defs><style>.b {fill: none;}.b,.c {stroke: #b6b4cf;stroke-linejoin: round;stroke-width: 8px;}.c,.d {  fill: #fff;}.e {fill: #6e6ea1;}.e,.d {stroke-width: 0px;}</style>
+  </defs><rect class="d" x="4" y="4" width="992" height="992" /><path class="e" d="M992,8v984H8V8h984M1000,0H0v1000h1000V0h0Z" /><path class="b"
+    d="M361.83,226.44c-62.23-3.99-115.91,43.22-119.9,105.45-3.99,62.23,43.22,115.91,105.45,119.9,62.23,3.99,115.91-43.22,119.9-105.45,3.99-62.23-43.22-115.91-105.45-119.9ZM413.76,342.91c-2.09,32.67-30.28,57.46-62.95,55.36-32.67-2.1-57.46-30.28-55.36-62.95,2.09-32.67,30.28-57.46,62.95-55.36,32.67,2.09,57.45,30.28,55.36,62.95Z"
+  /><circle class="b" cx="353.85" cy="682.11" r="80.62" /><circle class="b" cx="652.79" cy="644.36" r="52.47" /><polyline class="b" points="410.2 624.82 698.58 340.68 464.78 340.68" /><line class="b" x1="617.63" y1="609.81" x2="432.03" y2="420.13" /><circle class="c" cx="696.98" cy="340.44" r="54.47" />
+</svg></g>
+<g transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+<g transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">source</text>
+    </svg></g>
+<g filter="url(#drop-shadow)" transform="translate(0 500) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+    text {
+      transform-origin: center center;
+    }
+    </style><g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+    <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+        vector-effect="non-scaling-stroke" />
+    <path d="M 500 0 L 500 300 M 100 300 L 900 300 M 200 475 L 800 475 M 300 650 L 700 650 M 400 825 L 600 825"
+        stroke="black" stroke-width="8" />
+</svg></g>
+<g transform="translate(0 -500) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">ground</text>
+    </svg></g>
+    <path d="M 100 400 L 100 200 L 200 200 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 400 200 L 500 200 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 800 400 L 800 200 L 500 200 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 500 400 L 500 200 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 800 600 L 800 800 L 500 800 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 500 900 L 500 800 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 500 600 L 500 800 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 500 800 L 100 800 L 100 600 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <circle cx="500" cy="200" r="5" fill="blue" />
+    <circle cx="500" cy="800" r="5" fill="blue" />
+      </svg></div></div>""")
+",
+  "generated/SinRLC_experiment.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+"""Run model SinRLC from 0 to 10"""
+function simple_sine()
+  @mtkbuild model = SinRLC()
+  u0 = [model.capacitor.v => 10, model.inductor.i => 0]
+  prob = ODEProblem(model, u0, (0, 10))
+  sol = solve(prob)
+end
+export simple_sine
+",
+  "generated/SinRLC_test.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+@test try
+    simple_sine()
+    true
+catch
+    false
+end
+@testset "Running test case1 for SinRLC" begin
+  using CSV, DataFrames, Plots
+
+  @mtkbuild model = SinRLC()
+  u0 = []
+  prob = ODEProblem(model, u0, (0, 10))
+  sol = solve(prob, DefaultODEAlgorithm())
+  @test SciMLBase.successful_retcode(sol)
+  @test sol.t[1] ≈ 0
+  @test sol[model.capacitor.v][1] ≈ 10
+  @test sol.t[end] ≈ 10
+# Signals selected for regression testing: []
+  ref_times = [sol(t, idxs=:t) for t in LinRange(sol[:t][1], sol[:t][end], 100)]
+  if get(ENV, "DYAD_UPDATE_REFS", "") !== ""
+    # If asked to update snapshots, write out reference data for all signals
+    mkpath("snapshots")
+  end
+end
+",
+  "generated/Sine_definition.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+@doc Markdown.doc"""
+   Sine(; name, frequency, amplitude, phase)
+
+## Parameters: 
+
+| Name         | Description                         | Units  |   Default value |
+| ------------ | ----------------------------------- | ------ | --------------- |
+| \`frequency\`         |                          | Hz  |    |
+| \`amplitude\`         |                          | --  |    |
+| \`phase\`         |                          | rad  |    |
+
+## Connectors
+
+ * \`y\` - ([\`RealOutput\`](@ref))
+"""
+@component function Sine(; name, frequency=nothing, amplitude=nothing, phase=nothing)
+
+  ### Symbolic Parameters
+  __params = Any[]
+  append!(__params, @parameters (frequency::Float64 = frequency))
+  append!(__params, @parameters (amplitude::Float64 = amplitude))
+  append!(__params, @parameters (phase::Float64 = phase))
+
+  ### Variables
+  __vars = Any[]
+  append!(__vars, @variables y(t), [output = true])
+
+  ### Constants
+  __constants = Any[]
+
+  ### Components
+  __systems = ODESystem[]
+
+  ### Defaults
+  __defaults = Dict()
+
+  ### Initialization Equations
+  __initialization_eqs = []
+
+  ### Equations
+  __eqs = Equation[]
+  push!(__eqs, y ~ amplitude * sin(frequency * 2 * pi * t + phase))
+
+  # Return completely constructed ODESystem
+  return ODESystem(__eqs, t, __vars, __params; systems=__systems, defaults=__defaults, name, initialization_eqs=__initialization_eqs)
+end
+export Sine
+
+Base.show(io::IO, a::MIME"image/svg+xml", t::typeof(Sine)) = print(io,
+  """<div style="height: 100%; width: 100%; background-color: white"><div style="margin: auto; height: 500px; width: 500px; padding: 200px"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+      <defs>
+        <filter id='red-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#ff0000" flood-opacity="0.5"/></filter>
+        <filter id='green-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#00ff00" flood-opacity="0.5"/></filter>
+        <filter id='blue-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#0000ff" flood-opacity="0.5"/></filter>
+        <filter id='drop-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="40" flood-opacity="0.5"/></filter>
+      </defs>
+    
+      </svg></div></div>""")
+",
+  "generated/Sine_experiment.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+
+",
+  "generated/Sine_test.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+
+",
+  "generated/VoltagePulse_definition.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+@doc Markdown.doc"""
+   VoltagePulse(; name, Vbase, Vpulse, start, stop)
+
+## Parameters: 
+
+| Name         | Description                         | Units  |   Default value |
+| ------------ | ----------------------------------- | ------ | --------------- |
+| \`Vbase\`         |                          | V  |    |
+| \`Vpulse\`         |                          | V  |    |
+| \`start\`         |                          | s  |    |
+| \`stop\`         |                          | s  |    |
+
+## Connectors
+
+ * \`p\` - This connector represents an electrical pin with voltage and current as the potential and flow variables, respectively. ([\`Pin\`](@ref))
+ * \`n\` - This connector represents an electrical pin with voltage and current as the potential and flow variables, respectively. ([\`Pin\`](@ref))
+
+## Variables
+
+| Name         | Description                         | Units  | 
+| ------------ | ----------------------------------- | ------ | 
+| \`v\`         |                          | V  | 
+| \`i\`         |                          | A  | 
+"""
+@component function VoltagePulse(; name, Vbase=nothing, Vpulse=nothing, start=nothing, stop=nothing)
+
+  ### Symbolic Parameters
+  __params = Any[]
+  append!(__params, @parameters (Vbase::Float64 = Vbase))
+  append!(__params, @parameters (Vpulse::Float64 = Vpulse))
+  append!(__params, @parameters (start::Float64 = start))
+  append!(__params, @parameters (stop::Float64 = stop))
+
+  ### Variables
+  __vars = Any[]
+  append!(__vars, @variables (v(t)))
+  append!(__vars, @variables (i(t)))
+
+  ### Constants
+  __constants = Any[]
+
+  ### Components
+  __systems = ODESystem[]
+  push!(__systems, @named p = __Dyad__Pin())
+  push!(__systems, @named n = __Dyad__Pin())
+
+  ### Defaults
+  __defaults = Dict()
+
+  ### Initialization Equations
+  __initialization_eqs = []
+
+  ### Equations
+  __eqs = Equation[]
+  push!(__eqs, v ~ p.v - n.v)
+  push!(__eqs, i ~ p.i)
+  push!(__eqs, p.i + n.i ~ 0)
+  push!(__eqs, v ~ ifelse((t > start) & (t < stop), Vpulse, Vbase))
+
+  # Return completely constructed ODESystem
+  return ODESystem(__eqs, t, __vars, __params; systems=__systems, defaults=__defaults, name, initialization_eqs=__initialization_eqs)
+end
+export VoltagePulse
+
+Base.show(io::IO, a::MIME"image/svg+xml", t::typeof(VoltagePulse)) = print(io,
+  """<div style="height: 100%; width: 100%; background-color: white"><div style="margin: auto; height: 500px; width: 500px; padding: 200px"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+      <defs>
+        <filter id='red-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#ff0000" flood-opacity="0.5"/></filter>
+        <filter id='green-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#00ff00" flood-opacity="0.5"/></filter>
+        <filter id='blue-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#0000ff" flood-opacity="0.5"/></filter>
+        <filter id='drop-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="40" flood-opacity="0.5"/></filter>
+      </defs>
+    <g  transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+<g  transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+      </svg></div></div>""")
+",
+  "generated/VoltagePulse_experiment.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+
+",
+  "generated/VoltagePulse_test.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+
+",
+  "generated/VoltageSource_definition.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+@doc Markdown.doc"""
+   VoltageSource(; name, uV)
+
+## Parameters: 
+
+| Name         | Description                         | Units  |   Default value |
+| ------------ | ----------------------------------- | ------ | --------------- |
+| \`uV\`         |                          | V  |   1 |
+
+## Connectors
+
+ * \`p\` - This connector represents an electrical pin with voltage and current as the potential and flow variables, respectively. ([\`Pin\`](@ref))
+ * \`n\` - This connector represents an electrical pin with voltage and current as the potential and flow variables, respectively. ([\`Pin\`](@ref))
+ * \`V\` - ([\`RealInput\`](@ref))
+
+## Variables
+
+| Name         | Description                         | Units  | 
+| ------------ | ----------------------------------- | ------ | 
+| \`v\`         |                          | V  | 
+| \`i\`         |                          | A  | 
+"""
+@component function VoltageSource(; name, uV=1)
+
+  ### Symbolic Parameters
+  __params = Any[]
+  append!(__params, @parameters (uV::Float64 = uV))
+
+  ### Variables
+  __vars = Any[]
+  append!(__vars, @variables V(t), [input = true])
+  append!(__vars, @variables (v(t)))
+  append!(__vars, @variables (i(t)))
+
+  ### Constants
+  __constants = Any[]
+
+  ### Components
+  __systems = ODESystem[]
+  push!(__systems, @named p = __Dyad__Pin())
+  push!(__systems, @named n = __Dyad__Pin())
+
+  ### Defaults
+  __defaults = Dict()
+
+  ### Initialization Equations
+  __initialization_eqs = []
+
+  ### Equations
+  __eqs = Equation[]
+  push!(__eqs, v ~ p.v - n.v)
+  push!(__eqs, i ~ p.i)
+  push!(__eqs, p.i + n.i ~ 0)
+  push!(__eqs, v ~ V * uV)
+
+  # Return completely constructed ODESystem
+  return ODESystem(__eqs, t, __vars, __params; systems=__systems, defaults=__defaults, name, initialization_eqs=__initialization_eqs)
+end
+export VoltageSource
+
+Base.show(io::IO, a::MIME"image/svg+xml", t::typeof(VoltageSource)) = print(io,
+  """<div style="height: 100%; width: 100%; background-color: white"><div style="margin: auto; height: 500px; width: 500px; padding: 200px"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+      <defs>
+        <filter id='red-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#ff0000" flood-opacity="0.5"/></filter>
+        <filter id='green-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#00ff00" flood-opacity="0.5"/></filter>
+        <filter id='blue-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#0000ff" flood-opacity="0.5"/></filter>
+        <filter id='drop-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="40" flood-opacity="0.5"/></filter>
+      </defs>
+    <g  transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+<g  transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+  shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+  <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+      vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+      </svg></div></div>""")
+",
+  "generated/VoltageSource_experiment.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+
+",
+  "generated/VoltageSource_test.jl": "### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+
+",
+  "generated/definitions.jl": "
+### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+using ModelingToolkit
+import Markdown
+using ModelingToolkit: t_nounits as t
+using OrdinaryDiffEqDefault
+using RuntimeGeneratedFunctions
+RuntimeGeneratedFunctions.init(@__MODULE__)
+
+D = Differential(t)
+
+@doc Markdown.doc"""
+This connector represents an electrical pin with voltage and current as the potential and flow variables, respectively.
+"""
+@connector function __Dyad__Pin(; name)
+  vars = @variables begin
+    v(t), []
+    i(t), [connect = Flow]
+  end
+  return ODESystem(Equation[], t, vars, []; name)
+end
+@doc Markdown.doc"""
+This connector represents a thermal node with temperature and heat flow as the potential and flow variables, respectively.
+"""
+@connector function __Dyad__Node(; name)
+  vars = @variables begin
+    T(t), []
+    Q(t), [connect = Flow]
+  end
+  return ODESystem(Equation[], t, vars, []; name)
+end
+@doc Markdown.doc"""
+This connector represents a mechanical flange with position and force as the potential and flow variables, respectively.
+"""
+@connector function __Dyad__Flange(; name)
+  vars = @variables begin
+    s(t), []
+    f(t), [connect = Flow]
+  end
+  return ODESystem(Equation[], t, vars, []; name)
+end
+@doc Markdown.doc"""
+This connector represents a rotational spline with angle and torque as the potential and flow variables, respectively.
+"""
+@connector function __Dyad__Spline(; name)
+  vars = @variables begin
+    phi(t), []
+    tau(t), [connect = Flow]
+  end
+  return ODESystem(Equation[], t, vars, []; name)
+end
+
+include("Inductor_definition.jl")
+include("ConstantVoltage_definition.jl")
+include("DeSauty_definition.jl")
+include("RLCModel_definition.jl")
+include("Capacitor_definition.jl")
+include("SinRLC_definition.jl")
+include("Resistor_definition.jl")
+include("VoltageSource_definition.jl")
+include("Ground_definition.jl")
+include("Sine_definition.jl")
+include("VoltagePulse_definition.jl")",
+  "generated/experiments.jl": "
+### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+
+include("Inductor_experiment.jl")
+include("ConstantVoltage_experiment.jl")
+include("DeSauty_experiment.jl")
+include("RLCModel_experiment.jl")
+include("Capacitor_experiment.jl")
+include("SinRLC_experiment.jl")
+include("Resistor_experiment.jl")
+include("VoltageSource_experiment.jl")
+include("Ground_experiment.jl")
+include("Sine_experiment.jl")
+include("VoltagePulse_experiment.jl")",
+  "generated/precompilation.jl": "
+### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+using PrecompileTools: @setup_workload, @compile_workload
+
+@setup_workload begin
+    @compile_workload begin
+        simple()
+        simple_sine()
+    end
+end
+",
+  "generated/tests.jl": "
+### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+using ModelingToolkit
+import Markdown
+using OrdinaryDiffEqDefault
+using RuntimeGeneratedFunctions
+RuntimeGeneratedFunctions.init(@__MODULE__)
+
+
+
+include("Inductor_test.jl")
+include("ConstantVoltage_test.jl")
+include("DeSauty_test.jl")
+include("RLCModel_test.jl")
+include("Capacitor_test.jl")
+include("SinRLC_test.jl")
+include("Resistor_test.jl")
+include("VoltageSource_test.jl")
+include("Ground_test.jl")
+include("Sine_test.jl")
+include("VoltagePulse_test.jl")",
+  "generated/types.jl": "
+### DO NOT EDIT THIS FILE
+### This file is auto-generated by the Dyad command-line compiler.
+### If you edit this code it is likely to get overwritten.
+### Instead, update the Dyad source code and regenerate this file
+
+using ModelingToolkit
+",
+}
+`;

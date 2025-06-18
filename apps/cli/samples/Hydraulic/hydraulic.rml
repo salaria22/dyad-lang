@@ -1,0 +1,42 @@
+model MTK begin
+	parameter A_0::Real = 0.00094
+	parameter rho_0::Real = 1000
+	parameter C_0::Real = 2.7
+	parameter A::Real = 0.1
+	parameter beta::Real = 2.0e9
+	parameter act_vol1_direction::Real = -1
+	parameter act_vol2_direction::Real = 1
+	parameter act_mass_m::Real = 100
+	parameter src_p::Real = 1.1e7
+	parameter snk_p::Real = 9.0e6
+	parameter dmp_c::Real = 1000
+	
+    variable act_vol1_x::Real
+	variable act_vol1_r::Real
+	variable act_vol2_x::Real
+	variable act_vol2_r::Real
+	variable act_mass_x::Real
+	variable act_mass_dx::Real
+	variable act_vol1_dr::Real
+	variable act_vol2_dr::Real
+	variable res1_dm::Real
+	variable res2_dm::Real
+initial equations
+    act_vol1_x = 1
+	act_vol1_r = 1005.5000000000001
+	act_vol2_x = 1
+	act_vol2_r = 1004.5
+	act_mass_x = 0
+	act_mass_dx = 0
+equations
+	der(act_vol1_x) = act_vol1_direction*act_mass_dx
+	der(act_vol1_r) = act_vol1_dr
+	der(act_vol2_x) = act_vol2_direction*act_mass_dx
+	der(act_vol2_r) = act_vol2_dr
+	der(act_mass_x) = act_mass_dx
+	der(act_mass_dx) = ((-A*(-act_vol1_r + rho_0)*beta) / (act_vol1_direction*rho_0) + (-A*(-act_vol2_r + rho_0)*beta) / (act_vol2_direction*rho_0) - dmp_c*act_mass_dx) / act_mass_m
+	0 = -src_p + ((act_vol1_r - rho_0)*beta) / rho_0 + 0.5*C_0*((res1_dm / (A_0*rho_0))^2)*rho_0
+	0 = snk_p + ((-act_vol2_r + rho_0)*beta) / rho_0 + 0.5*C_0*((res2_dm / (A_0*rho_0))^2)*rho_0
+	0 = -res1_dm + A*act_vol1_x*act_vol1_dr + A*act_vol1_direction*act_mass_dx*act_vol1_r
+	0 = res2_dm + A*act_vol2_dr*act_vol2_x + A*act_vol2_direction*act_mass_dx*act_vol2_r
+end

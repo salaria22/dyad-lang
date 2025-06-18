@@ -1,0 +1,14 @@
+component Reservoir
+  port = HydraulicPort()
+  parameter p0::Pressure
+  final parameter rho0::Density = density(port.medium, p0); 
+  variable rho::Density
+relations
+  # This equation is here just to reference common variables on the connector
+  rho = density(port.medium, port.p)
+  port.p = p0
+end
+
+partial component Reservoir0 
+  extends Reservoir(p0=101325)
+end

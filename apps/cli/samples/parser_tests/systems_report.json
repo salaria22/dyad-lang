@@ -1,0 +1,329 @@
+{
+  "library": {
+    "kind": "lib",
+    "name": "???",
+    "directory": "???",
+    "module": [],
+    "files": [
+      {
+        "kind": "file",
+        "source": "???",
+        "definitions": [
+          {
+            "kind": "mod",
+            "imports": [],
+            "partial": false,
+            "name": "RLCModel",
+            "start": 90,
+            "end": 640,
+            "extends": [],
+            "declarations": {
+              "resistor": {
+                "kind": "comp",
+                "start": 113,
+                "end": 121,
+                "instance": {
+                  "kind": "tq",
+                  "name": "Resistor",
+                  "mods": {
+                    "R": {
+                      "type": "ilit",
+                      "value": 100,
+                      "prefix": null
+                    }
+                  }
+                },
+                "constraint": "Resistor",
+                "dims": [],
+                "doc_string": null,
+                "metadata": null
+              },
+              "capacitor": {
+                "kind": "comp",
+                "start": 142,
+                "end": 151,
+                "instance": {
+                  "kind": "tq",
+                  "name": "Capacitator",
+                  "mods": {
+                    "C": {
+                      "type": "rlit",
+                      "value": 0.001,
+                      "prefix": "m"
+                    }
+                  }
+                },
+                "constraint": "Capacitator",
+                "dims": [],
+                "doc_string": null,
+                "metadata": null
+              },
+              "inductor": {
+                "kind": "comp",
+                "start": 174,
+                "end": 182,
+                "instance": {
+                  "kind": "tq",
+                  "name": "Inductor",
+                  "mods": {
+                    "L": {
+                      "type": "ilit",
+                      "value": 1,
+                      "prefix": null
+                    }
+                  }
+                },
+                "constraint": "Inductor",
+                "dims": [],
+                "doc_string": null,
+                "metadata": null
+              },
+              "source": {
+                "kind": "comp",
+                "start": 201,
+                "end": 207,
+                "instance": {
+                  "kind": "tq",
+                  "name": "VoltageSource",
+                  "mods": {
+                    "Vf": {
+                      "type": "ilit",
+                      "value": 24,
+                      "prefix": null
+                    }
+                  }
+                },
+                "constraint": "TwoPin",
+                "dims": [],
+                "doc_string": null,
+                "metadata": null
+              },
+              "ground": {
+                "kind": "comp",
+                "start": 241,
+                "end": 247,
+                "instance": {
+                  "kind": "tq",
+                  "name": "Ground",
+                  "mods": {}
+                },
+                "constraint": "Ground",
+                "dims": [],
+                "doc_string": null,
+                "metadata": null
+              }
+            },
+            "equations": [],
+            "connections": [
+              {
+                "connectors": [
+                  {
+                    "type": "cref",
+                    "elems": [
+                      {
+                        "name": "source",
+                        "elems": []
+                      },
+                      {
+                        "name": "p",
+                        "elems": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "cref",
+                    "elems": [
+                      {
+                        "name": "inductor",
+                        "elems": []
+                      },
+                      {
+                        "name": "p",
+                        "elems": []
+                      }
+                    ]
+                  }
+                ],
+                "metadata": {
+                  "Dyad": {
+                    "path": [[]]
+                  }
+                }
+              },
+              {
+                "connectors": [
+                  {
+                    "type": "cref",
+                    "elems": [
+                      {
+                        "name": "inductor",
+                        "elems": []
+                      },
+                      {
+                        "name": "n",
+                        "elems": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "cref",
+                    "elems": [
+                      {
+                        "name": "resistor",
+                        "elems": []
+                      },
+                      {
+                        "name": "p",
+                        "elems": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "cref",
+                    "elems": [
+                      {
+                        "name": "capacitor",
+                        "elems": []
+                      },
+                      {
+                        "name": "p",
+                        "elems": []
+                      }
+                    ]
+                  }
+                ],
+                "metadata": {
+                  "Dyad": {
+                    "path": [
+                      [
+                        {
+                          "x": 1,
+                          "y": 10
+                        }
+                      ],
+                      [
+                        {
+                          "x": 5,
+                          "y": 10
+                        },
+                        {
+                          "x": 5,
+                          "y": 20
+                        }
+                      ]
+                    ]
+                  }
+                }
+              },
+              {
+                "connectors": [
+                  {
+                    "type": "cref",
+                    "elems": [
+                      {
+                        "name": "resistor",
+                        "elems": []
+                      },
+                      {
+                        "name": "n",
+                        "elems": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "cref",
+                    "elems": [
+                      {
+                        "name": "ground",
+                        "elems": []
+                      },
+                      {
+                        "name": "g",
+                        "elems": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "cref",
+                    "elems": [
+                      {
+                        "name": "capacitor",
+                        "elems": []
+                      },
+                      {
+                        "name": "n",
+                        "elems": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "cref",
+                    "elems": [
+                      {
+                        "name": "source",
+                        "elems": []
+                      },
+                      {
+                        "name": "n",
+                        "elems": []
+                      }
+                    ]
+                  }
+                ],
+                "metadata": null
+              }
+            ],
+            "doc_string": {
+              "string": "\"\"\"\nThis is an RLC model.  This should support markdown.  That includes\nHTML as well.\n\"\"\"",
+              "tripleQuoted": true
+            },
+            "metadata": null
+          },
+          {
+            "kind": "mod",
+            "imports": [],
+            "partial": false,
+            "name": "RLCModel2",
+            "start": 642,
+            "end": 724,
+            "extends": [
+              {
+                "kind": "tq",
+                "name": "RLCModel",
+                "mods": {
+                  "source": {
+                    "type": "call",
+                    "func": {
+                      "type": "cref",
+                      "elems": [
+                        {
+                          "name": "CurrentSource",
+                          "elems": []
+                        }
+                      ]
+                    },
+                    "positional": [],
+                    "keyword": {
+                      "i_final": {
+                        "type": "rlit",
+                        "value": 0.0015,
+                        "prefix": "m"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "declarations": {},
+            "equations": [],
+            "connections": [],
+            "doc_string": null,
+            "metadata": null
+          }
+        ]
+      }
+    ]
+  },
+  "semantic": [],
+  "syntax": []
+}

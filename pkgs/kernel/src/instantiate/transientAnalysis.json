@@ -1,0 +1,42 @@
+{
+  "title": "Transient Analysis",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Analysis Type",
+      "default": "TransientAnalysis"
+    },
+    "model": {
+      "type": "string",
+      "description": "Model to simulate",
+      "dyad:class": "component_definition"
+    },
+    "integrator": {
+      "enum": ["auto", "Rodas4", "FBDF", "Tsit5"]
+    },
+    "abstol": {
+      "type": "number",
+      "description": "Absolute tolerance to use during the simulation"
+    },
+    "reltol": {
+      "type": "number",
+      "description": "Relative tolerance to use during the simulation"
+    },
+    "start": {
+      "type": "number",
+      "description": "Start time of simulation",
+      "default": 0
+    },
+    "stop": {
+      "type": "number",
+      "description": "Stop time of simulation"
+    },
+    "dtmax": {
+      "description": "Maximum time step",
+      "type": "number",
+      "minimum": 0
+    }
+  },
+  "required": ["name", "model", "integrator", "abstol", "reltol", "stop"]
+}

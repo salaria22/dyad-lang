@@ -1,0 +1,119 @@
+{
+  "title": "Optimization Analysis",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Analysis Type",
+      "default": "OptimizationAnalysis"
+    },
+    "result": {
+      "type": "string",
+      "description": "Analysis to optimize",
+      "dyad:class": "analysis_definition"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "filename": {
+          "title": "Dataset filename",
+          "type": "string"
+        },
+        "ivar": {
+          "title": "Independent variable",
+          "type": "string"
+        },
+        "dvar": {
+          "title": "Dependent variable",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": ["filename", "ivar", "dvar"]
+    },
+    "method": {
+      "enum": [
+        "SingleShooting",
+        "MultipleShooting",
+        "SplineCollocation",
+        "KernelCollocation"
+      ],
+      "description": "Optimization method to use"
+    },
+    "optimizer": {
+      "enum": ["Ipopt", "BBO"],
+      "description": "Optimization algorithm to use"
+    },
+    "loss": {
+      "enum": ["l2loss"],
+      "description": "Loss function"
+    },
+    "maxiters": {
+      "type": "number",
+      "description": "Maximum iterations"
+    },
+    "trajectories": {
+      "type": "number",
+      "description": "Number of trajectories"
+    },
+    "pem": {
+      "title": "PEM Factor",
+      "type": "number",
+      "min": 0,
+      "max": 1
+    },
+    "parameters": {
+      "type": "object",
+      "additional_properties": {
+        "type": "object",
+        "properties": {
+          "min": {
+            "type": "number"
+          },
+          "max": {
+            "type": "number"
+          },
+          "default": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "lhs": {
+            "type": "string",
+            "dyad:class": "expr"
+          },
+          "rhs": {
+            "type": "string",
+            "dyad:class": "expr"
+          }
+        }
+      }
+    },
+    "signals": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "dyad:class": "component_reference"
+      },
+      "dyad:size": "data.depvars"
+    }
+  },
+  "required": [
+    "name",
+    "result",
+    "data",
+    "method",
+    "optimizer",
+    "loss",
+    "maxiters",
+    "signals"
+  ]
+}

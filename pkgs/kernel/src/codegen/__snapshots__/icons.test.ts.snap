@@ -1,0 +1,221 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test SVG generation Test RLC Icon generation 1`] = `
+"<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+    text {
+      transform-origin: center center;
+    }
+    </style><g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" id="a" width="1000" height="1000" viewBox="0 0 1000 1000"
+><defs><style>.b {fill: none;}.b,.c {stroke: #b6b4cf;stroke-linejoin: round;stroke-width: 8px;}.c,.d {  fill: #fff;}.e {fill: #6e6ea1;}.e,.d {stroke-width: 0px;}</style>
+  </defs><rect class="d" x="4" y="4" width="992" height="992" /><path class="e" d="M992,8v984H8V8h984M1000,0H0v1000h1000V0h0Z" /><path class="b"
+    d="M361.83,226.44c-62.23-3.99-115.91,43.22-119.9,105.45-3.99,62.23,43.22,115.91,105.45,119.9,62.23,3.99,115.91-43.22,119.9-105.45,3.99-62.23-43.22-115.91-105.45-119.9ZM413.76,342.91c-2.09,32.67-30.28,57.46-62.95,55.36-32.67-2.1-57.46-30.28-55.36-62.95,2.09-32.67,30.28-57.46,62.95-55.36,32.67,2.09,57.45,30.28,55.36,62.95Z"
+  /><circle class="b" cx="353.85" cy="682.11" r="80.62" /><circle class="b" cx="652.79" cy="644.36" r="52.47" /><polyline class="b" points="410.2 624.82 698.58 340.68 464.78 340.68" /><line class="b" x1="617.63" y1="609.81" x2="432.03" y2="420.13" /><circle class="c" cx="696.98" cy="340.44" r="54.47" />
+</svg></g>
+<g transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" id="a" width="1000" height="1000" viewBox="0 0 1000 1000"
+><defs><style>.b {fill: none;}.b,.c {stroke: #b6b4cf;stroke-linejoin: round;stroke-width: 8px;}.c,.d {  fill: #fff;}.e {fill: #6e6ea1;}.e,.d {stroke-width: 0px;}</style>
+  </defs><rect class="d" x="4" y="4" width="992" height="992" /><path class="e" d="M992,8v984H8V8h984M1000,0H0v1000h1000V0h0Z" /><path class="b"
+    d="M361.83,226.44c-62.23-3.99-115.91,43.22-119.9,105.45-3.99,62.23,43.22,115.91,105.45,119.9,62.23,3.99,115.91-43.22,119.9-105.45,3.99-62.23-43.22-115.91-105.45-119.9ZM413.76,342.91c-2.09,32.67-30.28,57.46-62.95,55.36-32.67-2.1-57.46-30.28-55.36-62.95,2.09-32.67,30.28-57.46,62.95-55.36,32.67,2.09,57.45,30.28,55.36,62.95Z"
+  /><circle class="b" cx="353.85" cy="682.11" r="80.62" /><circle class="b" cx="652.79" cy="644.36" r="52.47" /><polyline class="b" points="410.2 624.82 698.58 340.68 464.78 340.68" /><line class="b" x1="617.63" y1="609.81" x2="432.03" y2="420.13" /><circle class="c" cx="696.98" cy="340.44" r="54.47" />
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">p</text>
+<g transform="translate(500 0) scale(0.2 0.2) rotate(90)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" id="a" width="1000" height="1000" viewBox="0 0 1000 1000"
+><defs><style>.b {fill: none;}.b,.c {stroke: #b6b4cf;stroke-linejoin: round;stroke-width: 8px;}.c,.d {  fill: #fff;}.e {fill: #6e6ea1;}.e,.d {stroke-width: 0px;}</style>
+  </defs><rect class="d" x="4" y="4" width="992" height="992" /><path class="e" d="M992,8v984H8V8h984M1000,0H0v1000h1000V0h0Z" /><path class="b"
+    d="M361.83,226.44c-62.23-3.99-115.91,43.22-119.9,105.45-3.99,62.23,43.22,115.91,105.45,119.9,62.23,3.99,115.91-43.22,119.9-105.45,3.99-62.23-43.22-115.91-105.45-119.9ZM413.76,342.91c-2.09,32.67-30.28,57.46-62.95,55.36-32.67-2.1-57.46-30.28-55.36-62.95,2.09-32.67,30.28-57.46,62.95-55.36,32.67,2.09,57.45,30.28,55.36,62.95Z"
+  /><circle class="b" cx="353.85" cy="682.11" r="80.62" /><circle class="b" cx="652.79" cy="644.36" r="52.47" /><polyline class="b" points="410.2 624.82 698.58 340.68 464.78 340.68" /><line class="b" x1="617.63" y1="609.81" x2="432.03" y2="420.13" /><circle class="c" cx="696.98" cy="340.44" r="54.47" />
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">n</text>
+    <text x="500" y="500" transform="rotate(0, 0, 0)" fill="red" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">R=100</text>
+    </svg>"
+`;
+
+exports[`Test SVG generation Test RLC Icon generation 2`] = `
+"<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+    text {
+      transform-origin: center center;
+    }
+    </style><g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" id="a" width="1000" height="1000" viewBox="0 0 1000 1000"
+><defs><style>.b {fill: none;}.b,.c {stroke: #b6b4cf;stroke-linejoin: round;stroke-width: 8px;}.c,.d {  fill: #fff;}.e {fill: #6e6ea1;}.e,.d {stroke-width: 0px;}</style>
+  </defs><rect class="d" x="4" y="4" width="992" height="992" /><path class="e" d="M992,8v984H8V8h984M1000,0H0v1000h1000V0h0Z" /><path class="b"
+    d="M361.83,226.44c-62.23-3.99-115.91,43.22-119.9,105.45-3.99,62.23,43.22,115.91,105.45,119.9,62.23,3.99,115.91-43.22,119.9-105.45,3.99-62.23-43.22-115.91-105.45-119.9ZM413.76,342.91c-2.09,32.67-30.28,57.46-62.95,55.36-32.67-2.1-57.46-30.28-55.36-62.95,2.09-32.67,30.28-57.46,62.95-55.36,32.67,2.09,57.45,30.28,55.36,62.95Z"
+  /><circle class="b" cx="353.85" cy="682.11" r="80.62" /><circle class="b" cx="652.79" cy="644.36" r="52.47" /><polyline class="b" points="410.2 624.82 698.58 340.68 464.78 340.68" /><line class="b" x1="617.63" y1="609.81" x2="432.03" y2="420.13" /><circle class="c" cx="696.98" cy="340.44" r="54.47" />
+</svg></g>
+<g transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+<rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="8"
+    vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">p</text>
+<g transform="translate(500 0) scale(0.2 0.2) rotate(90)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+<rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="8"
+    vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">n</text>
+    <text x="500" y="500" transform="rotate(0, 0, 0)" fill="red" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">R=100</text>
+    </svg>"
+`;
+
+exports[`Test SVG generation Test RLC Icon generation 3`] = `
+"<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+    text {
+      transform-origin: center center;
+    }
+    </style><g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" id="a" width="1000" height="1000" viewBox="0 0 1000 1000"
+><defs><style>.b {fill: none;}.b,.c {stroke: #b6b4cf;stroke-linejoin: round;stroke-width: 8px;}.c,.d {  fill: #fff;}.e {fill: #6e6ea1;}.e,.d {stroke-width: 0px;}</style>
+  </defs><rect class="d" x="4" y="4" width="992" height="992" /><path class="e" d="M992,8v984H8V8h984M1000,0H0v1000h1000V0h0Z" /><path class="b"
+    d="M361.83,226.44c-62.23-3.99-115.91,43.22-119.9,105.45-3.99,62.23,43.22,115.91,105.45,119.9,62.23,3.99,115.91-43.22,119.9-105.45,3.99-62.23-43.22-115.91-105.45-119.9ZM413.76,342.91c-2.09,32.67-30.28,57.46-62.95,55.36-32.67-2.1-57.46-30.28-55.36-62.95,2.09-32.67,30.28-57.46,62.95-55.36,32.67,2.09,57.45,30.28,55.36,62.95Z"
+  /><circle class="b" cx="353.85" cy="682.11" r="80.62" /><circle class="b" cx="652.79" cy="644.36" r="52.47" /><polyline class="b" points="410.2 624.82 698.58 340.68 464.78 340.68" /><line class="b" x1="617.63" y1="609.81" x2="432.03" y2="420.13" /><circle class="c" cx="696.98" cy="340.44" r="54.47" />
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">root</text>
+    </svg>"
+`;
+
+exports[`Test SVG generation Test RLC Icon generation 4`] = `
+"<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+      <defs>
+        <filter id='red-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#ff0000" flood-opacity="0.5"/></filter>
+        <filter id='green-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#00ff00" flood-opacity="0.5"/></filter>
+        <filter id='blue-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#0000ff" flood-opacity="0.5"/></filter>
+        <filter id='drop-shadow' color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="0" stdDeviation="40" flood-opacity="0.5"/></filter>
+      </defs>
+    <g filter="url(#drop-shadow)" transform="translate(300 0) scale(0.2 0.2) rotate(90)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+    text {
+      transform-origin: center center;
+    }
+    </style><g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" id="a" width="1000" height="1000" viewBox="0 0 1000 1000"
+><defs><style>.b {fill: none;}.b,.c {stroke: #b6b4cf;stroke-linejoin: round;stroke-width: 8px;}.c,.d {  fill: #fff;}.e {fill: #6e6ea1;}.e,.d {stroke-width: 0px;}</style>
+  </defs><rect class="d" x="4" y="4" width="992" height="992" /><path class="e" d="M992,8v984H8V8h984M1000,0H0v1000h1000V0h0Z" /><path class="b"
+    d="M361.83,226.44c-62.23-3.99-115.91,43.22-119.9,105.45-3.99,62.23,43.22,115.91,105.45,119.9,62.23,3.99,115.91-43.22,119.9-105.45,3.99-62.23-43.22-115.91-105.45-119.9ZM413.76,342.91c-2.09,32.67-30.28,57.46-62.95,55.36-32.67-2.1-57.46-30.28-55.36-62.95,2.09-32.67,30.28-57.46,62.95-55.36,32.67,2.09,57.45,30.28,55.36,62.95Z"
+  /><circle class="b" cx="353.85" cy="682.11" r="80.62" /><circle class="b" cx="652.79" cy="644.36" r="52.47" /><polyline class="b" points="410.2 624.82 698.58 340.68 464.78 340.68" /><line class="b" x1="617.63" y1="609.81" x2="432.03" y2="420.13" /><circle class="c" cx="696.98" cy="340.44" r="54.47" />
+</svg></g>
+<g transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+<rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="8"
+    vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">p</text>
+<g transform="translate(500 0) scale(0.2 0.2) rotate(90)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" id="a" width="1000" height="1000" viewBox="0 0 1000 1000"
+><defs><style>.b {fill: none;}.b,.c {stroke: #b6b4cf;stroke-linejoin: round;stroke-width: 8px;}.c,.d {  fill: #fff;}.e {fill: #6e6ea1;}.e,.d {stroke-width: 0px;}</style>
+  </defs><rect class="d" x="4" y="4" width="992" height="992" /><path class="e" d="M992,8v984H8V8h984M1000,0H0v1000h1000V0h0Z" /><path class="b"
+    d="M361.83,226.44c-62.23-3.99-115.91,43.22-119.9,105.45-3.99,62.23,43.22,115.91,105.45,119.9,62.23,3.99,115.91-43.22,119.9-105.45,3.99-62.23-43.22-115.91-105.45-119.9ZM413.76,342.91c-2.09,32.67-30.28,57.46-62.95,55.36-32.67-2.1-57.46-30.28-55.36-62.95,2.09-32.67,30.28-57.46,62.95-55.36,32.67,2.09,57.45,30.28,55.36,62.95Z"
+  /><circle class="b" cx="353.85" cy="682.11" r="80.62" /><circle class="b" cx="652.79" cy="644.36" r="52.47" /><polyline class="b" points="410.2 624.82 698.58 340.68 464.78 340.68" /><line class="b" x1="617.63" y1="609.81" x2="432.03" y2="420.13" /><circle class="c" cx="696.98" cy="340.44" r="54.47" />
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">n</text>
+    <text x="500" y="500" transform="rotate(0, 0, 0)" fill="red" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">R=100</text>
+    </svg></g>
+<g filter="url(#drop-shadow)" transform="translate(0 0) scale(0.2 0.2) rotate(90)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+    text {
+      transform-origin: center center;
+    }
+    </style><g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" id="a" width="1000" height="1000" viewBox="0 0 1000 1000"
+><defs><style>.b {fill: none;}.b,.c {stroke: #b6b4cf;stroke-linejoin: round;stroke-width: 8px;}.c,.d {  fill: #fff;}.e {fill: #6e6ea1;}.e,.d {stroke-width: 0px;}</style>
+  </defs><rect class="d" x="4" y="4" width="992" height="992" /><path class="e" d="M992,8v984H8V8h984M1000,0H0v1000h1000V0h0Z" /><path class="b"
+    d="M361.83,226.44c-62.23-3.99-115.91,43.22-119.9,105.45-3.99,62.23,43.22,115.91,105.45,119.9,62.23,3.99,115.91-43.22,119.9-105.45,3.99-62.23-43.22-115.91-105.45-119.9ZM413.76,342.91c-2.09,32.67-30.28,57.46-62.95,55.36-32.67-2.1-57.46-30.28-55.36-62.95,2.09-32.67,30.28-57.46,62.95-55.36,32.67,2.09,57.45,30.28,55.36,62.95Z"
+  /><circle class="b" cx="353.85" cy="682.11" r="80.62" /><circle class="b" cx="652.79" cy="644.36" r="52.47" /><polyline class="b" points="410.2 624.82 698.58 340.68 464.78 340.68" /><line class="b" x1="617.63" y1="609.81" x2="432.03" y2="420.13" /><circle class="c" cx="696.98" cy="340.44" r="54.47" />
+</svg></g>
+<g transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+<rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="8"
+    vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">p</text>
+<g transform="translate(500 0) scale(0.2 0.2) rotate(90)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+<rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="8"
+    vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">n</text>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">capacitor</text>
+    </svg></g>
+<g filter="url(#drop-shadow)" transform="translate(-200 -300) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+    text {
+      transform-origin: center center;
+    }
+    </style><g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" id="a" width="1000" height="1000" viewBox="0 0 1000 1000"
+><defs><style>.b {fill: none;}.b,.c {stroke: #b6b4cf;stroke-linejoin: round;stroke-width: 8px;}.c,.d {  fill: #fff;}.e {fill: #6e6ea1;}.e,.d {stroke-width: 0px;}</style>
+  </defs><rect class="d" x="4" y="4" width="992" height="992" /><path class="e" d="M992,8v984H8V8h984M1000,0H0v1000h1000V0h0Z" /><path class="b"
+    d="M361.83,226.44c-62.23-3.99-115.91,43.22-119.9,105.45-3.99,62.23,43.22,115.91,105.45,119.9,62.23,3.99,115.91-43.22,119.9-105.45,3.99-62.23-43.22-115.91-105.45-119.9ZM413.76,342.91c-2.09,32.67-30.28,57.46-62.95,55.36-32.67-2.1-57.46-30.28-55.36-62.95,2.09-32.67,30.28-57.46,62.95-55.36,32.67,2.09,57.45,30.28,55.36,62.95Z"
+  /><circle class="b" cx="353.85" cy="682.11" r="80.62" /><circle class="b" cx="652.79" cy="644.36" r="52.47" /><polyline class="b" points="410.2 624.82 698.58 340.68 464.78 340.68" /><line class="b" x1="617.63" y1="609.81" x2="432.03" y2="420.13" /><circle class="c" cx="696.98" cy="340.44" r="54.47" />
+</svg></g>
+<g transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+<rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="8"
+    vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">p</text>
+<g transform="translate(500 0) scale(0.2 0.2) rotate(90)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+<rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="8"
+    vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">n</text>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">inductor</text>
+    </svg></g>
+<g filter="url(#drop-shadow)" transform="translate(-400 0) scale(0.2 0.2) rotate(90)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+    text {
+      transform-origin: center center;
+    }
+    </style><g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" id="a" width="1000" height="1000" viewBox="0 0 1000 1000"
+><defs><style>.b {fill: none;}.b,.c {stroke: #b6b4cf;stroke-linejoin: round;stroke-width: 8px;}.c,.d {  fill: #fff;}.e {fill: #6e6ea1;}.e,.d {stroke-width: 0px;}</style>
+  </defs><rect class="d" x="4" y="4" width="992" height="992" /><path class="e" d="M992,8v984H8V8h984M1000,0H0v1000h1000V0h0Z" /><path class="b"
+    d="M361.83,226.44c-62.23-3.99-115.91,43.22-119.9,105.45-3.99,62.23,43.22,115.91,105.45,119.9,62.23,3.99,115.91-43.22,119.9-105.45,3.99-62.23-43.22-115.91-105.45-119.9ZM413.76,342.91c-2.09,32.67-30.28,57.46-62.95,55.36-32.67-2.1-57.46-30.28-55.36-62.95,2.09-32.67,30.28-57.46,62.95-55.36,32.67,2.09,57.45,30.28,55.36,62.95Z"
+  /><circle class="b" cx="353.85" cy="682.11" r="80.62" /><circle class="b" cx="652.79" cy="644.36" r="52.47" /><polyline class="b" points="410.2 624.82 698.58 340.68 464.78 340.68" /><line class="b" x1="617.63" y1="609.81" x2="432.03" y2="420.13" /><circle class="c" cx="696.98" cy="340.44" r="54.47" />
+</svg></g>
+<g transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+<rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="8"
+    vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">p</text>
+<g transform="translate(500 0) scale(0.2 0.2) rotate(90)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+<rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="8"
+    vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">n</text>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">source</text>
+    </svg></g>
+<g filter="url(#drop-shadow)" transform="translate(0 500) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+    text {
+      transform-origin: center center;
+    }
+    </style><g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" id="a" width="1000" height="1000" viewBox="0 0 1000 1000"
+><defs><style>.b {fill: none;}.b,.c {stroke: #b6b4cf;stroke-linejoin: round;stroke-width: 8px;}.c,.d {  fill: #fff;}.e {fill: #6e6ea1;}.e,.d {stroke-width: 0px;}</style>
+  </defs><rect class="d" x="4" y="4" width="992" height="992" /><path class="e" d="M992,8v984H8V8h984M1000,0H0v1000h1000V0h0Z" /><path class="b"
+    d="M361.83,226.44c-62.23-3.99-115.91,43.22-119.9,105.45-3.99,62.23,43.22,115.91,105.45,119.9,62.23,3.99,115.91-43.22,119.9-105.45,3.99-62.23-43.22-115.91-105.45-119.9ZM413.76,342.91c-2.09,32.67-30.28,57.46-62.95,55.36-32.67-2.1-57.46-30.28-55.36-62.95,2.09-32.67,30.28-57.46,62.95-55.36,32.67,2.09,57.45,30.28,55.36,62.95Z"
+  /><circle class="b" cx="353.85" cy="682.11" r="80.62" /><circle class="b" cx="652.79" cy="644.36" r="52.47" /><polyline class="b" points="410.2 624.82 698.58 340.68 464.78 340.68" /><line class="b" x1="617.63" y1="609.81" x2="432.03" y2="420.13" /><circle class="c" cx="696.98" cy="340.44" r="54.47" />
+</svg></g>
+<g transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+shape-rendering="geometricPrecision" text-rendering="geometricPrecision" transform-origin="center center">
+<rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="8"
+    vector-effect="non-scaling-stroke"></rect>
+</svg></g>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">g</text>
+    <text x="500" y="1100" transform="rotate(0, 0, 600)" fill="black" font-size="200" font-weight="200" dominant-baseline="central" text-anchor="middle">ground</text>
+    </svg></g>
+    <path d="M 100 400 L 100 200 L 200 200 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 400 200 L 500 200 L 800 200 L 800 400 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 800 600 L 100 800 L 500 800 L 600 1000 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 600 1000 L 500 800 L 500 600 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <path d="M 500 600 L 800 800 L 500 800 L 100 600 " stroke-stroke="4" fill="transparent" stroke="blue" vector-effect="non-scaling-stroke"/>
+    <circle cx="500" cy="800" r="5" fill="blue" />
+      </svg>"
+`;

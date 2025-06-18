@@ -1,0 +1,3 @@
+analysis BogusAnalysis
+  extends Analysis(analysisSchema="dyad://CommonTests/bogusAnalysis.json")
+end

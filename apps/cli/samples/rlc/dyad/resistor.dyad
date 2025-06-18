@@ -1,0 +1,17 @@
+"""
+A simple linear resistor model
+"""
+model Resistor begin
+  extends TwoPin()
+
+  "Resistance of this Resistor"
+  parameter R::Resistance
+equations
+  "Ohm's Law"
+  v = i * R
+metadata {
+    "Dyad": {
+      "icon": "model:./assets/resistor.svg"
+    }  
+}
+end

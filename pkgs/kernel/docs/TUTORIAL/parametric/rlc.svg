@@ -1,0 +1,202 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+    overflow="visible" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <defs>
+        <filter id="red-shadow" color-interpolation-filters="sRGB">
+            <feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#ff0000" flood-opacity="0.5"></feDropShadow>
+        </filter>
+        <filter id="green-shadow" color-interpolation-filters="sRGB">
+            <feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#00ff00" flood-opacity="0.5"></feDropShadow>
+        </filter>
+        <filter id="blue-shadow" color-interpolation-filters="sRGB">
+            <feDropShadow dx="0" dy="0" stdDeviation="100" flood-color="#0000ff" flood-opacity="0.5"></feDropShadow>
+        </filter>
+        <filter id="drop-shadow" color-interpolation-filters="sRGB">
+            <feDropShadow dx="0" dy="0" stdDeviation="40" flood-opacity="0.5"></feDropShadow>
+        </filter>
+    </defs>
+    <g tabindex="0" filter="url(#drop-shadow)" transform="translate(300 0) scale(0.2 0.2) rotate(90)"
+        transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000" overflow="visible"
+            shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+            <style>
+                text {
+                    transform-origin: center center;
+                }
+            </style>
+            <g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 1000 1000" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                    transform-origin="center center">
+                    <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+                        vector-effect="non-scaling-stroke"></rect>
+                    <path
+                        d="M 0 500 L 200 500 L 250 300 L 350 700 L 450 300 L 550 700 L 650 300 L 750 700 L 800 500 L 1000 500"
+                        fill="transparent" stroke="black" stroke-width="8"></path>
+                </svg></g>
+            <g transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 1000 1000" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                    transform-origin="center center">
+                    <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+                        vector-effect="non-scaling-stroke"></rect>
+                </svg></g>
+            <g transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 1000 1000" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                    transform-origin="center center">
+                    <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+                        vector-effect="non-scaling-stroke"></rect>
+                </svg></g>
+        </svg></g>
+    <g tabindex="0" filter="url(#drop-shadow)" transform="translate(0 0) scale(0.2 0.2) rotate(90)"
+        transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000" overflow="visible"
+            shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+            <style>
+                text {
+                    transform-origin: center center;
+                }
+            </style>
+            <g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 1000 1000" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                    transform-origin="center center">
+                    <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+                        vector-effect="non-scaling-stroke"></rect>
+                    <path d="M 0 500 L 400 500 M 400 200 L 400 800 M 600 200 L 600 800 M 600 500 L 1000 500"
+                        stroke="black" stroke-width="8"></path>
+                </svg></g>
+            <g transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 1000 1000" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                    transform-origin="center center">
+                    <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+                        vector-effect="non-scaling-stroke"></rect>
+                </svg></g>
+            <g transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 1000 1000" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                    transform-origin="center center">
+                    <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+                        vector-effect="non-scaling-stroke"></rect>
+                </svg></g>
+        </svg></g>
+    <g tabindex="0" filter="url(#drop-shadow)" transform="translate(-200 -300) scale(0.2 0.2) rotate(180)"
+        transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000" overflow="visible"
+            shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+            <style>
+                text {
+                    transform-origin: center center;
+                }
+            </style>
+            <g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 1000 1000" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                    transform-origin="center center">
+                    <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+                        vector-effect="non-scaling-stroke"></rect>
+                    <g id="rings">
+                        <circle cx="275" cy="500" r="75" fill="transparent" stroke="black" stroke-width="8"></circle>
+                        <circle cx="425" cy="500" r="75" fill="transparent" stroke="black" stroke-width="8"></circle>
+                        <circle cx="575" cy="500" r="75" fill="transparent" stroke="black" stroke-width="8"></circle>
+                        <circle cx="725" cy="500" r="75" fill="transparent" stroke="black" stroke-width="8"></circle>
+                    </g>
+
+                    <rect x="100" y="500" width="800" height="100" fill="#d2dbed"></rect>
+
+                    <path d="M 0 500 L 200 500" fill="transparent" stroke="black" stroke-width="8"></path>
+                    <path d="M 800 500 L 1000 500" fill="transparent" stroke="black" stroke-width="8"></path>
+                </svg></g>
+            <g transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 1000 1000" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                    transform-origin="center center">
+                    <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+                        vector-effect="non-scaling-stroke"></rect>
+                </svg></g>
+            <g transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 1000 1000" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                    transform-origin="center center">
+                    <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+                        vector-effect="non-scaling-stroke"></rect>
+                </svg></g>
+        </svg></g>
+    <g tabindex="0" filter="url(#drop-shadow)" transform="translate(-400 0) scale(0.2 0.2) rotate(90)"
+        transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000" overflow="visible"
+            shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+            <style>
+                text {
+                    transform-origin: center center;
+                }
+            </style>
+            <g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 1000 1000" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                    transform-origin="center center">
+                    <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+                        vector-effect="non-scaling-stroke"></rect>
+                    <text x="250" y="300" dominant-baseline="middle" text-anchor="middle" font-weight="200"
+                        font-size="300">+</text>
+                    <text x="750" y="300" dominant-baseline="middle" text-anchor="middle" font-weight="200"
+                        font-size="300">-</text>
+                    <path d="M 0 500 L 400 500 M 400 100 L 400 900 M 600 200 L 600 800 M 600 500 L 1000 500"
+                        stroke="black" stroke-width="8"></path>
+                </svg></g>
+            <g transform="translate(-500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 1000 1000" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                    transform-origin="center center">
+                    <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+                        vector-effect="non-scaling-stroke"></rect>
+                </svg></g>
+            <g transform="translate(500 0) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 1000 1000" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                    transform-origin="center center">
+                    <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+                        vector-effect="non-scaling-stroke"></rect>
+                </svg></g>
+        </svg></g>
+    <g tabindex="0" filter="url(#drop-shadow)" transform="translate(0 500) scale(0.2 0.2) rotate(0)"
+        transform-origin="center center"><svg xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000" overflow="visible"
+            shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+            <style>
+                text {
+                    transform-origin: center center;
+                }
+            </style>
+            <g transform="translate(0 0) scale(1.0) rotate(0)" transform-origin="center center"><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 1000 1000" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                    transform-origin="center center">
+                    <rect rx="0" ry="0" width="1000" height="1000" fill="#d2dbed" stroke="blue" stroke-width="3"
+                        vector-effect="non-scaling-stroke"></rect>
+                    <path
+                        d="M 500 0 L 500 300 M 100 300 L 900 300 M 200 475 L 800 475 M 300 650 L 700 650 M 400 825 L 600 825"
+                        stroke="black" stroke-width="8"></path>
+                </svg></g>
+            <g transform="translate(0 -500) scale(0.2 0.2) rotate(0)" transform-origin="center center"><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 1000 1000" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                    transform-origin="center center">
+                    <rect rx="0" ry="0" width="1000" height="1000" fill="blue" stroke="blue" stroke-width="3"
+                        vector-effect="non-scaling-stroke"></rect>
+                </svg></g>
+        </svg></g>
+    <path d="M 100 400 L 100 200 L 200 200" stroke="blue" stroke-stroke="4" fill="transparent"
+        vector-effect="non-scaling-stroke"></path>
+    <path d="M 400 200 L 500 200 L 800 200 L 800 400" stroke="blue" stroke-stroke="4" fill="transparent"
+        vector-effect="non-scaling-stroke"></path>
+    <path d="M 800 400 L 800 200 L 500 200 L 500 400" stroke="blue" stroke-stroke="4" fill="transparent"
+        vector-effect="non-scaling-stroke"></path>
+    <path d="M 800 600 L 800 800 L 500 800 L 500 900" stroke="blue" stroke-stroke="4" fill="transparent"
+        vector-effect="non-scaling-stroke"></path>
+    <path d="M 500 900 L 500 800 L 500 600" stroke="blue" stroke-stroke="4" fill="transparent"
+        vector-effect="non-scaling-stroke"></path>
+    <path d="M 500 600 L 500 800 L 100 800 L 100 600" stroke="blue" stroke-stroke="4" fill="transparent"
+        vector-effect="non-scaling-stroke"></path>
+</svg>

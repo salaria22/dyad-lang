@@ -1,0 +1,57 @@
+model Ground begin
+  g = Pin()
+equations
+  g.v = 0
+end
+
+partial model TwoPin begin
+  p = Pin() [{ "Dyad": { "iconName": "pos" } }]
+  n = Pin() [{ "Dyad": { "iconName": "neg" } }]
+  variable v::Voltage
+  variable i::Current
+equations
+  v = p.v - n.V
+  i = p.i
+  """Conservation of Charge"""
+  p.i + n.i = 0
+end
+
+model VoltageSource begin
+  extends TwoPin()
+  parameter Vf::Voltage = 10
+equations
+  src: v = if t<0 then 0 elseif t>5 then 7 else Vf
+end
+
+model Capacitor begin
+  extends TwoPin()
+  parameter C::Capacitance
+equations
+  C * der(v) = i
+end
+
+model Inductor begin
+  extends TwoPin()
+  parameter L::Inductor
+equations
+  L * der(i) = v
+end
+
+"""
+A simple linear resistor model
+"""
+model Resistor begin
+  extends TwoPin()
+
+  "Resistance of this Resistor"
+  parameter R::Resistance
+equations
+  "Ohm's Law"
+  v = i * R
+metadata {
+    "Dyad": {
+      "icon": "model:./assets/resistor.svg"
+    }  
+}
+end
+

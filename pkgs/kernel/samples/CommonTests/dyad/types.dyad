@@ -1,0 +1,19 @@
+type Degrees = Real(min=0, max=360, units="degrees")
+
+type ConversionFunction = func(::Degrees)::Angle
+type UnitlessConversionFunction = func(::Real)::Real
+
+connector IntegerInput = input Integer 
+
+type Trucks = Integer(quantity="trucks")
+type Flag = Boolean;
+type FileName = String;
+
+struct InterpolationData
+  time::Real[100];
+  y::Trucks[100];
+end
+
+enum OptionalNumber = Just(x::Real) | Nothing
+
+type Foo = Native

@@ -1,0 +1,28 @@
+{
+    "library": {
+        "kind": "lib",
+        "name": "???",
+        "directory": "???",
+        "module": [],
+        "files": [
+            {
+                "kind": "file",
+                "source": "???",
+                "definitions": [
+                    {
+                        "kind": "con",
+                        "imports": [],
+                        "name": "Foo",
+                        "elements": {},
+                        "metadata": null,
+                        "doc_string": null,
+                        "start": 0,
+                        "end": 8
+                    }
+                ]
+            }
+        ]
+    },
+    "semantic": [],
+    "syntax": []
+}

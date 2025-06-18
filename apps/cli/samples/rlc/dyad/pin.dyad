@@ -1,0 +1,10 @@
+connector Pin begin
+  potential v::Voltage [{ "Dyad": { "tags": ["electrical"] } }]
+  flow i::Current
+  metadata {
+    "Dyad": {
+        "icon": { "pos": "file:./assets/p_pin.svg", "neg": "file:./assets/n_pin.svg" },
+        "pathStyle": "stroke:#a495e6;stroke-width:2.5;stroke-dasharray:none;stroke-opacity:1"
+    }
+  }
+end

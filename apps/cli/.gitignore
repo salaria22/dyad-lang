@@ -1,0 +1,13 @@
+out
+dist
+node_modules
+.vscode-test/
+*.vsix
+.DS_Store
+.yalc
+*.0x
+yalc.lock
+remodel
+/dyad*
+/dyad
+*.bun-build

@@ -1,0 +1,80 @@
+partial analysis Autotune 
+  extends Analysis 
+  model::Empty = Empty()
+
+  # The measured output of P that is used for feedback
+  parameter measurement::String 
+
+  # The control input of the plant
+  parameter control_input::String
+
+  # The input to the system when optimizing the step response
+  parameter step_input::String
+
+  # The output to the system when optimizing the step response
+  parameter step_output::String
+
+  # The reference signal for the response optimization
+  parameter ref::Real = 0
+
+  # Sampling time
+  parameter Ts::Time(min=0)
+
+  # Duration (final time)
+  parameter duration::Time(min=0)
+
+  # Maximum allowed peak in the sensitivity function
+  parameter Ms::Real(min=1)
+
+  # Maximum allowed peak in the complementary sensitivity function
+  parameter Mt::Real(min=0)
+
+  # Maximum allowed peak in the noise sensitivity function
+  parameter Mks::Real(min=0)
+
+  # Discretization method
+  parameter disc::String = "tustin"
+
+  # If true, time-weighted error is used as the cost function.
+  parameter timeweight::Boolean = false
+
+  # The order of the filter. Options are {1, 2}.
+  parameter filterorder::Integer = 2
+
+  # If true, the filter damping ratio is optimized.
+  parameter optimize_d::Boolean = false
+
+  # Lower bound for proportional gain
+  parameter kp_lb::Real = 0
+
+  # Lower bound for proportional gain
+  parameter kp_ub::Real = 1e300
+
+  # Lower bound for integral gain
+  parameter ki_lb::Real = 0
+
+  # Lower bound for integral gain
+  parameter ki_ub::Real = 1e300
+
+  # Lower bound for differential gain
+  parameter kd_lb::Real = 0
+
+  # Lower bound for differential gain
+  parameter kd_ub::Real = 1e300
+
+  # Lower bound for filter time constant
+  parameter Tf_lb::Real = 1e-16
+
+  # Lower bound for filter time constant
+  parameter Tf_ub::Real = 1e300
+metadata {
+  "using": "JuliaSimControl"
+}
+end
+
+analysis LotkaVolterraTuner
+  extends Autotune(measurement="foo", control_input="u", step_input="u", step_output="y", Ts=2m, duration=10, Ms=1, Mt=1, Mks=10)
+  parameter α::Real = 1.3
+
+  model = LotkaVolterra(α=α)
+end

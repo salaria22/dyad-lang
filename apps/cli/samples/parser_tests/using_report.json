@@ -1,0 +1,17 @@
+{
+    "library": {
+        "kind": "lib",
+        "name": "???",
+        "directory": "???",
+        "module": [],
+        "files": [
+            {
+                "kind": "file",
+                "source": "???",
+                "definitions": []
+            }
+        ]
+    },
+    "semantic": [],
+    "syntax": []
+}

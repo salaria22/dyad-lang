@@ -1,0 +1,98 @@
+{
+  "title": "PID Autotuning Analysis",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Analysis Type",
+      "default": "PIDAutotuningAnalysis"
+    },
+    "model": {
+      "type": "object",
+      "description": "Model to simulate",
+      "dyad:type": "component"
+    },
+    "measurement": {
+      "type": "string",
+      "description": "The measured output of P that is used for feedback"
+    },
+    "control_input": {
+      "type": "string",
+      "description": "The control input of the plant"
+    },
+    "step_input": {
+      "type": "string",
+      "description": "The input to the system when optimizing the step response"
+    },
+    "step_output": {
+      "type": "string",
+      "description": "The output to the system when optimizing the step response"
+    },
+    "ref": {
+      "type": "number",
+      "description": "The reference signal for the response optimization",
+      "default": 0.0
+    },
+    "Ts": {
+      "type": "number",
+      "description": "Sampling time",
+      "minimum": 0
+    },
+    "Tf": {
+      "type": "number",
+      "description": "Duration (Final time)",
+      "minimum": 0
+    },
+    "Ms": {
+      "type": "number",
+      "description": "Maximum allowed peak in the sensitivity function",
+      "minimum": 0
+    },
+    "Mt": {
+      "type": "number",
+      "description": "Maximum allowed peak in the complementary sensitivity function",
+      "minimum": 0
+    },
+    "Mks": {
+      "type": "number",
+      "description": "Maximum allowed peak in the noise sensitivity function",
+      "minimum": 0
+    },
+    "disc": {
+      "enum": ["tustin", "zoh", "foh"],
+      "default": "tustin",
+      "description": "Discretization method"
+    },
+    "lb": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "default": [0.0, 0, 0, 1e-16],
+      "description": "Lower bounds for the optimization. A vector of the same length and layout as the parameter vector."
+    },
+    "ub": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "default": [null, null, null, null],
+      "description": "Upper bounds for the optimization. A vector of the same length and layout as the parameter vector."
+    },
+    "timeweight": {
+      "type": "boolean",
+      "default": false,
+      "description": "If true, time-weighted error is used as the cost function."
+    },
+    "filterorder": {
+      "type": "number",
+      "default": 2,
+      "description": "The order of the filter. Options are {1, 2}."
+    },
+    "optimize_d": {
+      "type": "boolean",
+      "default": false,
+      "description": "If true, the filter damping ratio is optimized."
+    }
+  }
+}

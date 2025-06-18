@@ -1,0 +1,81 @@
+// See https://go.microsoft.com/fwlink/?LinkId=733558
+// for the documentation about the tasks.json format
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "build:dev",
+      "group": "build",
+      "problemMatcher": "$esbuild-watch",
+      "isBackground": false,
+      "label": "apps/studio: npm run build:dev",
+      "options": {
+        "cwd": "${workspaceFolder}/apps/studio"
+      }
+    },
+    {
+      "type": "npm",
+      "script": "check-types",
+      "group": "build",
+      "problemMatcher": "$tsc-watch",
+      "isBackground": false,
+      "label": "apps/studio: npm run check-types",
+      "options": {
+        "cwd": "${workspaceFolder}/apps/studio"
+      }
+    },
+    {
+      "type": "npm",
+      "script": "build",
+      "isBackground": false,
+      "label": "turbo: build",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    // {
+    //   "type": "npm",
+    //   "script": "watch:esbuild",
+    //   "group": "build",
+    //   "problemMatcher": "$esbuild-watch",
+    //   "isBackground": true,
+    //   "label": "apps/studio: npm run watch:esbuild",
+    //   "options": {
+    //     "cwd": "${workspaceFolder}/apps/studio"
+    //   }
+    // },
+    // {
+    //   "type": "npm",
+    //   "script": "watch:tsc",
+    //   "group": "build",
+    //   "problemMatcher": "$tsc-watch",
+    //   "isBackground": true,
+    //   "label": "apps/studio: npm run watch:tsc",
+    //   "options": {
+    //     "cwd": "${workspaceFolder}/apps/studio"
+    //   }
+    // },
+
+    // {
+    //   "label": "apps/studio-webview: npm run build:dev",
+    //   "type": "npm",
+    //   "script": "build:webview",
+    //   "problemMatcher": "$tsc-watch",
+    //   "isBackground": false,
+    //   "options": {
+    //     "cwd": "${workspaceFolder}/apps/studio-webview"
+    //   },
+    //   "group": "build"
+    // },
+    {
+      "label": "Build Extension",
+      "group": "build",
+      "dependsOn": ["apps/studio: npm run build:dev"]
+    }
+  ]
+}

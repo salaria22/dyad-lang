@@ -1,0 +1,1 @@
+type Voltage = Real(units="V", b=[5k, 5%2], c=(true and false), d=f(5, 6, x=5e+2), e=d.a, f=1k+1m, g=Resistor(R=10.0))

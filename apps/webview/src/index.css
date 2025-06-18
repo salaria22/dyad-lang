@@ -1,0 +1,20 @@
+:root {
+  background-color: #ccc;
+}
+
+.mermaid {
+  color: black;
+}
+.mermaid rect {
+  stroke: black;
+  fill: white;
+}
+
+.mermaid line {
+  stroke: black;
+}
+
+.mermaid path {
+  fill: transparent;
+  stroke: black;
+}

@@ -1,0 +1,5 @@
+model Ground begin
+  g = Pin()
+equations
+  g.v = 0
+end

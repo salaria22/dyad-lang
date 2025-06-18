@@ -1,0 +1,3 @@
+partial analysis AutotuneAnalysis
+  extends Analysis(analysisSchema="dyad://CommonTests/autotuneAnalysis.json")
+end

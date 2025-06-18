@@ -1,0 +1,52 @@
+partial analysis SurrogateAnalysis
+  extends Analysis
+  # Model to simulate
+  model::Empty = Empty()
+  # The type of surrogate model to be used. Can be either `SolutionOperator` or `DigitalEcho`
+  parameter surrogate_model::String
+  # Integration algorithm
+  parameter alg::String = "auto"
+  # Absolute tolerance
+  parameter abstol::Real 
+  # Relative tolerance
+  parameter reltol::Real 
+  # Start time
+  parameter start::Time = 0
+  # Stop time
+  parameter stop::Time 
+  # Save at time
+  parameter saveat::Time
+  # Maximum time step
+  parameter dtmax::Time = 0
+  # The random seed to be used
+  parameter seed::Integer
+  # Number of trajectories to generate from the model. These are total generated trajectories. Set `train_ratio` for splitting into training and validation.
+  parameter num_samples::Integer
+  # The numbers of runners to launch in parallel for data generation
+  parameter num_runners::Integer
+  # Reservoir size
+  parameter RSIZE::Integer
+  # Time constant
+  parameter tau::Time 
+  # Number of Epochs to train on
+  parameter n_epochs::Integer(min=7)
+  # Number of Epochs per learning rate
+  parameter epochs_per_lr::Integer(min=7)
+  # Regularization Constant for training
+  parameter regularization_constant::Real = 1e-6
+  # Ratio defining the train validation split
+  parameter train_ratio::Real(min=0.1) = 0.8
+  # Field to train for. Can either be `states` or `observables`
+  parameter ground_truth_field::String
+end
+
+analysis LotkaVolterraSurrogate
+  extends SurrogateAnalysis(surrogate_model="DigitalEcho", abstol=1m, reltol=1m,
+                    stop=10, saveat=10, seed=1032, num_samples=10, num_runners=10,
+                    RSIZE=30, tau=0.1, n_epochs=10, epochs_per_lr=10,
+                    ground_truth_field="states")
+  parameter α::Real(min=1.0, max=5.0) = 1.3
+  parameter β::Real(min=0.1, max=2.0) = 0.9
+
+  model = LotkaVolterra(α=α, β=β)
+end

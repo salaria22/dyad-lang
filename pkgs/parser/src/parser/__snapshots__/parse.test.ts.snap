@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Parsing and Lexing tests Test expression parsing 1`] = `
+{
+  "elementwise": false,
+  "lhs": {
+    "elems": [
+      {
+        "indices": [],
+        "name": "a",
+        "span": {
+          "ec": 1,
+          "el": 1,
+          "sc": 1,
+          "sl": 1,
+        },
+      },
+    ],
+    "type": "cref",
+  },
+  "op": "*",
+  "rhs": {
+    "elems": [
+      {
+        "indices": [],
+        "name": "b",
+        "span": {
+          "ec": 3,
+          "el": 1,
+          "sc": 3,
+          "sl": 1,
+        },
+      },
+    ],
+    "type": "cref",
+  },
+  "type": "bexp",
+}
+`;

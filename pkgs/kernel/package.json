@@ -1,0 +1,108 @@
+{
+  "name": "@juliacomputing/dyad-kernel",
+  "displayName": "dyad-kernel",
+  "version": "0.50.0",
+  "description": "The Dyad language kernel",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "exports": {
+    ".": {
+      "types": "./esm/index.d.ts",
+      "require": "./cjs/index.js",
+      "import": "./esm/index.mjs"
+    },
+    "./node": {
+      "types": "./esm/node.d.ts",
+      "require": "./cjs/node.js",
+      "import": "./esm/node.mjs"
+    }
+  },
+  "scripts": {
+    "prepublishOnly": "npm run clean && npm run build && npm run bundle && npm run test:release",
+    "build": "tsc -p ./",
+    "bundle": "npm run bundle:cjs && npm run bundle:esm",
+    "bundle:cjs": "rimraf cjs && tsup --tsconfig tsconfig.tsup.json src/index.ts --format cjs --dts --dts-resolve -d=./cjs --sourcemap && tsup tsup --tsconfig tsconfig.tsup.json src/node.ts --format cjs --dts --dts-resolve -d=./cjs --sourcemap",
+    "bundle:esm": "rimraf esm && tsup --tsconfig tsconfig.tsup.json src/index.ts --external isomorphic-git --format esm --dts --dts-resolve -d=./esm --sourcemap  && tsup tsup --tsconfig tsconfig.tsup.json src/node.ts --external isomorphic-git --format esm --dts --dts-resolve -d=./esm --sourcemap",
+    "benchmarks": "npm run benchmark:modify",
+    "benchmark:modify": "npm run bundle:benchmark && time node ./cjs/profile_modify.js > benchmark/modify/timing.txt && 0x -D benchmark/modify ./cjs/profile_modify.js",
+    "bundle:benchmark": "npm run build && tsup src/benchmarks/profile_modify.ts --format cjs --dts --dts-resolve -d=./cjs",
+    "devdocs": "retype start",
+    "docs": "npm run docs:retype && npm run docs:kernel",
+    "docs:retype": "retype build",
+    "docs:kernel": "typedoc src/index.ts --searchInComments --out ../dyad-kernel/.retype/kernel",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run build && npm run lint",
+    "lint": "eslint src --ext ts",
+    "yalc:publish": "cross-env SKIP_LIBS=true yalc publish",
+    "test:codegen": "npm run test -- src/codegen",
+    "test:workspace": "npm run test -- src/workspace",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
+    "test:release": "cross-env RELEASE_PREP=true npm run test",
+    "test:compile": "cross-env COMPILE_ONLY=true RELEASE_PREP=true npm run test",
+    "test:coverage": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --collectCoverage",
+    "clean": "rimraf dist && rimraf out && rimraf cjs && rimraf esm"
+  },
+  "keywords": [
+    "Dyad"
+  ],
+  "files": [
+    "esm",
+    "!esm/**/*.test.*",
+    "cjs",
+    "!cjs/**/*.test.*",
+    "src",
+    "!src/**/*.test.*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JuliaComputing/dyad-lang.git"
+  },
+  "author": "Michael M. Tiller",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "devDependencies": {
+    "@gulujs/toml": "0.4.1",
+    "@types/debug": "^4.1.12",
+    "@types/jest": "^29.5.12",
+    "@types/lodash": "^4.14.202",
+    "@types/object-hash": "3.0.6",
+    "@types/path-browserify": "1.0.3",
+    "@types/uuid": "10.0.0",
+    "@typescript-eslint/eslint-plugin": "7.18.0",
+    "@typescript-eslint/parser": "7.18.0",
+    "0x": "5.8.0",
+    "cross-env": "^7.0.3",
+    "eslint": "8.57.1",
+    "eslint-plugin-require-extensions": "0.1.3",
+    "isomorphic-git": "1.30.2",
+    "lru-cache": "11.1.0",
+    "retypeapp": "3.8.1",
+    "rimraf": "^5.0.5",
+    "ts-jest": "^29.1.2",
+    "ts-node": "10.9.2",
+    "tsup": "8.5.0",
+    "typedoc": "0.28.5",
+    "typescript": "5.5.3"
+  },
+  "dependencies": {
+    "@isomorphic-git/lightning-fs": "4.6.2",
+    "@juliacomputing/dyad-ast": "*",
+    "@juliacomputing/dyad-common": "*",
+    "@juliacomputing/dyad-parser": "*",
+    "@zip.js/zip.js": "2.7.62",
+    "async-mutex": "0.5.0",
+    "chokidar": "3.6.0",
+    "debug": "^4.3.4",
+    "handlebars": "^4.7.8",
+    "jsonschema": "1.5.0",
+    "lodash": "^4.17.21",
+    "mobx": "6.13.7",
+    "nanoid": "^3.3.7",
+    "object-hash": "3.0.0",
+    "path-browserify": "1.0.1",
+    "purify-ts": "2.1.0",
+    "rxjs": "^7.8.2",
+    "uuid": "9.0.1",
+    "zod": "3.25.36",
+    "zod-to-json-schema": "3.24.5"
+  }
+}

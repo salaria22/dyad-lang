@@ -1,0 +1,31 @@
+"""
+This is an RLC model.  This should support markdown.  That includes
+HTML as well.
+"""
+model RLCModel begin
+  resistor = Resistor(R=100)
+  capacitor = Capacitor(C=1m)
+  inductor = Inductor(L=1)
+  source::TwoPin = ConstantVoltage(V=30)
+  ground = Ground()
+connections
+  connect(source.p, inductor.p) metadata {
+    "Dyad": {
+        "path": [
+            []
+        ]
+    }
+  }
+  connect(inductor.n, resistor.p, capacitor.p) metadata {
+    "Dyad": {
+        "path": [
+            [{ "x": 1, "y": 10}],
+            [{ "x": 5, "y": 10}, { "x": 5, "y": 20 }]
+        ]}
+  }
+  connect(resistor.n, ground.g, capacitor.n, source.n)
+end
+  
+model RLCModel2 begin
+  extends RLCModel(source = CurrentSource(i_final=1.5m))
+end

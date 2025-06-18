@@ -1,0 +1,13 @@
+partial component A0
+  parameter x1::Real
+  parameter x2::Real
+  parameter x3::Real
+  parameter x4::Real
+end
+
+
+component A
+  extends A0(x1 = 1, x2 = 2, x3 = 3, x4 = 4)
+relations
+  x1 = x2
+end

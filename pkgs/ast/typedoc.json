@@ -1,0 +1,8 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "navigation": true,
+  "searchInComments": true,
+  "readme": "./DOCS.md",
+  "requiredToBeDocumented": ["Interface", "Function"],
+  "out": "./typedocs"
+}

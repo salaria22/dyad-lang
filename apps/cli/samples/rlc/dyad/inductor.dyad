@@ -1,0 +1,6 @@
+model Inductor begin
+  extends TwoPin()
+  parameter L::Inductance
+equations
+  L * der(i) = v
+end

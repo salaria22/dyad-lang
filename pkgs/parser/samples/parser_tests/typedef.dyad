@@ -1,0 +1,41 @@
+using OtherLibrary: SpecialType
+
+# This is a scalar type definition
+type Voltage = Real(units="V")
+
+type Current = Real(final units="A")
+
+type MyType = SpecialType
+
+type MediumModel = Native
+
+# This is the definition of a function type
+type EnthalpyFunction = func(::Pressure, ::Temperature)::SpecificEnthalpy
+
+type JuliaFunc = func(; name::String)::Integer
+
+type Action = func()::(::Real, ::Real)
+
+type KitchenSink = func(::Real; b::Real)::(::String, ::Boolean)
+
+# This is the definition of a struct
+struct Geometry
+  # The length of the stator arm
+  length::Length(final min=0) = 10
+  # The radius of the rotor
+  radius::Radius() [{"Dyad": {"dialog": "Mechanical", "group": "Geometry"}}]
+  # Position in space
+  x::Position[3]
+end
+
+# This is the definition of an enum
+enum LightColor =
+  | Red
+  | Green
+  | Blue
+
+enum InitializationOptions =
+  | FixedPosition(s0::Position)
+  | FixedSpeedAndPosition(s0::Position, v0::Velocity)
+  | Equilibrium
+  | None

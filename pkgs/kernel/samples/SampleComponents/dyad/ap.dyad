@@ -1,0 +1,17 @@
+component Gain 
+  u = RealInput()
+  y = RealOutput()
+  parameter k::Real
+relations
+  y = k*u
+end 
+
+component PlantModel 
+  u = RealInput()
+  y = RealOutput()
+  gain = Gain(k=10)
+relations  
+  connect(u, gain.u)
+  connect(gain.y, y)
+  u_v: analysis_point(u, gain.u)
+end
